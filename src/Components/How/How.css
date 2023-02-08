@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.How{
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins';
+    background-image: url("Bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.How-one{
+    flex-wrap: wrap;
+}
+.How-wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.How-h1{
+    margin: 40px;
+    color: #006edc;
+}
+.How-wrapped{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.How-img-wrap{
+    width: 380px;
+    height: 330px;
+}
+.How-img{
+    width: 100%;
+    height: 100%;
+}
+.How-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+}
+.How-text-one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+}
+@media screen and (max-width: 767px) {
+    .How-text-one{
+        color: #006edc;
+    }
+    .How-img-wrap{
+        width: 250px;
+        height: 210px;
+    }
+    .How-one{
+        margin-bottom: 60px;
+    }
+}

@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+.about{
+    background-color: #006edc;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+.miss-h1{
+    margin-top: 30px;
+    color: white;
+}
+.about-wrap{
+    width: 90%;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.abt-img-wrap{
+    width: 275px;
+    height: 240px;
+    border-radius: 10px;
+    animation: fadeInRight; 
+    animation-duration: 1.5s;
+}
+.abt-text{
+    color: white;
+    font-size: 1.4rem;
+    animation: fadeInLeft; 
+    animation-duration: 1.5s;
+}
+.abt-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.mission{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.mission-wrap{
+    border-radius: 10px;
+    background-color: #44A1E4;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 300px;
+    flex-wrap: wrap;
+}
+.wrap-wrap{
+    margin: 20px ;
+}
+.mission-img-wrap{
+    width: 140px;
+    height: 90px;
+    background-color: #44A1E4;
+}
+.mission-img{
+    width: 100%;
+    height: 100%;
+}
+.why-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.why-hold{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #44A1E4;
+    border-radius: 12px;
+    width: 250px;
+    height: 375px;
+    margin: 10px;
+}
+.why-p{
+    text-align: center;
+}
+.why-h1{
+    color: white;
+    text-align: center;
+}
+.miss-zig{
+    display: none;
+}
+@media screen and (max-width: 760px) {
+
+    .about-wrap{
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .abt-text{
+        color: white;
+        font-size: medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .abt-img{
+        display:  none;
+    }
+    .miss-zig{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrap-wrap{
+        margin: 20px ;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mission{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #44A1E4;
+        border-radius: 12px;
+        width: 250px;
+        height: 375px;
+    }
+    .mission-img-wrap{
+        display: none
+    }
+    .miss-h4{
+        font-weight: 500;
+    }
+    .abt-img-wrap{
+        display: none ;
+    }
+}

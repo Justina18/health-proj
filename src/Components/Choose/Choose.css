@@ -1,0 +1,64 @@
+
+.Choose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    width:100% ;
+    background: white;
+    color: black;
+    font-family: Raleway;
+}
+.choose-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.choose-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.choose-button-med{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #D9D9D9;
+    border: 1px solid #006edc;
+    height: 50px;
+    width: 320px;
+    margin-top: 15px;
+}
+.chooseBack{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+.chooseBackButt{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #006edc;
+    color: white;
+    height: 40px;
+    width: 120px;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+}
+.choose-button-user{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #D9D9D9;
+    border: 1px solid #006edc;
+    height: 50px;
+    width: 320px;
+    margin-top: 15px;
+}

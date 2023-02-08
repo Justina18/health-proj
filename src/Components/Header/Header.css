@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raleway;
+}
+.Head-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: white;
+}
+.head-img{
+    width: 88px;
+    height: 63px;
+    cursor: pointer;
+}
+.head-links{
+    margin: 10px;
+    color: #006edc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.head-buttons{
+  display: flex;
+}
+.head-log-button{
+    background: transparent;
+    border: 2px solid #006edc;
+    border-radius: 8px;
+    color: #006edc;
+    width: 70px;
+    margin-right: 10px;
+    font-size: small;
+    font-weight: 600;
+    height: 32px;
+}
+.head-sign-button{
+    background:  #006edc;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    margin-right: 10px;
+    width: 70px;
+    font-size: small;
+    font-weight: 600;
+    height: 32px;
+}
+.line{
+  width: 100%;
+  height: 2px;
+  margin: 2px;
+  border-top: 2px solid #006edc;
+}
+.head-link{
+  display: none;
+}
+.Burger {
+    display: none;
+  }
+ .hid{
+  display: none;
+ }
+  
+  @media screen and (max-width: 767px) {
+    .head-link{
+      width: 100px;
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+        }
+    .head-links{
+      display: none;
+    }
+    .Burger {
+      display: flex;
+    }
+    .hid{
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.13);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3.6px);
+      -webkit-backdrop-filter: blur(3.6px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      position: absolute;
+      top: 66px;
+      left: 200px;
+      width: 120px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+        }
+    .Header-Toggle{
+      display: flex;
+    }
+    .Head-wrap{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;  
+      flex-wrap: wrap; 
+  }
+  .head-sign-button{
+    display: none;
+  }
+  .head-log-button{
+    display: none;
+  }
+  }

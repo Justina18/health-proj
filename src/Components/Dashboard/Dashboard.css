@@ -1,0 +1,272 @@
+.dash-wrap{
+    display: flex;
+    background-color: #F5F7F9;
+}
+
+.dash-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; 
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.side{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 100vh;
+  background-color: #1B75BC;
+  color: black;
+  border: 1.5px solid rgb(223, 222, 222);
+}
+.side-head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.dash-txt{
+  margin-top: 80px;
+  width: 100%;
+}
+.dash-hr{
+    border-top: 1px solid #006edc;
+    width: 1005;
+}
+.dash-img{
+    width: 110px;
+    height: 80px;
+    border-radius: 100%;
+}
+.dash-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    background-color: #006edc;
+}
+.dash-icon-wrap{
+    display: flex;
+    background-color: white;
+    width: 210px;
+    height: 90px;
+    border-radius: 5px;
+    border: 1px solid #006edc;
+}
+.dash-icon-wrap-holder{
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+.dash-p{
+    font-size: medium;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.dash-p:active{
+  background-color: #1B75BC;
+    color: white;
+}
+.dash-icon-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.heys{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: start;
+  flex-wrap: wrap;
+  height: 160px;
+}
+.dun{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    overflow: auto;
+    background-color: #F5F5F5;
+}
+.hey{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hey-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 130px;
+    border-radius: 12px;
+    background-color: #e7e6e6;
+}
+/* The wave */
+* {
+    margin: 0px;
+    font-family: Raleway;
+  }
+  .todo {
+    width: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #006edc;
+  }
+  .todo-wrap {
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    border-radius: 5px;
+  }
+  .inputed-holder{
+    background-color: white;
+    border: 3px solid #006edc;
+    height: 50px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 3px 0px 3px;
+    border-radius: 5px;
+  }  .checkbox{
+    width: 20%;
+  }
+  input {
+    width: 90%;
+    height: 70%;
+    outline: none;
+    border: none;
+  }
+   .plus-butt {
+    font-size: 26px;
+    font-weight: 100;
+    height: 30px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    border-radius: 10px;
+    color: white;
+    border: none;
+  }
+  .remove-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+  }
+  .Card {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+  }
+  .Card-holder{
+    
+    min-height: auto;
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .texts{
+    display: flex;
+    flex-direction: column;
+    color:rgb(36, 36, 36);
+    width: 97.8%;
+  }
+  .text1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:rgb(36, 36, 36)
+  }
+  .wrap {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card {
+    margin-top: 15px;
+  }
+  .scroll {
+    height: 100%;
+    overflow-y: auto;
+    max-height: 150px;
+    background-color: rgba(118, 116, 116, 0.4);
+    border-radius: 0px 0px 10px 10px;
+  }
+  .card_top {
+    background-color: #006edc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+  }
+  .top-parent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:10px;
+    width: 100%;
+  }
+  .status{
+    display: flex;
+    align-items: center;
+    gap:10px;
+  }
+  .Main_cardtop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    color: black;
+    margin-top: 2px;
+  }
+  
+  .Burger {
+    display: none;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .side{
+      display: none;
+    }
+    .Burger {
+      display: flex;
+    }
+    
+  }
