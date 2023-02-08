@@ -2,10 +2,11 @@ import React from 'react'
 import SideBar from './SideBar'
 import './User.css'
 import {BsFillJournalBookmarkFill} from 'react-icons/bs'
-import {MdAttachMoney} from 'react-icons/md'
+import {MdAttachMoney,MdOutlineCancel} from 'react-icons/md'
 import {HiOutlineUsers} from 'react-icons/hi'
 import {AiOutlinePhone} from 'react-icons/ai'
 import {CiFolderOn} from 'react-icons/ci'
+import {TiTick} from 'react-icons/ti'
 
 const UserDash = () => {
   return (
@@ -178,6 +179,72 @@ const UserDash = () => {
             </div>
             </div>
           </div>
+        </div>
+
+        <h3 className='user-dash-h3'>
+              Appointments Requests
+        </h3>
+        <div>
+              <div className='user-dash-wrap-lower'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 61.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Beth Mccoy</h4>
+                    <p>Migraines</p>
+                    <p>13 March  <b>10:00</b></p>
+                  </div>
+                  <div>
+                    <TiTick color='green'/>
+                    <MdOutlineCancel color='red'/>
+                  </div>
+                </div>
+              </div>
+
+              <div className='user-dash-wrap-lower'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 62.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Beth Mccoy</h4>
+                    <p>Migraines</p>
+                    <p>13 March  <b>10:00</b></p>
+                  </div>
+                  <div>
+                    <TiTick color='green'/>
+                    <MdOutlineCancel color='red'/>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div className='user-dash-wrap-lower'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 63.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Beth Mccoy</h4>
+                    <p>Migraines</p>
+                    <p>13 March  <b>10:00</b></p>
+                  </div>
+                  <div>
+                    <TiTick color='green'/>
+                    <MdOutlineCancel color='red'/>
+                  </div>
+                </div>
+              </div>
+
+              <div className='user-dash-wrap-lower'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 59.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Beth Mccoy</h4>
+                    <p>Migraines</p>
+                    <p>13 March  <b>10:00</b></p>
+                  </div>
+                  <div>
+                    <TiTick color='green'/>
+                    <MdOutlineCancel color='red'/>
+                  </div>
+                </div>
+              </div>
         </div>
         </div>
     </div>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "public",
+			"path": "."
+		},
+		{
+			"name": "New folder (3)",
+			"path": "../../../New folder (3)"
+		}
+	],
+	"settings": {}
+}

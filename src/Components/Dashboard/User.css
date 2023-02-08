@@ -13,6 +13,7 @@
     width: 78%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -131,6 +132,7 @@ box-shadow: 0px 0px 12px -1px rgba(147,179,200,1);
     display: flex;
     justify-content: space-between;
     margin: 20px;
+    align-items: center;
 }
 .user-dash-wrap-lower-text-upper-low-wrap{
     display: flex;
@@ -181,5 +183,9 @@ box-shadow: 0px 0px 12px -1px rgba(147,179,200,1);
     border-radius: 5px;
 }
 @media screen and (max-width: 767px) {
-
+.user-dash-wrap-upper-wrapper{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
 }
