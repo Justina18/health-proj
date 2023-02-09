@@ -28,6 +28,7 @@ import UserSucess from './Components/Form/UserSucess';
 import Settings from './Components/Dashboard/Settings';
 import Texts from './Components/Dashboard/Texts';
 import BookInfo from './Components/Book/BookInfo';
+import UserPro from './Components/Dashboard/UserPro';
 
 const App = () => {
   return (
@@ -61,6 +62,7 @@ const App = () => {
           <Route path='/settings' element={ <Settings/> } />
           <Route path='/texts' element={ <Texts/> }/>
           <Route path='/booking info' element={ <BookInfo/> }/>
+          <Route path='/User Profile' element={ <UserPro/> }/>
         </Routes>
  
       </HashRouter>

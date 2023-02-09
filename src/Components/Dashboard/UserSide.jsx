@@ -42,7 +42,7 @@ const UserSide = () => {
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject} className='p-wrap' to='/profile' >
+              isActive ? activeColorObject : colorObject} className='p-wrap' to='/User Profile' >
                <BiUserCircle color='white' fontSize={20}/><p className='dash-p'>   Your Profile</p>
               </NavLink>
               <br/>

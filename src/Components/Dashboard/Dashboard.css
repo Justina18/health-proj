@@ -102,7 +102,7 @@
     flex-direction: column;
     width: 78%;
     height: 100%;
-    overflow: auto;
+    flex-wrap: wrap;
 }
 .hey{
     display: flex;
@@ -112,6 +112,7 @@
 }
 .user-dash-wrap-lower-wrapped{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 20px;
@@ -136,6 +137,7 @@
     justify-content: center;
     align-items: center;
     width: 80%;
+    flex-wrap: wrap;
     margin-top: 70px;
     border-radius: 12px;
     background-color: #ffffff;
