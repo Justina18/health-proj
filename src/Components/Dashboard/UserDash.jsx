@@ -1,6 +1,7 @@
 import React from 'react'
 import SideBar from './SideBar'
 import './User.css'
+import { useNavigate} from 'react-router-dom';
 import {BsFillJournalBookmarkFill} from 'react-icons/bs'
 import {MdAttachMoney,MdOutlineCancel} from 'react-icons/md'
 import {HiOutlineUsers} from 'react-icons/hi'
@@ -9,6 +10,8 @@ import {CiFolderOn} from 'react-icons/ci'
 import {TiTick} from 'react-icons/ti'
 
 const UserDash = () => {
+  
+  const navigate = useNavigate()
   return (
     <div className='user-dash'>
         <SideBar/>
@@ -40,8 +43,8 @@ const UserDash = () => {
               </div>
 
               <div>
-                <p>Patients</p>
-                <h2>132</h2>
+                <p>Income Made</p>
+                <h2>$432</h2>
               </div>
 
           </div>
@@ -53,7 +56,7 @@ const UserDash = () => {
               </div>
 
               <div>
-                <p>Patients</p>
+                <p>Appointments</p>
                 <h2>132</h2>
               </div>
             </div>
@@ -194,8 +197,8 @@ const UserDash = () => {
                     <p>13 March  <b>10:00</b></p>
                   </div>
                   <div>
-                    <TiTick color='green'/>
-                    <MdOutlineCancel color='red'/>
+                    <TiTick fontSize={20} color='green'/>
+                    <MdOutlineCancel fontSize={20} color='red'/>
                   </div>
                 </div>
               </div>
@@ -209,8 +212,8 @@ const UserDash = () => {
                     <p>13 March  <b>10:00</b></p>
                   </div>
                   <div>
-                    <TiTick color='green'/>
-                    <MdOutlineCancel color='red'/>
+                    <TiTick fontSize={20} color='green'/>
+                    <MdOutlineCancel fontSize={20} color='red'/>
                   </div>
                 </div>
               </div>
@@ -225,8 +228,8 @@ const UserDash = () => {
                     <p>13 March  <b>10:00</b></p>
                   </div>
                   <div>
-                    <TiTick color='green'/>
-                    <MdOutlineCancel color='red'/>
+                    <TiTick fontSize={20} color='green'/>
+                    <MdOutlineCancel fontSize={20} color='red'/>
                   </div>
                 </div>
               </div>
@@ -240,8 +243,8 @@ const UserDash = () => {
                     <p>13 March  <b>10:00</b></p>
                   </div>
                   <div>
-                    <TiTick color='green'/>
-                    <MdOutlineCancel color='red'/>
+                    <TiTick fontSize={20} color='green'/>
+                    <MdOutlineCancel fontSize={20} color='red'/>
                   </div>
                 </div>
               </div>

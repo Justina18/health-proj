@@ -116,13 +116,12 @@
 .user-lower-h{
     font-weight: 400
 }
+
 .Today:hover{
     -webkit-box-shadow: 0px 0px 12px -1px rgba(147,179,200,1);
 -moz-box-shadow: 0px 0px 12px -1px rgba(147,179,200,1);
 box-shadow: 0px 0px 12px -1px rgba(147,179,200,1);
     background-color: #F2FAFF;
-    width: 330px;
-    height: 290px;
 }
 .user-dash-wrap-lower-img{
     width: 40px;
@@ -151,9 +150,10 @@ box-shadow: 0px 0px 12px -1px rgba(147,179,200,1);
     flex-direction: column;
 }
 .user-dash-butt{
-    margin: 25px;
+    width: 100%;
+    margin: 15px;
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
 }
 .numb-butt{

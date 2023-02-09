@@ -126,6 +126,8 @@ margin-left: 40px;
         align-items: center;
         width: 315px;
         height: 290px;
+        animation: fadeInLeft; 
+        animation-duration: 1s;
     }
     .land-img-two{
         width: 100%;

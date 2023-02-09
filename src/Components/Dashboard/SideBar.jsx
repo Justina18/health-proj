@@ -43,7 +43,8 @@ const SideBar = () => {
               <br/>
               <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/appointment'>
-               <BsJournalBookmarkFill  color='white'  fontSize={18}/><p  className='dash-p'>   Appointments and Schedule</p>
+               <BsJournalBookmarkFill  color='white'  fontSize={18}/>
+               <p  className='dash-p'>Appointments and Schedule</p>
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>

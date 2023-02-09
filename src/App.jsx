@@ -27,6 +27,7 @@ import UserUpload from './Components/Form/UserUpload';
 import UserSucess from './Components/Form/UserSucess';
 import Settings from './Components/Dashboard/Settings';
 import Texts from './Components/Dashboard/Texts';
+import BookInfo from './Components/Book/BookInfo';
 
 const App = () => {
   return (
@@ -59,6 +60,7 @@ const App = () => {
           <Route path='/user upload' element={ <UserUpload/> }/>
           <Route path='/settings' element={ <Settings/> } />
           <Route path='/texts' element={ <Texts/> }/>
+          <Route path='/booking info' element={ <BookInfo/> }/>
         </Routes>
  
       </HashRouter>

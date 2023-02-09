@@ -106,7 +106,7 @@ const Book = () => {
             </div>
           </NavLink>
         </div>
-         <button className='book-butt'>
+         <button  onClick={()=> navigate('/booking info')}  className='book-butt'>
                 Book Now
              </button>
         </div>
