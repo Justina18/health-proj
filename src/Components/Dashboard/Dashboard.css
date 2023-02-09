@@ -83,6 +83,7 @@
     flex-direction: column;
 }
 .heys{
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -91,31 +92,56 @@
   flex-wrap: wrap;
   height: 160px;
 }
+.heys p{
+  font-size: small;
+}
 .dun{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 75%;
+    width: 78%;
     height: 100%;
     overflow: auto;
-    background-color: #F5F5F5;
 }
 .hey{
     display: flex;
     width: 100%;
     height: 100%;
+    background-color: #E2E3FE;
 }
-
+.user-dash-wrap-lower-wrapped{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+ .user-dash-wrap-lower-wrapped-one{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.user-dash-wrap-lower-wrapped-two{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.this-div{
+  display: flex;
+}
 .hey-wrap{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 80%;
-    margin-top: 130px;
+    margin-top: 70px;
     border-radius: 12px;
-    background-color: #e7e6e6;
+    background-color: #ffffff;
+}
+.hey-wrap-img{
+  width: 280px;
 }
 /* The wave */
 * {

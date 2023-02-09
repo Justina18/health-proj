@@ -1,23 +1,35 @@
-import React,{useState} from 'react'
-import { NavLink,useNavigate } from 'react-router-dom'
-import Time from './Time';
+import React,{useContext} from 'react'
+import { Contexts } from '../../Api/Context'
 
-
-const BookInfo = (setDate, showTime, date, props) => {
-    const [event, setEvent] = useState(null)
-    const [info, setInfo] = useState(false)
-    function displayInfo(e) {
-        setInfo(true);
-        setEvent(e.target.innerText);
-     }
+const BookInfo = () => {
+    const {totalAmount}=useContext(Contexts)
+    const payment=()=>{
+        const refVal = "my-ref" + Math.random () * 1000;
+        
+          window.Korapay.initialize({
+              key:"pk_test_X3AXhz3wRAETd6TrgfBXdcVwpVwJMq8XifBAakPe",
+              reference: `${refVal}`,
+              amount: totalAmount, 
+              currency: "NGN",
+              customer: {
+                name: "John Doe",
+                email: "john@doe.com"
+              },
+              notification_url: "https://example.com/webhook"
+          });
+    
+      
+    
+      }
 
   return (
     <div>
-        <div className='app-date'>
-            {info ? `Your appointment is set to ${event} ${props.date.toDateString()}` : null}
-        </div>
+      BookInfo
+      <button  onClick={payment}  className='book-butt'>
+                Proceed to Payments
+             </button>
     </div>
   )
 }
 
-export default BookInfo
+export default BookInfo;

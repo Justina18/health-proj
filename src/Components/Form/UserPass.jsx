@@ -53,8 +53,8 @@ const UserPass = () => {
                 <button className='button' type='submit' onClick={()=> navigate('/user upload')}>
                     CREATE ACCOUNT
                 </button>
-                
-                <p className='p'>Already have an account? <b className='b'> Log In.</b></p>
+               
+                <p className='p'>Already have an account? <b onClick={()=> navigate( '/log in')} className='b'> Log In.</b></p>
                 </div>
               </form>
         </div>

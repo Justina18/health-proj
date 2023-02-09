@@ -5,13 +5,13 @@ import {FiAlignJustify} from 'react-icons/fi';
 import {FaTimes} from 'react-icons/fa'
 import {AiFillHome,AiOutlineMessage,AiOutlineSetting} from 'react-icons/ai'
 import {BiUserCircle,BiBell,} from 'react-icons/bi'
-import {BsSuitHeart} from 'react-icons/bs'
-import {SlUserFollow} from 'react-icons/sl'
-import {AiOutlineArrowUp} from 'react-icons/ai'
-import {RxClock} from 'react-icons/rx'
-import Dash from './Dash'
+import {BsFillJournalBookmarkFill} from 'react-icons/bs'
+import {MdAttachMoney,MdOutlineCancel} from 'react-icons/md'
+import {HiOutlineUsers} from 'react-icons/hi'
+import {TiTick} from 'react-icons/ti'
 import './Dashy'
 import SideBar from './SideBar';
+import UserSide from './UserSide';
 
 function reducer(todos, action) {
     switch (action.type) {
@@ -89,65 +89,96 @@ const Dashboard = () => {
                     </div>
                   </div>
                 )}
-         <SideBar/>
+         <UserSide/>
 
         <div className='dun'>
-            
-            <div className='hey-wrap'>
+          
+        <div className='hey-wrap'>
                 <div className='heys'>
-                    <h1>Hello Doc!<BsSuitHeartFill color='E22727' fontSize={25}/> </h1>
+                    <h1>Hello User!<BsSuitHeartFill color='E22727' fontSize={25}/> </h1>
                     <p>
                     Welcome to your dashboard. <br/> See a quick summary of your transactions below.
                     </p>
+                    <p>Have a nice day and don't forget to take care of your health!</p>
                 </div>
             </div>
-            <br/>
-            <div className='dash-main'>
-          <div className='dash-icon-wrap-holder'>
-            <div className='dash-icon-wrap'>
-              <div className='dash-icon'>
-                <SlUserFollow color='white' fontSize={50}/>
-              </div>
-              <div className='dash-icon-text'>
-                <p>Patients</p>
-                <div><AiOutlineArrowUp/>14</div>
-                
-              </div>
+          
+          <div className='user-dash-wrap-lower-wrapped'>
+            <div className='user-dash-wrap-lower-wrapped-one'>
+            <div>
+              <b>Next Appointment</b>
             </div>
-
-            <div className='dash-icon-wrap'>
-              <div className='dash-icon'>
-                <RxClock color='white' fontSize={50}/>
+            <div className='user-dash-wrap-lower'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 56.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                  <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Dr. Mccoy Bert</h4>
+                    <p>Dietitian</p>
+                  </div>
+                  <div>
+                    <p>10:00pm</p>
+                  </div>
+                  <div className='this-div'>
+                    <p>6 February</p>
+                    <MdOutlineCancel fontSize={15} color='red'/>
+                  </div>
+                </div>
               </div>
-              <div className='dash-icon-text'>
-                <p>Time Taken</p>
+              </div>
+
+              <div className='user-dash-wrap-lower-wrapped-two'>
                 <div>
-                    <AiOutlineArrowUp/>
-                      02: 14: 39
+                  <b>Appointment History</b>
                 </div>
+                <div className='user-dash-wrap-lower-one'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 57.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Evan Henry</h4>
+                    <p>Surgeon</p>
+                  </div>
+                  <div>
+                    <p>1:00pm -2:30pm</p>
+                  </div>
+                  <div>
+                    <p>28 February</p>
+                  </div>
+                </div>
+              </div> 
+
+              <div className='user-dash-wrap-lower-one'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 57.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Evan Henry</h4>
+                    <p>Surgeon</p>
+                  </div>
+                  <div>
+                    <p>1:00pm -2:30pm</p>
+                  </div>
+                  <div>
+                    <p>28 February</p>
+                  </div>
+                </div>
+              </div> 
+
+              <div className='user-dash-wrap-lower-one'>
+                <img  className='user-dash-wrap-lower-img' src='/Ellipse 57.png'/>
+                <div className='user-dash-wrap-lower-text'>
+                <div className='user-dash-wrap-lower-text-upper'>
+                    <h4>Evan Henry</h4>
+                    <p>Surgeon</p>
+                  </div>
+                  <div>
+                    <p>1:00pm -2:30pm</p>
+                  </div>
+                  <div>
+                    <p>28 February</p>
+                  </div>
+                </div>
+              </div> 
               </div>
             </div>
-          </div>
-
-          <div className='todo'>
-            <div className='todo-wrap'>
-              <div className='inputed-holder'>
-                <input 
-                  ref={inputRef} 
-                  placeholder='Add new Appointment...' 
-                />
-                <button 
-                className='plus-butt'
-                onClick={() => {
-                  handleClick() }}>+</button>
-              </div>
-              </div>
-              <Dash
-                    Todo={state}
-                    update={dispatch}/>
-          </div>
-        </div>
-           
         </div>
     </div>
   )

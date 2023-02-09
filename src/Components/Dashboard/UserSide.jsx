@@ -7,7 +7,7 @@ import {BiUserCircle,BiBell} from 'react-icons/bi'
 import {RxDashboard} from 'react-icons/rx'
 import {FiLogOut} from 'react-icons/fi'
 
-const SideBar = () => {
+const UserSide = () => {
 
   const navigate = useNavigate()
   
@@ -36,7 +36,7 @@ const SideBar = () => {
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject} className='p-wrap' to='/user dashboard'>
+              isActive ? activeColorObject : colorObject} className='p-wrap' to='/dashboard'>
               <RxDashboard color='white' fontSize={20}/>  
               <p className='dash-p'>  Dashboard</p>
               </NavLink>
@@ -74,4 +74,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default UserSide;

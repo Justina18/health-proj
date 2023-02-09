@@ -8,6 +8,7 @@ import {HiOutlineUsers} from 'react-icons/hi'
 import {AiOutlinePhone} from 'react-icons/ai'
 import {CiFolderOn} from 'react-icons/ci'
 import {TiTick} from 'react-icons/ti'
+import {BsSuitHeartFill} from 'react-icons/bs'
 
 const UserDash = () => {
   
@@ -18,6 +19,17 @@ const UserDash = () => {
         <div className='user-dash-wrap' >
           <div className='user-dash-head'>
             <h3 className='user-dash-h4'>Dashboard</h3>
+
+              
+            <div className='hey-wrap'>
+                <div className='heys'>
+                    <h1>Hello Doc!<BsSuitHeartFill color='E22727' fontSize={25}/> </h1>
+                    <p>
+                    Welcome to your dashboard. <br/> See a quick summary of your transactions below.
+                    </p>
+                </div>
+            </div>
+            <br/>
             <div>
             <img className='prof-head-img' src='/Morest.png' onClick={()=> navigate('/')}/>
             </div>
@@ -184,71 +196,6 @@ const UserDash = () => {
           </div>
         </div>
 
-        <h3 className='user-dash-h3'>
-              Appointments Requests
-        </h3>
-        <div>
-              <div className='user-dash-wrap-lower'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 61.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Beth Mccoy</h4>
-                    <p>Migraines</p>
-                    <p>13 March  <b>10:00</b></p>
-                  </div>
-                  <div>
-                    <TiTick fontSize={20} color='green'/>
-                    <MdOutlineCancel fontSize={20} color='red'/>
-                  </div>
-                </div>
-              </div>
-
-              <div className='user-dash-wrap-lower'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 62.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Beth Mccoy</h4>
-                    <p>Migraines</p>
-                    <p>13 March  <b>10:00</b></p>
-                  </div>
-                  <div>
-                    <TiTick fontSize={20} color='green'/>
-                    <MdOutlineCancel fontSize={20} color='red'/>
-                  </div>
-                </div>
-              </div>
-              
-
-              <div className='user-dash-wrap-lower'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 63.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Beth Mccoy</h4>
-                    <p>Migraines</p>
-                    <p>13 March  <b>10:00</b></p>
-                  </div>
-                  <div>
-                    <TiTick fontSize={20} color='green'/>
-                    <MdOutlineCancel fontSize={20} color='red'/>
-                  </div>
-                </div>
-              </div>
-
-              <div className='user-dash-wrap-lower'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 59.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Beth Mccoy</h4>
-                    <p>Migraines</p>
-                    <p>13 March  <b>10:00</b></p>
-                  </div>
-                  <div>
-                    <TiTick fontSize={20} color='green'/>
-                    <MdOutlineCancel fontSize={20} color='red'/>
-                  </div>
-                </div>
-              </div>
-        </div>
         </div>
     </div>
   )

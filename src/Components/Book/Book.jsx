@@ -5,9 +5,10 @@ import {MdLocationPin} from 'react-icons/md'
 import './Book.css'
 import Time from './Time';
 import {BsSuitHeartFill,BsSuitHeart} from 'react-icons/bs'
+import { Contexts } from '../../Api/Context';
 
 const Book = () => {
-
+  const [value, setValue] = useState("hello from Nina")
   const [date, setDate] = useState(new Date())
   const [showTime, setShowTime] = useState(false) 
   const navigate = useNavigate()
@@ -105,10 +106,12 @@ const Book = () => {
               </div>
             </div>
           </NavLink>
-        </div>
-         <button  onClick={()=> navigate('/booking info')}  className='book-butt'>
-                Book Now
+          </div>
+          <Contexts.Provider value={{value, setValue}}>
+           <button onClick={()=> navigate('/booking info')}  className='book-butt'>
+                Proceed
              </button>
+          </Contexts.Provider>   
         </div>
        
 </div>

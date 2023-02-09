@@ -16,7 +16,7 @@ const UserSucess = () => {
         <br/>
 <b className='suc'>Signed Up!</b>
         </h2>
-        <button className='button' onClick={()=> navigate('/user dashboard')}>
+        <button className='button' onClick={()=> navigate('/dashboard')}>
           Continue
         </button>
       </div>
