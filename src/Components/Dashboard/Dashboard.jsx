@@ -10,7 +10,6 @@ import {MdAttachMoney,MdOutlineCancel} from 'react-icons/md'
 import {HiOutlineUsers} from 'react-icons/hi'
 import {TiTick} from 'react-icons/ti'
 import './Dashboard.css'
-import { Redirect } from "react-router-dom";
 import UserSide from './UserSide';
 
 function reducer(todos, action) {

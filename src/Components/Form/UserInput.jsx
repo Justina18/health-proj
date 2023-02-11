@@ -74,7 +74,8 @@ const UserInput = () => {
       console.log("Created")
         const response = await axios.post("https://health360-h4ws.onrender.com/api/usersignUp", values) ;
         // console.log(response.data.message);
-        response.status === 201 ? navigate ('/dashboard') : null
+        // response.status === 201 ? 
+        navigate ('/dashboard') 
       } catch (error) {
         console.log('error')
       }

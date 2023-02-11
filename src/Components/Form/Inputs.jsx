@@ -50,7 +50,7 @@ const Inputs = () => {
       try {
         event.preventDefault();
       console.log("Created")
-        const response = await axios.post("https://health360-h4ws.onrender.com/", {firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, location: location, email: email, password:  password});
+        const response = await axios.post("https://health360-h4ws.onrender.com/", values);
         console.log(response);
       } catch (error) {
     
