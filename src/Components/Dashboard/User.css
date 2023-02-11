@@ -1,6 +1,7 @@
 .user-dash{
     width: 100%;
     display: flex;
+    justify-content: end;
     background-color: #E2E3FE; 
 }
 .user-dash-head{

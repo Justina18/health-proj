@@ -30,9 +30,7 @@ const UserDash = () => {
                 </div>
             </div>
             <br/>
-            <div>
             <img className='prof-head-img' src='/Morest.png' onClick={()=> navigate('/')}/>
-            </div>
           </div>
           <div className='user-dash-wrap-upper-wrapper'>
           <div className='user-dash-wrap-upper'>

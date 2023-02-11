@@ -35,13 +35,10 @@ const Header = () => {
               <h4 className='head-link'  onClick={()=> navigate('premium')}>Go Premium</h4>
            </div>
              </div> )}
-            <div className='head-links'>
+            {/* <div className='head-links'>
                 <h4  onClick={()=> navigate('/')} className='head-links' >Home</h4>
                 <h4 className='head-links' onClick={()=> navigate('/user dashboard')}>Dashboard</h4>
-             </div>
-             <div className='head-links'>
-                <h4 className='head-links' onClick={()=> navigate('/dashboard')}>main</h4>
-             </div>
+             </div> */}
              <div className='head-buttons'>
               <button className='head-log-button '  onClick={()=> navigate('/log in')}>Log In</button>
                 <button className='head-sign-button' onClick={()=> navigate('/choice')}>Sign Up</button>
