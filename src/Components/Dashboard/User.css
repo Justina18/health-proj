@@ -24,6 +24,26 @@
     font-weight: 800;
     color: #18324F;
 }
+.heys{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: start;
+    flex-wrap: wrap;
+    height: 160px;
+  }
+  .hey-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
 .user-dash-h3{
     margin: 10px;
     font-size: medium;

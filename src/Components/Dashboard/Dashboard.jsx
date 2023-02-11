@@ -9,8 +9,8 @@ import {BsFillJournalBookmarkFill} from 'react-icons/bs'
 import {MdAttachMoney,MdOutlineCancel} from 'react-icons/md'
 import {HiOutlineUsers} from 'react-icons/hi'
 import {TiTick} from 'react-icons/ti'
-import './Dashy'
-import SideBar from './SideBar';
+import './Dashboard.css'
+import { Redirect } from "react-router-dom";
 import UserSide from './UserSide';
 
 function reducer(todos, action) {
@@ -46,17 +46,6 @@ const Dashboard = () => {
                   </div>)
                   const inputRef = useRef('')
                   const [state, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('todo'))|| [])
-
-
-                  const activeColorObject ={
-                    color: "#fffff",
-                    fontWeight: 700
-                  }
-                  
-                  const colorObject ={
-                    color: "#1B75BC",
-                  }
-                  
 
   return (
     <div className='hey'>

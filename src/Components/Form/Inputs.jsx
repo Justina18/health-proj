@@ -45,7 +45,20 @@ const Inputs = () => {
       },
  
     ];
+
+    const handleSubmit = async (event) => {
+      try {
+        event.preventDefault();
+      console.log("Created")
+        const response = await axios.post("https://health360-h4ws.onrender.com/", {firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, location: location, email: email, password:  password});
+        console.log(response);
+      } catch (error) {
     
+      }
+    };
+    
+    useEffect(()=>{
+    }, [values])
     const handleChange= e =>{
       setValues({...values, [e.target.name]: e.target.values});
     }
@@ -86,7 +99,10 @@ const Inputs = () => {
             <button className='back-button' onClick={()=> navigate('/choice')}>
               Go Back
             </button>
-            <button className='button' type='submit' onClick={()=> navigate('/comp')} disabled={!validate()} >
+            <button className='button' type='submit'
+            onClick={handleSubmit}
+            //  onClick={()=> navigate('/comp')}
+             disabled={!validate()} >
                 CONTINUE
             </button>
             </div>
