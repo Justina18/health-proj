@@ -80,9 +80,11 @@
       display: flex;
     }
     .hid{
-      background: rgba(255, 255, 255, 0.12);
       border-radius: 4px;
-      background: rgba(255, 255, 255, 0.13);
+      background: #0D3859;
+      color: white;
+      font-weight: 400;
+      line-height: 40px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(2.1px);
       -webkit-backdrop-filter: blur(3.6px);
@@ -91,12 +93,12 @@
       animation:fadeInRight;
    animation-duration: 0.5s;
       top: 66px;
-      left: 303px;
+      left: 305px;
       width: 120px;
-      height: 100px;
+      height: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       cursor: pointer;
         }
     .Header-Toggle{
@@ -117,9 +119,8 @@
   }
   @media screen and (max-width: 376px) {
     .hid{
-      background: rgba(255, 255, 255, 0.12);
       border-radius: 4px;
-      background: rgba(255, 255, 255, 0.13);
+      background: #0D3859;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(2.1px);
       -webkit-backdrop-filter: blur(3.6px);
@@ -128,20 +129,19 @@
       animation:fadeInRight;
    animation-duration: 0.5s;
       top: 66px;
-      left: 250px;
+      left: 257px;
       width: 120px;
-      height: 100px;
+      height: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       cursor: pointer;
         }
   }
   @media screen and (max-width: 321px) {
     .hid{
-      background: rgba(255, 255, 255, 0.12);
       border-radius: 4px;
-      background: rgba(255, 255, 255, 0.13);
+      background: #0D3859;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(2.1px);
       -webkit-backdrop-filter: blur(3.6px);
@@ -150,12 +150,12 @@
       animation:fadeInRight;
    animation-duration: 0.5s;
       top: 66px;
-      left: 200px;
+      left: 209px;
       width: 120px;
-      height: 100px;
+      height: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       cursor: pointer;
         }
   }

@@ -1,175 +1,203 @@
-import React,{useState, useRef, useReducer} from 'react'
-import {BsSuitHeartFill,BsJournalBookmarkFill} from 'react-icons/bs'
-import { useNavigate,NavLink } from 'react-router-dom';
-import {FiAlignJustify} from 'react-icons/fi';
-import {FaTimes} from 'react-icons/fa'
-import {AiFillHome,AiOutlineMessage,AiOutlineSetting} from 'react-icons/ai'
-import {BiUserCircle,BiBell,} from 'react-icons/bi'
-import {BsFillJournalBookmarkFill} from 'react-icons/bs'
-import {MdAttachMoney,MdOutlineCancel} from 'react-icons/md'
-import {HiOutlineUsers} from 'react-icons/hi'
-import {TiTick} from 'react-icons/ti'
-import './Dashboard.css'
-import UserSide from './UserSide';
+import React, { useState, useRef, useReducer } from "react";
+import { BsSuitHeartFill, BsJournalBookmarkFill } from "react-icons/bs";
+import { useNavigate, NavLink } from "react-router-dom";
+import { FiAlignJustify } from "react-icons/fi";
+import { FaTimes } from "react-icons/fa";
+import { AiFillHome, AiOutlineMessage, AiOutlineSetting } from "react-icons/ai";
+import { BiUserCircle, BiBell } from "react-icons/bi";
+import { BsFillJournalBookmarkFill } from "react-icons/bs";
+import { MdAttachMoney, MdOutlineCancel } from "react-icons/md";
+import { HiOutlineUsers } from "react-icons/hi";
+import { TiTick } from "react-icons/ti";
+import "./Dashboard.css";
+import UserSide from "./UserSide";
 
 function reducer(todos, action) {
-    switch (action.type) {
-      case 'Add':
-        return [...todos, newTodo(action.payload.name)]
-      case "checked":
-        return action.payload.Check
-      case "delete":
-        return action.payload.Check
-    }
+  switch (action.type) {
+    case "Add":
+      return [...todos, newTodo(action.payload.name)];
+    case "checked":
+      return action.payload.Check;
+    case "delete":
+      return action.payload.Check;
   }
-  
-  function newTodo(inputRef) {
-    return { id: Date.now(), todo: inputRef, checkers: false }
-  }
+}
+
+function newTodo(inputRef) {
+  return { id: Date.now(), todo: inputRef, checkers: false };
+}
 
 const Dashboard = () => {
-    const handleClick = () => {
-    dispatch({ type: 'Add', payload: { name: inputRef.current.value } })
-                              }
-    const navigate = useNavigate()
-    const [toggle, setToggle] = useState(true);
-    const [isOpen, setIsOpen] = useState(false)
-  
-    const handleToggle = () => { 
-      setToggle(!toggle) 
-    setIsOpen(!isOpen)
-    }
-    const FiAlignJustif = (<FiAlignJustify fontSize={25} color="#1B75BC" onClick={handleToggle} />)
-    const FaTime = (<div>
-        <FaTimes fontSize={25} color="#D9D9D9" onClick={handleToggle} />
-                  </div>)
-                  const inputRef = useRef('')
-                  const [state, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('todo'))|| [])
+  const handleClick = () => {
+    dispatch({ type: "Add", payload: { name: inputRef.current.value } });
+  };
+  const navigate = useNavigate();
+  const [toggle, setToggle] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+    setIsOpen(!isOpen);
+  };
+  const FiAlignJustif = (
+    <FiAlignJustify fontSize={25} color="#1B75BC" onClick={handleToggle} />
+  );
+  const FaTime = (
+    <div>
+      <FaTimes fontSize={25} color="#D9D9D9" onClick={handleToggle} />
+    </div>
+  );
+  const inputRef = useRef("");
+  const [state, dispatch] = useReducer(
+    reducer,
+    JSON.parse(localStorage.getItem("todo")) || []
+  );
 
   return (
-    <div className='hey'>
-        <div className='Burger'>
-                    {toggle ? FiAlignJustif : FaTime}
-                </div>
-                {isOpen && (
-                      <div className='sides'>
-                      <div>
-                          <h4 onClick={()=> navigate('/dashboard')}>
-                          Dashboard
-                          </h4>
-                          <div className='dash-img-wrap'>
-                          <img className='dash-img' src='/profile.png'/>
-                          </div>
-                          <h2>Albert Weed</h2>
-                    </div>
-                    <div className='dash-txt'>
-                        <NavLink to="/" className='dash-p'> <AiFillHome fontSize={25}/> Home</NavLink>
-                        <hr className='dash-hr'/>
-                        <NavLink  onClick={()=> navigate('/profile')} className='dash-p'> <BiUserCircle fontSize={25}/> Your Profile</NavLink>
-                        <hr className='dash-hr'/>
-                        <NavLink onClick={()=> navigate('/appointment')} className='dash-p'> <BsJournalBookmarkFill fontSize={25}/> Appointments and Schedule</NavLink>
-                        <hr className='dash-hr'/>
-                        <NavLink className='dash-p'> <BiBell fontSize={25}/> Notifications</NavLink>
-                        <hr className='dash-hr'/>
-                        <NavLink className='dash-p'> <AiOutlineMessage fontSize={25}/> Messages</NavLink>
-                        <hr className='dash-hr'/>
-                        <NavLink className='dash-p'> <AiOutlineSetting fontSize={25}/>Settings</NavLink>
-                    </div>
-                  </div>
-                )}
-         <UserSide/>
-
-        <div className='dun'>
-          
-        <div className='hey-wrap'>
-                <div className='heys'>
-                    <h1>Hello User!<BsSuitHeartFill color='E22727' fontSize={25}/> </h1>
-                    <p>
-                    Welcome to your dashboard. <br/> See a quick summary of your transactions below.
-                    </p>
-                    <p>Have a nice day and don't forget to take care of your health!</p>
-                </div>
+    <div className="hey">
+      <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
+      {isOpen && (
+        <div className="sides">
+          <div>
+            <h4 onClick={() => navigate("/dashboard")}>Dashboard</h4>
+            <div className="dash-img-wrap">
+              <img className="dash-img" src="/profile.png" />
             </div>
-          
-          <div className='user-dash-wrap-lower-wrapped'>
-            <div className='user-dash-wrap-lower-wrapped-one'>
+            <h2>Albert Weed</h2>
+          </div>
+          <div className="dash-txt">
+            <NavLink to="/" className="dash-p">
+              {" "}
+              <AiFillHome fontSize={25} /> Home
+            </NavLink>
+            <hr className="dash-hr" />
+            <NavLink onClick={() => navigate("/profile")} className="dash-p">
+              {" "}
+              <BiUserCircle fontSize={25} /> Your Profile
+            </NavLink>
+            <hr className="dash-hr" />
+            <NavLink
+              onClick={() => navigate("/appointment")}
+              className="dash-p"
+            >
+              {" "}
+              <BsJournalBookmarkFill fontSize={25} /> Appointments and Schedule
+            </NavLink>
+            <hr className="dash-hr" />
+            <NavLink className="dash-p">
+              {" "}
+              <BiBell fontSize={25} /> Notifications
+            </NavLink>
+            <hr className="dash-hr" />
+            <NavLink className="dash-p">
+              {" "}
+              <AiOutlineMessage fontSize={25} /> Messages
+            </NavLink>
+            <hr className="dash-hr" />
+            <NavLink className="dash-p">
+              {" "}
+              <AiOutlineSetting fontSize={25} />
+              Settings
+            </NavLink>
+          </div>
+        </div>
+      )}
+      <UserSide />
+
+      <div className="dun">
+        <div className="hey-wrap">
+          <div className="heys">
+            <h1>
+              Hello User!
+              <BsSuitHeartFill color="E22727" fontSize={25} />{" "}
+            </h1>
+            <p>
+              Welcome to your dashboard. <br /> See a quick summary of your
+              transactions below.
+            </p>
+            <p>Have a nice day and don't forget to take care of your health!</p>
+          </div>
+        </div>
+
+        <div className="user-dash-wrap-lower-wrapped">
+          <div className="user-dash-wrap-lower-wrapped-one">
             <div>
               <b>Next Appointment</b>
             </div>
-            <div className='user-dash-wrap-lower'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 56.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                  <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Dr. Mccoy Bert</h4>
-                    <p>Dietitian</p>
-                  </div>
-                  <div>
-                    <p>10:00pm</p>
-                  </div>
-                  <div className='this-div'>
-                    <p>6 February</p>
-                    <MdOutlineCancel fontSize={15} color='red'/>
-                  </div>
+            <div className="user-dash-wrap-lower">
+              <img className="user-dash-wrap-lower-img" src="/Ellipse 56.png" />
+              <div className="user-dash-wrap-lower-text">
+                <div className="user-dash-wrap-lower-text-upper">
+                  <h4>Dr. Mccoy Bert</h4>
+                  <p>Dietitian</p>
                 </div>
-              </div>
-              </div>
-
-              <div className='user-dash-wrap-lower-wrapped-two'>
                 <div>
-                  <b>Appointment History</b>
+                  <p>10:00pm</p>
                 </div>
-                <div className='user-dash-wrap-lower-one'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 57.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Evan Henry</h4>
-                    <p>Surgeon</p>
-                  </div>
-                  <div>
-                    <p>1:00pm -2:30pm</p>
-                  </div>
-                  <div>
-                    <p>28 February</p>
-                  </div>
+                <div className="this-div">
+                  <p>6 February</p>
+                  <MdOutlineCancel fontSize={15} color="red" />
                 </div>
-              </div> 
-
-              <div className='user-dash-wrap-lower-one'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 57.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Evan Henry</h4>
-                    <p>Surgeon</p>
-                  </div>
-                  <div>
-                    <p>1:00pm -2:30pm</p>
-                  </div>
-                  <div>
-                    <p>28 February</p>
-                  </div>
-                </div>
-              </div> 
-
-              <div className='user-dash-wrap-lower-one'>
-                <img  className='user-dash-wrap-lower-img' src='/Ellipse 57.png'/>
-                <div className='user-dash-wrap-lower-text'>
-                <div className='user-dash-wrap-lower-text-upper'>
-                    <h4>Evan Henry</h4>
-                    <p>Surgeon</p>
-                  </div>
-                  <div>
-                    <p>1:00pm -2:30pm</p>
-                  </div>
-                  <div>
-                    <p>28 February</p>
-                  </div>
-                </div>
-              </div> 
               </div>
             </div>
+          </div>
+
+          <div className="user-dash-wrap-lower-wrapped-two">
+            <div>
+              <b>Appointment History</b>
+            </div>
+            <div className="user-dash-wrap-lower-one">
+              <img className="user-dash-wrap-lower-img" src="/Ellipse 57.png" />
+              <div className="user-dash-wrap-lower-text">
+                <div className="user-dash-wrap-lower-text-upper">
+                  <h4>Evan Henry</h4>
+                  <p>Surgeon</p>
+                </div>
+                <div>
+                  <p>1:00pm -2:30pm</p>
+                </div>
+                <div>
+                  <p>28 February</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="user-dash-wrap-lower-one">
+              <img className="user-dash-wrap-lower-img" src="/Ellipse 57.png" />
+              <div className="user-dash-wrap-lower-text">
+                <div className="user-dash-wrap-lower-text-upper">
+                  <h4>Evan Henry</h4>
+                  <p>Surgeon</p>
+                </div>
+                <div>
+                  <p>1:00pm -2:30pm</p>
+                </div>
+                <div>
+                  <p>28 February</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="user-dash-wrap-lower-one">
+              <img className="user-dash-wrap-lower-img" src="/Ellipse 57.png" />
+              <div className="user-dash-wrap-lower-text">
+                <div className="user-dash-wrap-lower-text-upper">
+                  <h4>Evan Henry</h4>
+                  <p>Surgeon</p>
+                </div>
+                <div>
+                  <p>1:00pm -2:30pm</p>
+                </div>
+                <div>
+                  <p>28 February</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;

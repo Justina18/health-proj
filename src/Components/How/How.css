@@ -69,6 +69,12 @@
         height: 210px;
     }
     .How-one{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        color: white;
         margin-bottom: 60px;
     }
 }
