@@ -10,7 +10,6 @@ const persistor = persistStore(store);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'></link> */}
     <Provider  store={store}>
       <PersistGate persistor={persistor}>
         <App />
