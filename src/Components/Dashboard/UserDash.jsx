@@ -12,13 +12,53 @@ import { BsSuitHeartFill } from "react-icons/bs";
 
 const UserDash = () => {
   const navigate = useNavigate();
+  const cards = [
+    {
+      id: 1,
+      img: "/Ellipse 56.png",
+      name: "Bessie Alex",
+      case: "Migraines",
+      time: "17:00",
+      date: "13 February",
+    },
+    {
+      id: 2,
+      img: "/Ellipse 56.png",
+      name: "Evan Henry",
+      case: "Migraines",
+      time: "2:00",
+      date: "28 February",
+    },
+    {
+      id: 3,
+      img: "/Ellipse 56.png",
+      name: "Beth Mccoy",
+      case: "Migraines",
+      time: "14:00",
+      date: "19 February",
+    },
+    {
+      id: 4,
+      img: "/Ellipse 56.png",
+      name: "Joseph Evan",
+      case: "Migraines",
+      time: "10:00",
+      date: "6 March",
+    },
+  ];
   return (
     <div className="user-dash">
       <SideBar />
       <div className="user-dash-wrap">
         <div className="user-dash-head">
-          <h3 className="user-dash-h4">Dashboard</h3>
-
+          <div className="dash-name">
+            <h3 className="user-dash-h4">Dashboard</h3>
+          <img
+            className="prof-head-img"
+            src="/Morest.png"
+            onClick={() => navigate("/")}
+          />
+          </div>
           <div className="hey-wrap">
             <div className="heys">
               <h1>
@@ -32,11 +72,6 @@ const UserDash = () => {
             </div>
           </div>
           <br />
-          <img
-            className="prof-head-img"
-            src="/Morest.png"
-            onClick={() => navigate("/")}
-          />
         </div>
         <div className="user-dash-wrap-upper-wrapper">
           <div className="user-dash-wrap-upper">
@@ -76,64 +111,28 @@ const UserDash = () => {
         <div className="lower-user-dash-wrap">
           <div className="user-dash-wrap-lower-wrapper">
             <div>
-              <div className="user-dash-wrap-lower">
-                <img
-                  className="user-dash-wrap-lower-img"
-                  src="/Ellipse 56.png"
-                />
-                <div className="user-dash-wrap-lower-text">
-                  <div className="user-dash-wrap-lower-text-upper">
-                    <h4>Beth Mccoy</h4>
-                    <p>Migraines</p>
-                  </div>
-                  <div>
-                    <p> 10:00</p>
-                  </div>
-                  <div>
-                    <p>6 February</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="user-dash-wrap-lower-one">
-                <img
-                  className="user-dash-wrap-lower-img"
-                  src="/Ellipse 57.png"
-                />
-                <div className="user-dash-wrap-lower-text">
-                  <div className="user-dash-wrap-lower-text-upper">
-                    <h4>Evan Henry</h4>
-                    <p>Aches</p>
-                  </div>
-                  <div>
-                    <p> 1:00</p>
-                  </div>
-                  <div>
-                    <p>28 February</p>
+              {cards.map((i) => (
+                <div className="user-dash-wrap-lower">
+                  <img className="user-dash-wrap-lower-img" src={i.img} />
+                  <div className="user-dash-wrap-lower-text">
+                    <div className="user-dash-wrap-lower-text-upper">
+                      <h4>{i.name}</h4>
+                      <p>{i.case}</p>
+                    </div>
+                    <div>
+                      <p>{i.time}</p>
+                    </div>
+                    <div>
+                      <p>{i.date}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="user-dash-wrap-lower-one">
-                <img
-                  className="user-dash-wrap-lower-img"
-                  src="/Ellipse 57.png"
-                />
-                <div className="user-dash-wrap-lower-text">
-                  <div className="user-dash-wrap-lower-text-upper">
-                    <h4>Henry Evan </h4>
-                    <p>Back aches</p>
-                  </div>
-                  <div>
-                    <p> 4:00</p>
-                  </div>
-                  <div>
-                    <p>12 February</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="user-dash-wrap-lower-two">
+            <div className="Today">
+              <h3 className="user-dash-h3"> Today's Appointments</h3>
+              <div className="user-dash-wrap-lower-img-wrap">
                 <img
                   className="user-dash-wrap-lower-img"
                   src="/Ellipse 58.png"
@@ -141,69 +140,51 @@ const UserDash = () => {
                 <div className="user-dash-wrap-lower-text">
                   <div className="user-dash-wrap-lower-text-upper">
                     <h4>Bessie Alex</h4>
+                    <p>2235 Avondale Ave Pasadena</p>
+                    <p>Oklahoma 83900</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="user-dash-wrap-lower-text-upper-low-wrap">
+                  <div className="user-dash-wrap-lower-text-upper-low">
+                    <h5 className="user-lower-h">D.O.B</h5>
+                    <p>26th February 1994</p>
+                  </div>
+                  <div className="user-dash-wrap-lower-text-upper-low">
+                    <h5 className="user-lower-h">Sex</h5>
+                    <p>Female</p>
+                  </div>
+                  <div className="user-dash-wrap-lower-text-upper-low">
+                    <h5 className="user-lower-h">Weight</h5>
+                    <p>58kg</p>
+                  </div>
+                </div>
+
+                <div className="user-dash-wrap-lower-text-upper-low-wrap">
+                  <div className="user-dash-wrap-lower-text-upper-low">
+                    <h5 className="user-lower-h">Height</h5>
+                    <p>162cm</p>
+                  </div>
+                  <div className="user-dash-wrap-lower-text-upper-low">
+                    <h5 className="user-lower-h">Case</h5>
                     <p>Headaches</p>
                   </div>
-                  <div>
-                    <p> 14:00</p>
-                  </div>
-                  <div>
-                    <p>8 February</p>
+                  <div className="user-dash-wrap-lower-text-upper-low">
+                    <h5 className="user-lower-h">Method</h5>
+                    <p>Chat</p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="Today">
-            <div className="user-dash-wrap-lower-img-wrap">
-              <img className="user-dash-wrap-lower-img" src="/Ellipse 58.png" />
-              <div className="user-dash-wrap-lower-text">
-                <div className="user-dash-wrap-lower-text-upper">
-                  <h4>Bessie Alex</h4>
-                  <p>2235 Avondale Ave Pasadena</p>
-                  <p>Oklahoma 83900</p>
+                <div className="user-dash-butt">
+                  <button className="numb-butt">
+                    {" "}
+                    <AiOutlinePhone fontSize={16} /> (234) 555-0212
+                  </button>
+                  <button className="doc-butt">
+                    {" "}
+                    <CiFolderOn fontSize={16} /> Documents{" "}
+                  </button>
                 </div>
-              </div>
-            </div>
-            <div>
-              <div className="user-dash-wrap-lower-text-upper-low-wrap">
-                <div className="user-dash-wrap-lower-text-upper-low">
-                  <h5 className="user-lower-h">D.O.B</h5>
-                  <p>26th February 1994</p>
-                </div>
-                <div className="user-dash-wrap-lower-text-upper-low">
-                  <h5 className="user-lower-h">Sex</h5>
-                  <p>Female</p>
-                </div>
-                <div className="user-dash-wrap-lower-text-upper-low">
-                  <h5 className="user-lower-h">Weight</h5>
-                  <p>58kg</p>
-                </div>
-              </div>
-
-              <div className="user-dash-wrap-lower-text-upper-low-wrap">
-                <div className="user-dash-wrap-lower-text-upper-low">
-                  <h5 className="user-lower-h">Height</h5>
-                  <p>162cm</p>
-                </div>
-                <div className="user-dash-wrap-lower-text-upper-low">
-                  <h5 className="user-lower-h">Case</h5>
-                  <p>Headaches</p>
-                </div>
-                <div className="user-dash-wrap-lower-text-upper-low">
-                  <h5 className="user-lower-h">Method</h5>
-                  <p>Chat</p>
-                </div>
-              </div>
-              <div className="user-dash-butt">
-                <button className="numb-butt">
-                  {" "}
-                  <AiOutlinePhone fontSize={16} /> (234) 555-0212
-                </button>
-                <button className="doc-butt">
-                  {" "}
-                  <CiFolderOn fontSize={16} /> Documents{" "}
-                </button>
               </div>
             </div>
           </div>

@@ -13,13 +13,13 @@ const SideBar = () => {
   
   const activeColorObject ={
     color: "#006edc",
-    fontWeight: 700,
+    fontWeight: 500,
     backgroundColor: 'white'
   }
   
   const colorObject ={
     color: "white",
-    fontWeight:500,
+    fontWeight:400,
   }
 
 

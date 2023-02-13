@@ -31,10 +31,23 @@ import BookInfo from './Components/Book/BookInfo';
 import UserPro from './Components/Dashboard/UserPro';
 
 const App = () => {
+
+
+  const arr=[]
+const obj={
+    name:"bola"
+}
+const ARR= [{...obj}]
+console.log(ARR)
+const obj2={
+    status:"Doctor"
+}
+
+console.log([{...ARR[0],...obj2}])
   return (
+    
     <div className='App'>
         <HashRouter>
-
         <Routes>
           <Route path="/" element={ <Home/> } />
           <Route path='/homed' element={ <Homed/>} />
