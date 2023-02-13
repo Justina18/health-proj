@@ -10,13 +10,40 @@ import { RiEyeCloseLine } from "react-icons/ri";
 const Complete = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [values, setValues] = useState({
-    location: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [spec, setSpec] = useState("");
+  const [cert, setCert] = useState("");
+  const [med, setMed] = useState("");
+  const [proof, setProof] = useState("");
+  const [location, setLocation] = useState("");
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const FileCert = (e)=>{
+    const file = e.target.files[0];
+    setCert(file);
+  }
+  const FileMed = (e)=>{
+    const file = e.target.files[0];
+    setMed(file);
+  }
+  const FileProof = (e)=>{
+    const file = e.target.files[0];
+    setProof(file);
+  }
+
+  const dropdownOptions = [
+    {
+      label: "The Color Red",
+      value: "red",
+    },
+    {
+      label: "The Color Green",
+      value: "green",
+    },
+    {
+      label: "The Color Blue",
+      value: "blue",
+    },
+  ]
 
   const inputs = [
     {
@@ -26,43 +53,25 @@ const Complete = () => {
       type: "address",
       required: true,
     },
-    {
-      id: 2,
-      name: "password",
-      placeholder: "Password",
-      type: "password",
-      required: true,
-      errMsg:
-        "There must be at least 8 characters. It must have a capital letter, a number, a special character and small letters",
-      pattern: `^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$`,
-    },
-    {
-      id: 3,
-      name: "password",
-      placeholder: "Confirm Password",
-      type: "password",
-      required: true,
-      errMsg: "Must match the password",
-      pattern: values.password,
-    },
+
   ];
 
   const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.values });
+    setLocation(e.target.value);
   };
 
   const receivedValues = (e) => {
     e.preventDefault();
-    console.log(values);
-    window.location.reload();
+    console.log(spec, proof, cert, med);
+    // window.location.reload();
   };
   return (
     <div className="apps">
       <form onSubmit={receivedValues}>
-        <h1 className="comp-h1">Complete Your Account</h1>
+        <h2 className="comp-h1">Complete Your Account</h2>
         <div className="custom-select">
-          <select>
-            <option value="" selected disabled hidden>
+          <select onChange={(e)=>setSpec(e.target.value)}>
+            <option value="">
               Specialty
             </option>
             <option value="Allergy and immunology">
@@ -95,9 +104,8 @@ const Complete = () => {
         </div>
 
         {inputs.map((i) => (
-          <div>
+          <div key={i.id}>
             <Form
-              key={i.id}
               {...i}
               handleChange={handleChange}
               values={values[i.name]}
@@ -120,7 +128,7 @@ const Complete = () => {
           <input className="inp-text" type="text" />
           Certificate in Specialization
           <label className="lab-but">
-            <input type="file" className="file" /> Choose File
+            <input type="file" className="file" onChange={FileCert}/> Choose File
           </label>
         </label>
 
@@ -128,7 +136,7 @@ const Complete = () => {
           <input className="inp-text" type="text" />
           Nigeria Medical License
           <label className="lab-but">
-            <input type="file" className="file" /> Choose File
+            <input type="file" className="file" onChange={FileMed}/> Choose File
           </label>
         </label>
 
@@ -136,18 +144,17 @@ const Complete = () => {
           <input className="inp-text" type="text" />
           Proof of Identity
           <label className="lab-but">
-            <input type="file" className="file" /> Choose File
+            <input type="file" className="file" onChange={FileProof}/> Choose File
           </label>
         </label>
         <div className="foot">
           <button className="back-button" onClick={() => navigate("/sign up")}>
-            <AiOutlineArrowLeft />
             Go Back
           </button>
           <button
             className="button"
             type="submit"
-            onClick={() => navigate("/upload")}
+            // onClick={() => navigate("/upload")}
           >
             CREATE ACCOUNT
           </button>

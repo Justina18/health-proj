@@ -3,8 +3,10 @@ import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { userData } from "../../REDUX/Features";
 
 const Inputs = () => {
+  const dispatch = useDispatch()
   const [isValid, setValid] = useState(false);
   const navigate = useNavigate();
   const [values, setValues] = useState({
@@ -63,17 +65,7 @@ const Inputs = () => {
     },
   ];
 
-  const handleSubmit = async (event) => {
-    try {
-      event.preventDefault();
-      console.log("Created");
-      const response = await axios.post(
-        "https://health360-h4ws.onrender.com/",
-        values
-      );
-      console.log(response);
-    } catch (error) {}
-  };
+
 
   useEffect(() => {}, [values]);
 
@@ -136,8 +128,10 @@ const Inputs = () => {
             <button
               className="button"
               type="submit"
-              onClick={handleSubmit}
-              //  onClick={()=> navigate('/comp')}
+               onClick={()=> {
+                navigate('/comp');
+                dispatch(userData)
+              }}
               disabled={!validate()}
             >
               CONTINUE

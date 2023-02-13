@@ -10,7 +10,7 @@ const features = createSlice({
     userData: (state, { payload }) => {
       if (state.user.length) {
         state.user = [{ ...payload }];
-      } else {
+      } else { 
         state.user = [{ ...state.user[0], ...payload }];
       }
     },
