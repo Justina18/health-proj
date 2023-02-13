@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Inputs = () => {
   const [isValid, setValid] = useState(false);
@@ -16,32 +17,49 @@ const Inputs = () => {
 
   const inputs = [
     {
-      id: 1,
-      name: "name",
-      placeholder: "Name",
-      type: "text",
+      id:1,
+      name:'name',
+      placeholder: 'Name',
+      type: 'text',
       required: true,
-      errMsg:
-        "All characters must be letters. There should be at least 3 characters ",
-      pattern: `[a-zA-Z][a-zA-Z0-9-_. ]{3,20}`,
+      errMsg:'All characters must be letters. There should be at least 3 characters ',
+      pattern: `[a-zA-Z][a-zA-Z0-9-_. ]{3,20}`
     },
     {
-      id: 2,
-      name: "email",
-      placeholder: "E-mail",
-      type: "email",
+      id:2,
+      name:'email',
+      placeholder: 'E-mail',
+      type: 'email',
       required: true,
-      errMsg: "Must be a valid e-mail",
-      pattern: `^\S+@\S+$`,
+      errMsg:'Must be a valid e-mail',
+      pattern:`^\S+@\S+$`
     },
     {
-      id: 3,
-      name: "phone",
-      placeholder: "Phone Number",
-      type: "tel",
+      id:3,
+      name:'phone',
+      placeholder: 'Phone Number',
+      type: 'tel',
       required: true,
-      errMsg: "Must be a valid phone number",
-      pattern: "[0-9]{3}-[0-9]{2}-[0-9]{3}",
+      errMsg:'Must be a valid phone number',
+      pattern: "[0-9]{3}-[0-9]{2}-[0-9]{3}"
+    },
+    {
+      id:4,
+      name:'password',
+      placeholder: 'Password',
+      type: 'password',
+      required: true,
+      errMsg:'There must be at least 8 characters. It must have a capital letter, a number, a special character and small letters',
+      pattern:`^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$`
+    },
+    {
+      id:5,
+      name:'password',
+      placeholder: 'Confirm Password',
+      type: 'password',
+      required: true,
+      errMsg:'Must match the password',
+      pattern: values.password
     },
   ];
 
@@ -58,6 +76,8 @@ const Inputs = () => {
   };
 
   useEffect(() => {}, [values]);
+
+
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.values });
   };
@@ -104,7 +124,7 @@ const Inputs = () => {
               name="terms"
               id="terms"
             />
-            <label className="label" for="terms">
+            <label className="label">
               I have read and agreed to the{" "}
               <b className="b"> Terms and conditions</b>
             </label>

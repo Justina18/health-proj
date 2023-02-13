@@ -4,17 +4,21 @@ const initialState = {
 };
 
 const features = createSlice({
-  name: "e-store",
+  name: "health",
   initialState,
   reducers: {
     userData: (state, { payload }) => {
       if (state.user.length) {
-        
+        state.user = [{ ...payload }];
+      } else {
+        state.user = [{ ...state.user[0], ...payload }];
       }
-      state.product = payload;
+    },
+    clear_userData: (state) => {
+      state.user = [];
     },
   },
 });
 
-export const { userData } = features.actions;
+export const { userData,clear_userData  } = features.actions;
 export default features.reducer;
