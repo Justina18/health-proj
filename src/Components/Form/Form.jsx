@@ -25,7 +25,7 @@ const handleToggle = () => { setToggle(!toggle) }
         <input
           type={props.type} 
           name={props.name}
-          onChange={props.handleChange}
+          onChange={(e)=>{props.handleChange(e)}}
           required={props.required}
           placeholder={props.placeholder}
          className='inp'

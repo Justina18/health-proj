@@ -28,26 +28,11 @@ const Complete = () => {
   const FileProof = (e)=>{
     const file = e.target.files[0];
     setProof(file);
-  }
-
-  const dropdownOptions = [
-    {
-      label: "The Color Red",
-      value: "red",
-    },
-    {
-      label: "The Color Green",
-      value: "green",
-    },
-    {
-      label: "The Color Blue",
-      value: "blue",
-    },
-  ]
+  } 
 
   const inputs = [
     {
-      id: 1,
+      id: 6,
       name: "location",
       placeholder: "Location",
       type: "address",
@@ -69,7 +54,7 @@ const Complete = () => {
     <div className="apps">
       <form onSubmit={receivedValues}>
         <h2 className="comp-h1">Complete Your Account</h2>
-        <div className="custom-select">
+        {/* <div className="custom-select">
           <select onChange={(e)=>setSpec(e.target.value)}>
             <option value="">
               Specialty
@@ -101,14 +86,14 @@ const Complete = () => {
             <option value="Surgery">Surgery</option>
             <option value="Urology">Urology</option>
           </select>
-        </div>
+        </div> */}
 
         {inputs.map((i) => (
           <div key={i.id}>
             <Form
               {...i}
               handleChange={handleChange}
-              values={values[i.name]}
+              spec={spec[i.name]}
               type={
                 i.name === "password" && !showPassword ? "password" : "text"
               }

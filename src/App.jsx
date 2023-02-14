@@ -8,7 +8,6 @@ import Upload from './Components/Form/Upload'
 import LogIn from './Components/Form/LogIn'
 import LogSuccess from './Components/Form/LogSuccess'
 import Choose from './Components/Choose/Choose'
-import Complete from './Components/Form/Complete'
 import Forgot from './Components/Form/Forgot'
 import UserInput from './Components/Form/UserInput'
 import UserPass from './Components/Form/UserPass'
@@ -58,7 +57,6 @@ console.log([{...ARR[0],...obj2}])
           <Route path='/appointment' element={ <Appointment/> }/>
           <Route path='/dashboard' element={ <Dashboard/> } />
           <Route path='/choice' element={ <Choose/> } />
-          <Route path='/comp' element={ <Complete/> }/>
           <Route path='/forgot' element={ <Forgot/> }/>
           <Route path='/user sign' element={ <UserInput/> } />
           <Route path='/user password' element={ <UserPass/> } />

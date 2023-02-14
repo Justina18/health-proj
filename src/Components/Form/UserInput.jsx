@@ -80,7 +80,7 @@ const UserInput = () => {
         console.log('error')
       }
     };
-     
+
     const validate = () =>{
       return inputs.length;
     }
