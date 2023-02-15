@@ -9,21 +9,21 @@ const LogIn = () => {
 
     const navigate = useNavigate()
     const [values, setValues] = useState({
-      name:"",
+      email:"",
       password:"",
       })
     
       const inputs=[
         
-        {
-          id:1,
-          name:'name',
-          placeholder: 'Name',
-          type: 'text',
-          required: true,
-          errMsg:'All characters must be letters. There should be at least 3 characters ',
-          pattern: `[a-zA-Z][a-zA-Z0-9-_. ]{3,20}`
-        },
+      {
+        id:1,
+        name:'email',
+        placeholder: 'E-mail',
+        type: 'email',
+        required: true,
+        errMsg:'Must be a valid e-mail',
+        pattern:`^\S+@\S+$`
+      },
       {
         id:2,
         name:'password',
@@ -33,15 +33,6 @@ const LogIn = () => {
         errMsg:'There must be at least 8 characters. It must have a capital letter, a number, a special character and small letters',
         pattern:`^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$`
       },
-      // {
-      //   id:2,
-      //   name:'password',
-      //   placeholder: 'Confirm Password',
-      //   type: 'password',
-      //   required: true,
-      //   errMsg:'Must match the password',
-      //   pattern: values.password
-      // },
     ];
     
     const handleLog = (name, password) => {
@@ -55,19 +46,34 @@ const LogIn = () => {
     const handleChange= e =>{
       setValues({...values, [e.target.name]: e.target.values});
     }
+
+    const handleSubmit = async (event) => {
+      try {
+        event.preventDefault();
+        const response = await axios.post("https://health360-h4ws.onrender.com/api/usersignUp", values) ;
+        console.log(response.data.message);
+        // response.status === 201 ? 
+        navigate ('/dashboard') 
+      } catch (error) {
+        console.log(error)
+      }
+    };
     
-    const receivedValues =(e)=>{
-      e.preventDefault()
-      console.log(values)
-      window.location.reload()
-      handleLog();
-    } 
+    // const receivedValues =(e)=>{
+    //   e.preventDefault()
+    //   console.log(values)
+    //   window.location.reload()
+    //   handleLog();
+    // } 
 
   return (
     <div className='apps'>
-       <form onSubmit={receivedValues}>
-            <h1>Log In</h1>
-            <p>*All fields are compulsory</p>
+      <div className='logIn-head'>
+      <h1 className='logIn-head-h1'>Welcome Back</h1>
+      <p>Login to have access to your account</p>
+      </div>
+       <form onSubmit={handleSubmit}>
+            <p className='logIn-head-p'>*All fields are compulsory</p>
           {inputs.map((i)=>
       <Form key={i.id} {...i} handleChange={handleChange} values={values[i.name]}/>
       )}

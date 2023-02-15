@@ -11,7 +11,8 @@ const UserInput = () => {
     const [values, setValues] = useState({
         name: "",
         email: "",
-        phone:"",
+        mobileNo:"",
+        location: "",
         password: "",
         confirmPassword: "",
       })
@@ -37,7 +38,7 @@ const UserInput = () => {
       },
       {
         id:3,
-        name:'phone',
+        name:'mobileNo',
         placeholder: 'Phone Number',
         type: 'tel',
         required: true,
@@ -46,6 +47,14 @@ const UserInput = () => {
       },
       {
         id:4,
+        name:'location',
+        placeholder: 'Location',
+        type: 'text',
+        required: true,
+        errMsg:'Must be a valid phone number',
+      },
+      {
+        id:5,
         name:'password',
         placeholder: 'Password',
         type: 'password',
@@ -54,7 +63,7 @@ const UserInput = () => {
         pattern:`^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$`
       },
       {
-        id:5,
+        id:6,
         name:'password',
         placeholder: 'Confirm Password',
         type: 'password',
@@ -71,13 +80,12 @@ const UserInput = () => {
     const handleSubmit = async (event) => {
       try {
         event.preventDefault();
-      console.log("Created")
         const response = await axios.post("https://health360-h4ws.onrender.com/api/usersignUp", values) ;
-        // console.log(response.data.message);
+        console.log(response);
         // response.status === 201 ? 
         navigate ('/dashboard') 
       } catch (error) {
-        console.log('error')
+        console.log(error);
       }
     };
 
@@ -96,17 +104,15 @@ const UserInput = () => {
           {inputs.map((i)=>
       <Form key={i.id} {...i}  handleChange={handleChange} values={values[i.name]} />
       )}
-       {/* <div className='custom-select'>
+       <div className='custom-select'>
           <select>
           <option value="">Select a Gender</option>
             <option value="female">Female</option>
             <option value="male">Male</option>
           </select>
         </div>
-        <form  action="/action_page.php">
-            <label for="birthday"></label>
-            <input className='date' type="date" id="birthday" name="birthday"/>
-          </form> */}
+            <label></label>
+            <input className='date' type="date" id="birthday" name="birthday"></input>
             <div className='foot'>
               <div className='check'>
               <input type="checkbox" name="terms" id="terms" />
@@ -120,7 +126,7 @@ const UserInput = () => {
                 CONTINUE 
             </button>
             </div>
-            <p className='use-p'>Already have an account? <b className='b'onClick={()=> navigate('/log in')} > Log In.</b></p>
+            <p className='use-p'>Already have an account? <b className='b'onClick={()=> navigate('/User Login')} > Log In.</b></p>
             </div>
           </form>
     </div>

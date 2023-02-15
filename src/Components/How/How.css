@@ -13,6 +13,11 @@
     background-size: cover;
 }
 .How-one{
+    
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     flex-wrap: wrap;
 }
 .How-wrap{
@@ -37,12 +42,18 @@
     flex-wrap: wrap;
 }
 .How-img-wrap{
+
     width: 380px;
     height: 330px;
 }
 .How-img{
     width: 100%;
     height: 100%;
+}
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
 }
 .How-text{
     display: flex;

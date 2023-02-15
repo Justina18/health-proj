@@ -61,15 +61,9 @@ const Inputs = () => {
       errMsg: "Must be a valid e-mail",
       pattern: `^\S+@\S+$`,
     },
-    // name: "",
-    // email: "",
-    // phone: "",
-    // password: "",
-    // confirmPassword: "",
-    // location: "",
     {
       id: 3,
-      name: "phone",
+      name: "mobileNo",
       placeholder: "Phone Number",
       type: "tel",
       required: true,
@@ -114,28 +108,30 @@ const Inputs = () => {
   };
 
   const handleSubmit = async (event) => {
-    const formData = new FormData();
-    formData.append('name', values.name);
-    formData.append('email', values.email);
-    formData.append('mobileNo', values.mobileNo);
-    formData.append('birthdate', date);
-    formData.append('gender', gen);
-    formData.append('specialty', spec);
-    formData.append('location', values.location);
-    formData.append('password', values.password);
-    formData.append('certificateUpload', cert);
-    formData.append('license', med);
-    formData.append('proofOfId', proof);
+    event.preventDefault();
     try {
-      event.preventDefault();
+      const formData = new FormData();
+      formData.append('name', values.name);
+      formData.append('email', values.email);
+      formData.append('mobileNo', values.mobileNo);
+      formData.append('birthdate', date);
+      formData.append('gender', gen);
+      formData.append('specialty', spec);
+      formData.append('location', values.location);
+      formData.append('password', values.password);
+      formData.append('certificateUpload', cert);
+      formData.append('license', med);
+      formData.append('proofOfId', proof);
       const response = await axios.post("https://health360-h4ws.onrender.com/api/signup",formData,{
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      console.log(response);
+      console.log(response); 
+      event.preventDefault();
+      // console.log(proof); 
       // response.status === 201 ?
-      navigate("/user dashboard");
+      // navigate("/user dashboard");
     } catch (error) {
       console.log(error);
     }

@@ -28,6 +28,7 @@ import Settings from './Components/Dashboard/Settings';
 import Texts from './Components/Dashboard/Texts';
 import BookInfo from './Components/Book/BookInfo';
 import UserPro from './Components/Dashboard/UserPro';
+// import UserLogin from './Components/Form/userLogin';
 
 const App = () => {
 
@@ -74,6 +75,7 @@ console.log([{...ARR[0],...obj2}])
           <Route path='/texts' element={ <Texts/> }/>
           <Route path='/booking info' element={ <BookInfo/> }/>
           <Route path='/User Profile' element={ <UserPro/> }/>
+          {/* <Route path='/User Login' element={ <UserLogin/> } /> */}
         </Routes>
  
       </HashRouter>

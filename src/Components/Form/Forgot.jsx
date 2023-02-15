@@ -41,13 +41,13 @@ const Forgot = () => {
     <div className='apps'>
        <form onSubmit={receivedValues}>
             <h1>Forgot Password?</h1>
-            <p>Reset your password here</p>
+            <p>Input the email you used to register</p>
           {inputs.map((i)=>
       <Form key={i.id} {...i} handleChange={handleChange} values={values[i.name]}/>
       )}
             <div className='forgot-foot'>
             <button className='back-button' onClick={()=> navigate('/sign up')}>
-                <AiOutlineArrowLeft/>
+             
               Go Back
             </button>
             <button className='button' type='submit'>
