@@ -186,7 +186,7 @@ const Inputs = () => {
             <option value="Radiation oncology">Radiation oncology</option>
             <option value="Surgery">Surgery</option>
             <option value="Urology">Urology</option>
-          </select>
+          </select> 
         </div>
         <input
           onChange={(e) => setDate(e.target.value)}
