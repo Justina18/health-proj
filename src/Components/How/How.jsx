@@ -17,7 +17,7 @@ const How = () => {
                </div>
                </div>
                
-               <div className='How-one'>
+               <div className='How-one1'>
                <div className='How-img-wrap'>
                   <img className='How-img' src='/book.png'/>
                </div>
@@ -26,8 +26,8 @@ const How = () => {
                      <p>Select a day, time, and doctor that<br/> suits your preference</p>
                </div>
                </div>
-            </div>
-            <div className='How-one'>
+
+               <div className='How-one2'>
                <div className='How-img-wrap'>
                   <img className='How-img' src='rec.png'/>
                </div>
@@ -35,6 +35,7 @@ const How = () => {
                   <h2>Receive your recommendations</h2>
                      <p>Your notes, prescriptions, and test requests are <br/> available immediately after your consultation</p>
                </div>
+            </div>
                </div>
         </div>
     </div>

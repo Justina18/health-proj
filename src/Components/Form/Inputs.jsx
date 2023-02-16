@@ -3,7 +3,7 @@ import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { userData } from "../../REDUX/Features";
+// import { userData } from "../../REDUX/Features";
 import axios from "axios";
 
 const Inputs = () => {

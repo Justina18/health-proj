@@ -57,7 +57,7 @@ const UserSide = () => {
                <BiBell  color='white' fontSize={20}/>  <p className='dash-p'> Notifications</p>
               </NavLink>
               <br/>
-              <NavLink style={({ isActive }) =>
+              {/* <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject}  to='/texts' className='p-wrap'>
               <AiOutlineMessage color='white'  fontSize={20}/>  <p className='dash-p'>  Messages</p>
               </NavLink>
@@ -65,7 +65,7 @@ const UserSide = () => {
               <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject}  to='/settings' className='p-wrap'>
                <AiOutlineSetting color='white'  fontSize={20}/> <p className='dash-p'> Settings</p>
-              </NavLink>
+              </NavLink> */}
           </div>
           <div className='logOut'>
             <FiLogOut color='#d9d9d9' fontSize={30}/><h4>Log Out</h4>

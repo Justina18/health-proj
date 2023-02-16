@@ -6,6 +6,8 @@ import How from '../How/How';
 import './Home.css'
 import About from '../About/About';
 import Homed from '../Homed.jsx/Homed';
+import Whys from '../Whys/Whys';
+import Hows from '../Hows/Hows';
 
 const Home = () => {
 
@@ -13,7 +15,9 @@ const Home = () => {
     <div className='Home'>
         <Header/>
         <Homed/>
-        <About/>
+        {/* <About/> */}
+        <Whys/>
+        <Hows/>
         <How/>
         <Are/>
         <Footer/>

@@ -56,6 +56,9 @@ const Header = () => {
                 Log Out
               </p>
               <hr/>
+              <p className="head-link" onClick={() => navigate("/dashboard")}>
+                Main
+              </p>
             </div>
           </div>
         )}

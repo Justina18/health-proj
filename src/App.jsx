@@ -28,6 +28,7 @@ import Settings from './Components/Dashboard/Settings';
 import Texts from './Components/Dashboard/Texts';
 import BookInfo from './Components/Book/BookInfo';
 import UserPro from './Components/Dashboard/UserPro';
+import Requests from './Components/Dashboard/Requests';
 // import UserLogin from './Components/Form/userLogin';
 
 const App = () => {
@@ -73,6 +74,7 @@ console.log([{...ARR[0],...obj2}])
           <Route path='/user upload' element={ <UserUpload/> }/>
           <Route path='/settings' element={ <Settings/> } />
           <Route path='/texts' element={ <Texts/> }/>
+          <Route path='/requests' element={ <Requests/> } />
           <Route path='/booking info' element={ <BookInfo/> }/>
           <Route path='/User Profile' element={ <UserPro/> }/>
           {/* <Route path='/User Login' element={ <UserLogin/> } /> */}

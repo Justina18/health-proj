@@ -15,7 +15,23 @@
 .How-one{
     
     animation-name: floating;
-    animation-duration: 3s;
+    animation-duration: 3.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    flex-wrap: wrap;
+}
+.How-one2{
+    
+    animation-name: floating;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    flex-wrap: wrap;
+}
+.How-one1{
+    
+    animation-name: floating;
+    animation-duration: 3.3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     flex-wrap: wrap;
@@ -43,8 +59,8 @@
 }
 .How-img-wrap{
 
-    width: 380px;
-    height: 330px;
+    width: 330px;
+    height: 280px;
 }
 .How-img{
     width: 100%;
