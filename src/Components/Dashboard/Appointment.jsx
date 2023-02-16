@@ -6,7 +6,7 @@ import { FaTimes } from "react-icons/fa";
 import {CiFolderOn} from 'react-icons/ci'
 import { AiFillHome, AiOutlineMessage, AiOutlineSetting, AiOutlinePhone } from "react-icons/ai";
 import { BiUserCircle, BiBell } from "react-icons/bi";
-import SideBar from "./SideBar";
+// import SideBar from "./SideBar";
 import UserSide from "./UserSide";
 
 

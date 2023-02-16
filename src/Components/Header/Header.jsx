@@ -3,7 +3,6 @@ import "./Header.css";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import {RiVipCrown2Line} from 'react-icons/ri'
 
 const Header = () => {
   const navigate = useNavigate();

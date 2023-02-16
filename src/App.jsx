@@ -34,17 +34,17 @@ import Requests from './Components/Dashboard/Requests';
 const App = () => {
 
 
-  const arr=[]
-const obj={
-    name:"bola"
-}
-const ARR= [{...obj}]
-console.log(ARR)
-const obj2={
-    status:"Doctor"
-}
+//   const arr=[]
+// const obj={
+//     name:"bola"
+// }
+// const ARR= [{...obj}]
+// console.log(ARR)
+// const obj2={
+//     status:"Doctor"
+// }
 
-console.log([{...ARR[0],...obj2}])
+// console.log([{...ARR[0],...obj2}])
   return (
     
     <div className='App'>

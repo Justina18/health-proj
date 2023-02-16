@@ -9,7 +9,7 @@ const PassRes = () => {
         <div className='reset_main'>
       <div className='reset_wrap'> 
       <h3>Reset Password</h3>
-      <p className='resetPasswordText'>Set a new password for your profile on Agri_Market</p>
+      <p className='resetPasswordText'>Set a new password for your profile on Health-360</p>
 
       <input
       placeholder='  Set New Password'
