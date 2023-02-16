@@ -66,13 +66,13 @@ const Hows = () => {
             </div>
           </div>
           <div className="hows-img-holder">
-            <img className="hows-img" src="/pay.png" />
+            <img className="hows-img" src="/hold.png" />
           </div>
         </div>
 
         <div className="hows-imgAndText-wrap">
           <div className="hows-img-holder">
-            <img className="hows-img" src="/listening.png" />
+            <img className="hows-img" src='/notes.png' />
           </div>
           <div className="hows-head-text-wrap">
             <div className="hows-head-text-wrap-header">
