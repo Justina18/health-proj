@@ -18,7 +18,7 @@ const Home = () => {
         {/* <About/> */}
         <Whys/>
         <Hows/>
-        <How/>
+        {/* <How/> */}
         <Are/>
         <Footer/>
     </div>

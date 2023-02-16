@@ -66,7 +66,7 @@ const Hows = () => {
             </div>
           </div>
           <div className="hows-img-holder">
-            <img className="hows-img" src="/hold.png" />
+            <img className="hows-img" src="/pay.png" />
           </div>
         </div>
 

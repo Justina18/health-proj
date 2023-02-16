@@ -14,10 +14,6 @@ const UserInput = () => {
     email: "",
     mobileNo: "",
     password: "",
-    // dateOfBirth: date,
-    // gender: gender,
-
-    // confirmPassword: "",
   });
 
   const {name, email, mobileNo, password} = values
@@ -63,7 +59,7 @@ const UserInput = () => {
       required: true,
       errMsg:
         "There must be at least 8 characters. It must have a capital letter, a number, a special character and small letters",
-      pattern: `^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$`,
+      pattern:`^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`
     },
     {
       id: 5,

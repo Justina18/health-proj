@@ -78,7 +78,7 @@ const Inputs = () => {
       required: true,
       errMsg:
         "There must be at least 8 characters. It must have a capital letter, a number, a special character and small letters",
-      pattern: `^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$`,
+      pattern:`^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`
     },
     {
       id: 5,
