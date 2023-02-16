@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import { userData } from "../../REDUX/Features";
+import { useDispatch } from "react-redux";
+import { userData } from "../../REDUX/Features";
 import axios from "axios";
 
 const Inputs = () => {
@@ -186,7 +186,7 @@ const Inputs = () => {
             <option value="Radiation oncology">Radiation oncology</option>
             <option value="Surgery">Surgery</option>
             <option value="Urology">Urology</option>
-          </select> 
+          </select>
         </div>
         <input
           onChange={(e) => setDate(e.target.value)}
