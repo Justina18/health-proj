@@ -126,7 +126,7 @@ Swal.fire({
   //   handleSubmit();
   // }
   return (
-    <div className="apps">
+    <div className="log-apps">
       <form onSubmit={handleSubmit}>
         <h1>Create an account</h1>
         {inputs.map((i) => (
