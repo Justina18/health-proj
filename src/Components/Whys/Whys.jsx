@@ -11,7 +11,7 @@ const Whys = () => {
         <div className="whys-img-wrap">
           <img className="whys-img" src="/Group 28.png" />
         </div>
-        <div>
+        <div className=" whys-text-wrap">
           <div>
             <h5 className="whys-head-text">Why simple is better</h5>
             <h1 className="whys-head-h1">Smart and affordable</h1>

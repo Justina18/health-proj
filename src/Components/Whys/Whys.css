@@ -10,9 +10,20 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 20px;
+}
+.whys-img-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    margin-top: 20px;
+}
+.whys-img{
+    width: 100%;
 }
 .whys-head-text{
-    color: #006edc;
+    color: #0D3859;
 }
 .whys-head-text-wrap{
     max-width: 350px ;
@@ -42,3 +53,23 @@
     font-size: medium;
     font-weight: 500;
 }
+ 
+@media screen and (max-width: 767px) {
+    .whys-img-wrap{
+        background-color: #9EBCEA;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px ;
+    }
+    .whys-img{
+        width: 100%;
+    }
+    .whys-text-wrap{
+        margin: 15px;
+    }
+    /* .whys-text-icon{
+        width: 55px;
+    } */
+    }
