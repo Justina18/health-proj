@@ -3,7 +3,7 @@ import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const UserInput = () => {
   const [isValid, setValid] = useState(false);
@@ -17,8 +17,8 @@ const UserInput = () => {
     password: "",
   });
 
-  const {name, email, mobileNo, password} = values
-  const valuesData = {name, email, mobileNo, password,gender, dateOfBirth}
+  const { name, email, mobileNo, password } = values;
+  const valuesData = { name, email, mobileNo, password, gender, dateOfBirth };
   const inputs = [
     {
       id: 1,
@@ -60,7 +60,7 @@ const UserInput = () => {
       required: true,
       errMsg:
         "There must be at least 8 characters. It must have a capital letter, a number, a special character and small letters",
-      pattern:`^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`
+      pattern: `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`,
     },
     {
       id: 5,
@@ -74,33 +74,34 @@ const UserInput = () => {
   ];
 
   const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value});
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (event) => {
-    let timerInterval
-Swal.fire({
-  title: 'Auto close alert!',
-  html: 'You have been sent a verification email, click on the link to verify.',
-  timer: 5000,
-  timerProgressBar: true,
-  didOpen: () => {
-    Swal.showLoading()
-    const b = Swal.getHtmlContainer().querySelector('b')
-    timerInterval = setInterval(() => {
-      b.textContent = Swal.getTimerLeft()
-    }, 100)
-  },
-  willClose: () => {
-    clearInterval(timerInterval)
-  }
-}).then((result) => {
-  if (result.dismiss === Swal.DismissReason.timer) {
-    console.log('Verification text sweet alert')
-  }
-})
+    let timerInterval;
+    Swal.fire({
+      title: "Auto close alert!",
+      html: "You have been sent a verification email, click on the link to verify your account.",
+      timer: 5000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const b = Swal.getHtmlContainer().querySelector("b");
+        timerInterval = setInterval(() => {
+          b.textContent = Swal.getTimerLeft();
+        }, 100);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("Verification text sweet alert");
+      }
+      navigate("/User Login")
+    });
     event.preventDefault();
-    console.log(valuesData)
+    console.log(valuesData);
 
     try {
       event.preventDefault();
@@ -109,9 +110,8 @@ Swal.fire({
         valuesData
       );
       console.log(response);
-      // response.status === 201 ?
-      navigate('/log in')
-      login_alert()
+      navigate("/User Login");
+      login_alert();
     } catch (error) {
       console.log(error);
     }
@@ -121,12 +121,8 @@ Swal.fire({
     return inputs.length;
   };
 
-  // const receivedValues =(e)=>{
-  //   console.log(values)
-  //   handleSubmit();
-  // }
   return (
-    <div className="log-apps">
+    <div className="apps">
       <form onSubmit={handleSubmit}>
         <h1>Create an account</h1>
         {inputs.map((i) => (
@@ -138,18 +134,16 @@ Swal.fire({
           />
         ))}
         <div className="custom-select">
-          <select onChange={(e)=>{ setGender(e.target.value)}}>
+          <select
+            onChange={(e) => {
+              setGender(e.target.value);
+            }}
+          >
             <option value="">Select a Gender</option>
             <option value="female">Female</option>
             <option value="male">Male</option>
           </select>
         </div>
-        {/* <select onChange={(e)=>{ setGender(e.target.value)}}>
-                <option>Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-            </select> */}
         <label></label>
         <input
           onChange={(e) => setDate(e.target.value)}

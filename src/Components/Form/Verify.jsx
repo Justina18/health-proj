@@ -8,7 +8,8 @@ const Verify = () => {
   const [state, setState] = useState(false)
 
     const handleSubmit = async () => {
-        const response = await axios.post(`https://eduglobal.onrender.com/api/userVerify/${id}`)
+        const response = await axios.post(`https://health360-h4ws.onrender.com/api/docVerify/${id}`)
+        // https://health360-h4ws.onrender.com/api/docVerify/:id
         console.log(response)
         setState(true)
         setTimeout(() => {
@@ -37,4 +38,4 @@ const Verify = () => {
   )
 }
 
-export default Verify
+export default Verify;

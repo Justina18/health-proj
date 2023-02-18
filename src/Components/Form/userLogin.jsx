@@ -44,19 +44,19 @@
 //   setValues({...values, [e.target.name]: e.target.values});
 // }
 
-// const handleSubmit = async (event) => {
-//   try {
-//     event.preventDefault();
-//     const response = await axios.post("https://health360-h4ws.onrender.com/api/usersignUp", values) ;
-//     console.log(response.data.message);
-//     // response.status === 201 
-//     navigate ('/dashboard') 
-//   } catch (error) {
-//     console.log(error)
-//   }
-// };
-
-
+// const handleLogin = (e) => {
+//     setLoad(true)
+//     e.preventDefault();
+//     axios.post('https://health360-h4ws.onrender.com/api/doctorlogin', valueData)
+//         .then(function (res) {
+//             console.log(res.data)
+//             console.log(res.data.message)
+//             res.data.data.email === values.email ? dispatch(userData(res)) : null
+//             res.data.data.email === values.email ? navigate('/user dashboard') : null
+//         }).catch((e) => {
+//             console.log(e)
+//         })
+// }
 // const UserLogin = () => {
 //   return (
 //     <div className='apps'>
@@ -64,7 +64,7 @@
 //       <h1 className='logIn-head-h1'>Welcome Back</h1>
 //       <p>Login to have access to your account</p>
 //       </div>
-//        <form onSubmit={handleSubmit}>
+//        <form onSubmit={handleLogin}>
 //             <p className='logIn-head-p'>*All fields are compulsory</p>
 //           {inputs.map((i)=>
 //       <Form key={i.id} {...i} handleChange={handleChange} values={values[i.name]}/>

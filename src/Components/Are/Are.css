@@ -1,77 +1,82 @@
-
-.Are{
+.Are {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100%;
-    width:100% ;
-    background-image: url("Are.png");
-color: #509DC7;
-     font-family: Raleway;
+    width: 100%;
+    font-family: Raleway;
 }
-.are-wrap{
+
+.are-wrap {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-      flex-wrap: wrap;
+    flex-wrap: wrap;
 }
-.are-img-wrap{
-    background: #006edc;
-    width: 454px;
-    height: 357px;
+
+.are-img-wrap {
     margin: 20px;
     border-radius: 8px;
 }
-.are-img{
+
+.are-img {
     width: 100%;
     height: 100%;
 }
-.are-text{
+
+.are-text {
     font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: x-large;
     margin: 20px;
-   
+    line-height: 23px;
 }
-.are-h1{
-    color: #FFFFFF;
+.are-text-h3{
+    margin-bottom: 15px;
+    color: #0D3859;
+}
+.are-h1 {
+    color: #006edc;
     margin-top: 70px;
-    font-size:3rem;
-    margin-bottom: 54px;
+    font-size: 3rem;
 }
-.are-button{
+
+.are-button {
     background: #FFFFFF;
-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-width: 115px;
-height: 42px;
-border: none;
-outline: none;
-font-size: large;
-font-weight: 600;
-color: #006edc;
-margin-top: 10px;
-margin-bottom: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    width: 115px;
+    height: 42px;
+    border: none;
+    outline: none;
+    font-size: large;
+    font-weight: 600;
+    color: #006edc;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 @media screen and (max-width: 767px) {
 
-    .are-img-wrap{
+    .are-img-wrap {
         width: 300px;
         height: 291px
     }
-    .are-h1{
+
+    .are-h1 {
         margin-bottom: 0;
     }
-    .are-text{
+
+    .are-text {
         font-family: 'Poppins';
-    font-weight: 400;
-    font-size: small;
+        font-weight: 400;
+        font-size: small;
         margin: 0;
         color: #006edc;
     }
-    .are-button{
+
+    .are-button {
         width: 105px;
         height: 36px;
         margin: 10px;

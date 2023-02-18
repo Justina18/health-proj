@@ -5,7 +5,6 @@ import Home from './Components/Home/Home'
 import './App.css'
 import Inputs from './Components/Form/Inputs'
 import Upload from './Components/Form/Upload'
-import LogIn from './Components/Form/LogIn'
 import LogSuccess from './Components/Form/LogSuccess'
 import Choose from './Components/Choose/Choose'
 import Forgot from './Components/Form/Forgot'
@@ -29,7 +28,7 @@ import Texts from './Components/Dashboard/Texts';
 import BookInfo from './Components/Book/BookInfo';
 import UserPro from './Components/Dashboard/UserPro';
 import Requests from './Components/Dashboard/Requests';
-// import UserLogin from './Components/Form/userLogin';
+import LogIn from './Components/Form/LogIn';
 
 const App = () => {
 
@@ -54,7 +53,6 @@ const App = () => {
           <Route path='/homed' element={ <Homed/>} />
           <Route path='/sign up' element={ <Inputs/> }/>
           <Route path='/upload' element={ <Upload/> }/>
-          <Route path='/log in' element={ <LogIn/> }/>
           <Route path='/log in img' element={ <LogSuccess/> }/>
           <Route path='/appointment' element={ <Appointment/> }/>
           <Route path='/dashboard' element={ <Dashboard/> } />
@@ -77,7 +75,7 @@ const App = () => {
           <Route path='/requests' element={ <Requests/> } />
           <Route path='/booking info' element={ <BookInfo/> }/>
           <Route path='/User Profile' element={ <UserPro/> }/>
-          {/* <Route path='/User Login' element={ <UserLogin/> } /> */}
+          <Route path='/User login' element={ <LogIn/> }/>
         </Routes>
  
       </HashRouter>

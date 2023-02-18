@@ -42,10 +42,6 @@ const Form = (props) => {
         focus={focuses.toString()}
         onBlur={Focused}
       />
-      {/* onClick={Visible}
-            type={showPassword ? "text" : "password"} 
-                    {toggle ? openEye : closedEye} */}
-
       <span className="error-message">{props.errMsg}</span>
     </div>
   );

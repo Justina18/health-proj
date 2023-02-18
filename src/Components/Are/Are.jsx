@@ -13,9 +13,10 @@ const Are = () => {
             </h1>
         <div className='are-wrap'>
           <div className='are-img-wrap'>
-            <img className='are-img' src='/are2.png' />
+            <img className='are-img' src='/Small.png' />
           </div>
             <div className='are-text'>
+              <h2 className='are-text-h3'>Then this is for you.</h2>
             <p>
             Health 360 is available to all healthcare <br/> providers including practitioners,<br/>specialists, therapists, counsellors,<br/> and more.
             <br/>

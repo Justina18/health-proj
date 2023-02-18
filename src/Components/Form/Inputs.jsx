@@ -7,13 +7,14 @@ import { userData } from "../../REDUX/Features";
 import axios from "axios";
 
 const Inputs = () => {
+  const [view, setView] = useState(false)
   const dispatch = useDispatch();
   const [isValid, setValid] = useState(false);
   const navigate = useNavigate();
   const [spec, setSpec] = useState("");
-  const [cert, setCert] = useState("");
-  const [med, setMed] = useState("");
-  const [proof, setProof] = useState("");
+  const [cert, setCert] = useState( "" );
+  const [med, setMed] = useState( "" );
+  const [proof, setProof] = useState( "" );
   const [gen, setGen] = useState("");
   const [date, setDate] = useState("");
 
@@ -23,23 +24,29 @@ const Inputs = () => {
     mobileNo: "",
     location: "",
     password: "",
-    confirmPassword: "",
   });
 
   const totalInfo = { ...values };
 
   const FileCert = (e) => {
     const file = e.target.files[0];
-    setCert(file);
+    setCert(file );
   };
+
   const FileMed = (e) => {
     const file = e.target.files[0];
     setMed(file);
   };
+
   const FileProof = (e) => {
     const file = e.target.files[0];
-    setProof(file);
+    setProof( file);
   };
+  // useEffect(() => {
+  //   console.log(cert);
+  //   console.log(med);
+  //   console.log(proof);
+  // }, [cert, med, proof]);
 
   const inputs = [
     {
@@ -78,13 +85,13 @@ const Inputs = () => {
       required: true,
       errMsg:
         "There must be at least 8 characters. It must have a capital letter, a number, a special character and small letters",
-      pattern:`^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`
+      pattern: `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`,
     },
     {
       id: 5,
       name: "confirmPassword",
       placeholder: "Confirm Password",
-      type: "password",
+      type:  "password",
       required: true,
       errMsg: "Must match the password",
       pattern: values.password,
@@ -109,29 +116,36 @@ const Inputs = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("mobileNo", values.mobileNo);
+    formData.append("birthdate", date);
+    formData.append("gender", gen);
+    formData.append("specialty", spec);
+    formData.append("location", values.location);
+    formData.append("password", values.password);
+    formData.append("license", med.image);
+    formData.append("proofOfId", proof.image);
+    formData.append("certificateUpload", cert.image);
+   
+    console.log(cert.image);
+    console.log(med.image);
+    console.log(proof.image);
     try {
-      const formData = new FormData();
-      formData.append('name', values.name);
-      formData.append('email', values.email);
-      formData.append('mobileNo', values.mobileNo);
-      formData.append('birthdate', date);
-      formData.append('gender', gen);
-      formData.append('specialty', spec);
-      formData.append('location', values.location);
-      formData.append('password', values.password);
-      formData.append('certificateUpload', cert);
-      formData.append('license', med);
-      formData.append('proofOfId', proof);
-      const response = await axios.post("https://health360-h4ws.onrender.com/api/signup",formData,{
-        headers: {
-          'Content-Type': 'multipart/form-data'
+      const response = await axios.post(
+        "https://health360-h4ws.onrender.com/api/signup",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
-      });
-      console.log(response); 
+      );
+      console.log(response);
       event.preventDefault();
-      // console.log(proof); 
-      // response.status === 201 ?
-      // navigate("/user dashboard");
+      navigate("/log in");
     } catch (error) {
       console.log(error);
     }
@@ -144,12 +158,16 @@ const Inputs = () => {
   // };
   return (
     <div className="apps">
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={
+          handleSubmit
+        }
+      >
         <h1>Create an account</h1>
         <p>All fields are compulsory*</p>
         {inputs.map((i) => (
           <div key={i.id}>
-            <Form {...i} handleChange={handleChange} values={values[i.name]} />
+            <Form {...i} handleChange={handleChange} values={values[i.name]} setView={setView} view={view} />
           </div>
         ))}
         <select className="inp" onChange={(e) => setGen(e.target.value)}>
@@ -235,27 +253,25 @@ const Inputs = () => {
             </label>
           </div>
           <div>
-            <button className="back-button" onClick={() => navigate("/choice")}>
+            {/* <button className="back-button" onClick={() => navigate("/choice")}>
               Go Back
-            </button>
+            </button> */}
             <button
               className="button"
-              type="submit"
-              onClick={() => {}}
-              disabled={!validate()}
+              // disabled={!validate()}
             >
               CREATE ACCOUNT
             </button>
           </div>
-          <p className="p">
-            Already have an account?{" "}
-            <b className="b" onClick={() => navigate("/log in")}>
-              {" "}
-              Log In.
-            </b>
-          </p>
         </div>
       </form>
+      <p className="p">
+        Already have an account?{" "}
+        <b className="b" onClick={() => navigate("/log in")}>
+          {" "}
+          Log In.
+        </b>
+      </p>
     </div>
   );
 };
