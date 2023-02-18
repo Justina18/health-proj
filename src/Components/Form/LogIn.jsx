@@ -111,7 +111,7 @@ const LogIn = () => {
 
           <p className="p">
             Don't have an account?{" "}
-            <b onClick={() => navigate("/sign up")} className="b">
+            <b onClick={() => navigate("/choice")} className="b">
               {" "}
               Sign Up.
             </b>

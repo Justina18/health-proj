@@ -145,7 +145,7 @@ const Inputs = () => {
       );
       console.log(response);
       event.preventDefault();
-      navigate("/log in");
+      navigate("/User Login");
     } catch (error) {
       console.log(error);
     }

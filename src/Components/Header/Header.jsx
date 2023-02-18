@@ -61,14 +61,14 @@ const Header = () => {
             </div>
           </div>
         )}
-        {/* <div className='head-links'>
+        <div className='head-links'>
                 <h4  onClick={()=> navigate('/')} className='head-links' >Home</h4>
-                <h4 className='head-links' onClick={()=> navigate('/user dashboard')}>Dashboard</h4>
-             </div> */}
+                <h4 className='head-links' onClick={()=> navigate('/about')}>About</h4>
+             </div>
         <div className="head-buttons">
           <button
             className="head-log-button "
-            onClick={() => navigate("/log in")}
+            onClick={() => navigate("/User Login")}
           >
             Log In
           </button>
