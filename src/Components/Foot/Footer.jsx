@@ -7,7 +7,6 @@ import {MdEmail} from 'react-icons/md'
 
 const Footer = () => {
   return (
-    <div className='Footer'>
         <div className='Footer-wrap'>
             <div className='foot-img'>
               <img  className='footer-img' src='/logo.png' />
@@ -29,7 +28,7 @@ const Footer = () => {
               </p>
             </div>
         </div>
-    </div>
+
   )
 }
 

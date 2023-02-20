@@ -1,4 +1,4 @@
-import React,{useState, useEffect } from 'react'
+import React,{ useState, useEffect } from 'react'
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 const Verify = () => {
@@ -8,12 +8,11 @@ const Verify = () => {
   const [state, setState] = useState(false)
 
     const handleSubmit = async () => {
-        const response = await axios.post(`https://health360-h4ws.onrender.com/api/docVerify/${id}`)
-        // https://health360-h4ws.onrender.com/api/docVerify/:id
+        const response = await axios.post(`https://health360-h4ws.onrender.com/api/verifyUser/${id}`)
         console.log(response)
         setState(true)
         setTimeout(() => {
-          navigate('/loginuser/login')
+          navigate("/User Login")
         }, 3000);
     }
     useEffect(() => {

@@ -11,7 +11,7 @@ import { ThemeProvider } from "../../Api/Context";
 
 const LogIn = () => {
   const dispatch = useDispatch();
-  const inputRef = useRef("");
+  // const inputRef = useRef("");
   const [err, setErr] = useState("");
   const [herr, setHerr] = useState(false);
   const { verify, login_alert } = useContext(Contexts);
@@ -48,32 +48,27 @@ const LogIn = () => {
     },
   ];
 
-  const logOut = async () => {
-    const res = await axios.post(
-      `https://health360-h4ws.onrender.com/api/userlogout/:${user[0]?.data.data._id}`
-    );
-    console.log(res.data);
-    res.status === 200 ? dispatch(clearUser()) : null;
-    res.status === 200 ? navigate("/login") : null;
-    login_alert();
-  };
+  // const logOut = async () => {
+  //   const res = await axios.post(
+  //     `https://health360-h4ws.onrender.com/api/userlogout/:${user[0]?.data.data._id}`
+  //   );
+  //   console.log(res.data);
+  //   res.status === 200 ? dispatch(clearUser()) : null;
+  //   res.status === 200 ? navigate("/login") : null;
+  //   login_alert();
+  // };
 
   const handleLogin = async () => {
     e.preventDefault();
-    axios
-      .post("https://health360-h4ws.onrender.com/api/doctorlogin", valueData)
+    axios.post("https://health360-h4ws.onrender.com/api/doctorlogin", valueData)
       .then(function (res) {
         console.log(res.data);
         res.data.data.email === values.email ? dispatch(userData(res)) : null;
-        if (res.data.data.verify === true) {
-          res.data.data.email === values.email ? navigate("/log in img") : null
-        } else {
-          logOut()
-        }
+        res.data.data.email === values.email ? navigate("/log in img") : null;
       })
       .catch(function (error) {
         console.log(error);
-        setErr(error.response.data.message)
+        setErr(error.response.data.message);
       });
     e.preventDefault();
   };
@@ -81,20 +76,22 @@ const LogIn = () => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
   useEffect(() => {
-    setHerr(true)
+    setHerr(true);
     setTimeout(() => {
-      setHerr(false)
+      setHerr(false);
     }, 5000);
-  }, [err])
-
+  }, [err]);
+  ("/verify/:id");
   return (
     <div className="log-apps">
-      <div className="logIn-head">
+      {verify && (
+        <div className="logIn-head">
+          Please check your email for a verification link.
+        </div>
+      )}
 
-      </div>
-      
       <form onSubmit={handleLogin}>
-      <h1 className="logIn-head-h1">Welcome Back</h1>
+        <h1 className="logIn-head-h1">Welcome Back</h1>
         <p>Login to have access to your account</p>
         {inputs.map((i) => (
           <Form

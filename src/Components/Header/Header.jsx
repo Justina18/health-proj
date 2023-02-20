@@ -58,6 +58,10 @@ const Header = () => {
               <p className="head-link" onClick={() => navigate("/dashboard")}>
                 Main
               </p>
+              <hr/>
+              <p className="head-link" onClick={() => navigate('/Doc Sign')}>
+                Main
+              </p>
             </div>
           </div>
         )}

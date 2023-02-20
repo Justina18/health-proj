@@ -1,6 +1,6 @@
 .Footer-wrap{
     color: white;
-    height: 45vh;
+    height: 25vh;
     background-color: #0D3859;
     display: flex;
     justify-content: space-around;
@@ -16,7 +16,7 @@
     height: 110px;
 }
 .foot-line{
-    height: 170px;
+    height: 110px;
     margin: 20px;
     background-color: white;
     color: white;
@@ -39,5 +39,12 @@
 }
     .footed-p{
         display: none;
+    }
+    .foot-line{
+        height: 110px;
+        margin: 0;
+        margin-left: 10px;
+        background-color: white;
+        color: white;
     }
 }

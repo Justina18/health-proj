@@ -3,10 +3,10 @@ import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Swal from "sweetalert2";
+import { Contexts } from "../../Api/Context";
+
 
 const UserInput = () => {
-  const [isValid, setValid] = useState(false);
   const navigate = useNavigate();
   const [dateOfBirth, setDate] = useState();
   const [gender, setGender] = useState();
@@ -78,31 +78,8 @@ const UserInput = () => {
   };
 
   const handleSubmit = async (event) => {
-    let timerInterval;
-    Swal.fire({
-      title: "Auto close alert!",
-      html: "You have been sent a verification email, click on the link to verify your account.",
-      timer: 5000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading();
-        const b = Swal.getHtmlContainer().querySelector("b");
-        timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft();
-        }, 100);
-      },
-      willClose: () => {
-        clearInterval(timerInterval);
-      },
-    }).then((result) => {
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log("Verification text sweet alert");
-      }
-      navigate("/User Login")
-    });
     event.preventDefault();
     console.log(valuesData);
-
     try {
       event.preventDefault();
       const response = await axios.post(

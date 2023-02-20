@@ -9,7 +9,6 @@ import axios from "axios";
 const Inputs = () => {
   const [view, setView] = useState(false)
   const dispatch = useDispatch();
-  const [isValid, setValid] = useState(false);
   const navigate = useNavigate();
   const [spec, setSpec] = useState("");
   const [cert, setCert] = useState( "" );
@@ -42,11 +41,11 @@ const Inputs = () => {
     const file = e.target.files[0];
     setProof( file);
   };
-  // useEffect(() => {
-  //   console.log(cert);
-  //   console.log(med);
-  //   console.log(proof);
-  // }, [cert, med, proof]);
+  useEffect(() => {
+    console.log(cert);
+    console.log(med);
+    console.log(proof);
+  }, [cert, med, proof]);
 
   const inputs = [
     {
@@ -115,6 +114,7 @@ const Inputs = () => {
   };
 
   const handleSubmit = async (event) => {
+    
     event.preventDefault();
     const formData = new FormData();
 
@@ -129,19 +129,17 @@ const Inputs = () => {
     formData.append("license", med.image);
     formData.append("proofOfId", proof.image);
     formData.append("certificateUpload", cert.image);
-   
-    console.log(cert.image);
-    console.log(med.image);
-    console.log(proof.image);
+
+    const config ={
+      headers: {
+            "content-Type": "multipart/form-data",
+          },
+    }
+
     try {
       const response = await axios.post(
         "https://health360-h4ws.onrender.com/api/signup",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        formData, config
       );
       console.log(response);
       event.preventDefault();

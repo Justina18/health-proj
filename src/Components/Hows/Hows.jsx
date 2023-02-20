@@ -72,7 +72,7 @@ const Hows = () => {
 
         <div className="hows-imgAndText-wrap">
           <div className="hows-img-holder">
-            <img className="hows-img" src='/listening.png' />
+            <img className="hows-img" src='/jog.png' />
           </div>
           <div className="hows-head-text-wrap">
             <div className="hows-head-text-wrap-header">
