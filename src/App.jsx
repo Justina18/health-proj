@@ -29,7 +29,6 @@ import BookInfo from './Components/Book/BookInfo';
 import UserPro from './Components/Dashboard/UserPro';
 import Requests from './Components/Dashboard/Requests';
 import LogIn from './Components/Form/LogIn';
-import Signup from './Components/Form/DocSign';
 import Verify from './Components/Form/Verify';
 
 const App = () => {
@@ -78,7 +77,6 @@ const App = () => {
           <Route path='/booking info' element={ <BookInfo/> }/>
           <Route path='/User Profile' element={ <UserPro/> }/>
           <Route path='/User login' element={ <LogIn/> }/>
-          <Route path='/Doc Sign' element={ <Signup/> }/>
           <Route path='/verify/:id' element={ <Verify/> }/>
         </Routes>
  

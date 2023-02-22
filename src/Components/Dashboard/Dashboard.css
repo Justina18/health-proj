@@ -104,6 +104,15 @@
     height: 100%;
     flex-wrap: wrap;
 }
+.duns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 78%;
+  height: 100vh;
+  flex-wrap: wrap;
+}
 .hey{
     display: flex;
     justify-content: end;
@@ -142,6 +151,9 @@
     margin-top: 70px;
     border-radius: 12px;
     background-color: #ffffff;
+}
+.app-hist{
+  margin: 5px;
 }
 .hey-wrap-img{
   width: 280px;

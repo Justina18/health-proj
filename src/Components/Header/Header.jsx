@@ -85,7 +85,6 @@ const Header = () => {
         </div>
         <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
       </div>
-      <hr className="line" />
     </div>
   );
 };

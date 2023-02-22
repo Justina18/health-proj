@@ -104,7 +104,7 @@ const Dashboard = () => {
       )}
       <UserSide />
 
-      <div className="dun">
+      <div className="duns">
         <div className="hey-wrap">
           <div className="heys">
             <h1>
@@ -143,7 +143,7 @@ const Dashboard = () => {
           </div>
 
           <div className="user-dash-wrap-lower-wrapped-two">
-            <div>
+            <div className="app-hist">
               <b>Appointment History</b>
             </div>
             <div className="user-dash-wrap-lower-one">

@@ -37,6 +37,7 @@
     align-items: center;
     justify-content: center;
     width: 290px;
+    height: 320px;
     margin: 20px;
     animation-name: floating;
     animation-duration: 3.3s;
@@ -51,7 +52,7 @@
     100%   { transform: translate(0, -0px); }   
 }
 .hows-img{
-    width: 450px;
+    width: 430px;
     height: 100%;
 }
 @media screen and (max-width: 767px) {

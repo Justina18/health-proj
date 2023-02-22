@@ -14,11 +14,14 @@ const Home = () => {
   return (
     <div className='Home'>
         <Header/>
+        <br/>
+        <br/>
+        <br/>
         <Homed/>
-        {/* <About/> */}
+        <br/>
+        <br/>
         <Whys/>
         <Hows/>
-        {/* <How/> */}
         <Are/>
         <Footer/>
     </div>

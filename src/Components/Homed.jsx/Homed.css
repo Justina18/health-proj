@@ -78,7 +78,6 @@ margin-left: 40px;
   animation-duration: 1.5s;
 }
 .clip{
-    z-index: 100;
     width: 100%;
     background-color: #9EBCEA;
     clip-path: inset(0 0 0 0);

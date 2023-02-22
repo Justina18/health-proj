@@ -8,12 +8,14 @@ import { GiClockwork } from "react-icons/gi";
 import { BsCheck } from "react-icons/bs";
 
 const About = () => {
+
   const navigate = useNavigate;
+
   return (
     <div className="about">
       <div className="abt-head-img-wrap">
         <img
-          onClick={() => navigate("/")}
+           onClick={()=> navigate('/')}
           className="abt-head-img"
           src="/Morest.png"
         />
@@ -119,66 +121,6 @@ const About = () => {
                 and back end expert
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="why">
-        <div className="why-wrap">
-          <div>
-            <div className="why-hold">
-              <h1 className="why-h1">
-                Why use <br /> Health360
-              </h1>
-              <CgShapeZigzag fontSize={25} />
-              <p className="why-p">
-                The Health360 platform <br /> makes it possible for anyone with{" "}
-                <br /> a smartphone or tablet to receive <br /> quality and
-                affordable health <br /> consultation.
-              </p>
-            </div>
-          </div>
-          <div className="why-hold">
-            <GiTrophyCup color="#006edc" fontSize={55} />
-            <h1 className="why-h1">
-              Quality <br /> Healthcare
-              <br /> Services
-            </h1>
-            <br />
-            <CgShapeZigzag fontSize={25} />
-            <br />
-            <p className="why-p">
-              With a wide range of <br /> healthcare services to <br /> choose
-              from, you can <br /> always find what you <br /> need.
-            </p>
-          </div>
-
-          <div className="why-hold">
-            <FaAward color="#006edc" fontSize={55} />
-            <h1 className="why-h1">
-              High User <br /> Satisfaction
-            </h1>
-            <br />
-            <CgShapeZigzag fontSize={25} />
-            <br />
-            <p className="why-p">
-              We take pride in <br /> ensuring all services <br /> rendered are
-              done to <br /> perfection
-            </p>
-          </div>
-
-          <div className="why-hold">
-            <GiClockwork color="#006edc" fontSize={55} />
-            <h1 className="why-h1">
-              Round the <br /> clock <br /> availability
-            </h1>
-            <br />
-            <CgShapeZigzag fontSize={25} />
-            <br />
-            <p className="why-p">
-              With doctors from <br /> different countries, <br /> we ensure we
-              always <br /> have someone available <br /> for you
-            </p>
           </div>
         </div>
       </div>
