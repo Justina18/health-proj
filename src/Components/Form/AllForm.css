@@ -67,6 +67,21 @@ form {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.form {
+  background-color: white;
+}
+.form-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  color: gray;
+  background-color: white;
+  border-radius: 12px;
+  flex-wrap: wrap; 
+  margin-bottom: 20px;
+}
 
 .check {
   display: flex;
@@ -111,14 +126,23 @@ form {
   width: 120px;
   height: 32px;
   color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 0.7rem;
   margin-top: 12px;
   margin-left: 2px;
   border-radius: 8px;
   background: #006edc;
 }
-
+.doc-icon-hold{
+  width: 90%;
+  display: flex;
+  justify-content:flex-end;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.doc-icon{
+ cursor: pointer;
+}
 .back-button {
   margin-right: 2px;
   outline: none;
@@ -198,6 +222,7 @@ form {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .use-h1 {
@@ -434,7 +459,59 @@ select {
   -webkit-box-shadow: 0px 2px 14px 5px rgba(213, 225, 250, 0.75);
   -moz-box-shadow: 0px 2px 14px 5px rgba(213, 225, 250, 0.75);
 }
-
+.reset_main{
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-inline: 20px;
+  height: 50%;
+  border-radius: 5px;
+}
+.resetPasswordText{
+  color: #0D3859;
+}
+.reset_wrap{
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 30px;
+  color: #006edc;
+}
+.reset-inp{
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.res-inp {
+  margin: 10px;
+  border: none;
+  outline: none;
+  height: 40px;
+  border-radius: 12px;
+  width: 280px;
+  padding-left: 10px;
+  box-shadow: 0px 2px 14px 5px rgb(213 225 250 / 75%);
+}
+.reset_button{
+  width: 130px;
+  height: 30px;
+  background-color: #006edc;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.res-home{
+  cursor: pointer;
+}
 @media screen and (max-width: 767px) {
   .logSuccess-img {
     width: 362px;

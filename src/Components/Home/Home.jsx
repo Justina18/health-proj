@@ -20,6 +20,7 @@ const Home = () => {
         <Homed/>
         <br/>
         <br/>
+        <br/>
         <Whys/>
         <Hows/>
         <Are/>

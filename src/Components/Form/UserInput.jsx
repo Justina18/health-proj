@@ -3,8 +3,6 @@ import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Contexts } from "../../Api/Context";
-
 
 const UserInput = () => {
   const navigate = useNavigate();

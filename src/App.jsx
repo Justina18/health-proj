@@ -30,6 +30,8 @@ import UserPro from './Components/Dashboard/UserPro';
 import Requests from './Components/Dashboard/Requests';
 import LogIn from './Components/Form/LogIn';
 import Verify from './Components/Form/Verify';
+import PassRes from './Components/Form/PassRes';
+import Contact from './Components/Contact/Contact';
 
 const App = () => {
 
@@ -77,7 +79,8 @@ const App = () => {
           <Route path='/booking info' element={ <BookInfo/> }/>
           <Route path='/User Profile' element={ <UserPro/> }/>
           <Route path='/User login' element={ <LogIn/> }/>
-          <Route path='/verify/:id' element={ <Verify/> }/>
+          <Route path='/PasswordReset' element={ <PassRes/> } />
+          <Route path='/contact us' element={ <Contact/> } />
         </Routes>
  
       </HashRouter>

@@ -11,11 +11,10 @@ import { ThemeProvider } from "../../Api/Context";
 
 const LogIn = () => {
   const dispatch = useDispatch();
-  // const inputRef = useRef("");
+  const inputRef = useRef("");
   const [err, setErr] = useState("");
   const [herr, setHerr] = useState(false);
   const { verify, login_alert } = useContext(Contexts);
-
   const user = useSelector((state) => state.Commerce.user);
   const navigate = useNavigate();
   const [values, setValues] = useState({
@@ -25,6 +24,35 @@ const LogIn = () => {
 
   const { email, password } = values;
   const valueData = { email, password };
+
+  const logOut = async () => {
+    const res = await axios.post(
+      `https://health360-h4ws.onrender.com/api/userlogout/:${user[0]?.data.data._id}`
+    );
+    console.log(res.data);
+    res.status === 200 ? dispatch(clearUser()) : null;
+    res.status === 200 ? navigate("/login") : null;
+  };
+
+  const handleLogin = async () => {
+    event.preventDefault();
+    await axios.post("https://health360-h4ws.onrender.com/api/userlogin", valueData)
+      .then(function (res) {
+        console.log(res.data);
+        res.data.data.email === values.email ? dispatch(userData(res)) : null;
+        res.data.data.email === values.email ? navigate("/log in img") : null;
+        if (res.data.data.verify === true) {
+          res.data.data.email === values.email ? navigate("/") : null;
+        } else {
+          logOut();
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        setErr(error.response.data.message);
+      });
+    e.preventDefault();
+  };
 
   const inputs = [
     {
@@ -48,49 +76,26 @@ const LogIn = () => {
     },
   ];
 
-  // const logOut = async () => {
-  //   const res = await axios.post(
-  //     `https://health360-h4ws.onrender.com/api/userlogout/:${user[0]?.data.data._id}`
-  //   );
-  //   console.log(res.data);
-  //   res.status === 200 ? dispatch(clearUser()) : null;
-  //   res.status === 200 ? navigate("/login") : null;
-  //   login_alert();
-  // };
-
-  const handleLogin = async () => {
-    e.preventDefault();
-    axios.post("https://health360-h4ws.onrender.com/api/doctorlogin", valueData)
-      .then(function (res) {
-        console.log(res.data);
-        res.data.data.email === values.email ? dispatch(userData(res)) : null;
-        res.data.data.email === values.email ? navigate("/log in img") : null;
-      })
-      .catch(function (error) {
-        console.log(error);
-        setErr(error.response.data.message);
-      });
-    e.preventDefault();
-  };
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
+
   useEffect(() => {
     setHerr(true);
     setTimeout(() => {
       setHerr(false);
     }, 5000);
   }, [err]);
-  ("/verify/:id");
+
+
   return (
     <div className="log-apps">
-      {verify && (
-        <div className="logIn-head">
-          Please check your email for a verification link.
-        </div>
-      )}
+      {herr && <p style={{ color: "red" }}>{err}</p>}
 
-      <form onSubmit={handleLogin}>
+      <form onSubmit={ () =>{
+        event.preventDefault();
+        handleLogin()
+        }}>
         <h1 className="logIn-head-h1">Welcome Back</h1>
         <p>Login to have access to your account</p>
         {inputs.map((i) => (

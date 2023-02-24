@@ -4,16 +4,18 @@ import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userData } from "../../REDUX/Features";
+import { AiFillHome } from "react-icons/ai";
+import { BiArrowBack } from "react-icons/bi"; 
 import axios from "axios";
 
 const Inputs = () => {
-  const [view, setView] = useState(false)
+  const [view, setView] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [spec, setSpec] = useState("");
-  const [cert, setCert] = useState( "" );
-  const [med, setMed] = useState( "" );
-  const [proof, setProof] = useState( "" );
+  const [cert, setCert] = useState("");
+  const [med, setMed] = useState("");
+  const [proof, setProof] = useState("");
   const [gen, setGen] = useState("");
   const [date, setDate] = useState("");
 
@@ -29,7 +31,7 @@ const Inputs = () => {
 
   const FileCert = (e) => {
     const file = e.target.files[0];
-    setCert(file );
+    setCert(file);
   };
 
   const FileMed = (e) => {
@@ -39,7 +41,7 @@ const Inputs = () => {
 
   const FileProof = (e) => {
     const file = e.target.files[0];
-    setProof( file);
+    setProof(file);
   };
   useEffect(() => {
     console.log(cert);
@@ -90,7 +92,7 @@ const Inputs = () => {
       id: 5,
       name: "confirmPassword",
       placeholder: "Confirm Password",
-      type:  "password",
+      type: "password",
       required: true,
       errMsg: "Must match the password",
       pattern: values.password,
@@ -114,7 +116,6 @@ const Inputs = () => {
   };
 
   const handleSubmit = async (event) => {
-    
     event.preventDefault();
     const formData = new FormData();
 
@@ -126,20 +127,21 @@ const Inputs = () => {
     formData.append("specialty", spec);
     formData.append("location", values.location);
     formData.append("password", values.password);
-    formData.append("license", med.image);
-    formData.append("proofOfId", proof.image);
-    formData.append("certificateUpload", cert.image);
+    formData.append("license", med);
+    formData.append("proofOfId", proof);
+    formData.append("certificateUpload", cert);
 
-    const config ={
+    const config = {
       headers: {
-            "content-Type": "multipart/form-data",
-          },
-    }
+        "content-Type": "multipart/form-data",
+      },
+    };
 
     try {
       const response = await axios.post(
         "https://health360-h4ws.onrender.com/api/signup",
-        formData, config
+        formData,
+        config
       );
       console.log(response);
       event.preventDefault();
@@ -156,120 +158,128 @@ const Inputs = () => {
   // };
   return (
     <div className="apps">
-      <form
-        onSubmit={
-          handleSubmit
-        }
-      >
-        <h1>Create an account</h1>
-        <p>All fields are compulsory*</p>
-        {inputs.map((i) => (
-          <div key={i.id}>
-            <Form {...i} handleChange={handleChange} values={values[i.name]} setView={setView} view={view} />
-          </div>
-        ))}
-        <select className="inp" onChange={(e) => setGen(e.target.value)}>
-          <option value="">Select a Gender</option>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-        </select>
-        <div className="custom-select">
-          <select onChange={(e) => setSpec(e.target.value)}>
-            <option value="">Specialty</option>
-            <option value="Allergy and immunology">
-              Allergy and immunology
-            </option>
-            <option value="Anesthesiology">Anesthesiology</option>
-            <option value="Dermatology">Dermatology</option>
-            <option value="Diagnostic radiology">Diagnostic radiology</option>
-            <option value="Emergency medicine">Emergency medicine</option>
-            <option value="Family medicine">Family medicine</option>
-            <option value="Internal medicine">Internal medicine</option>
-            <option value="Medical genetics">Medical genetics</option>
-            <option value="Neurology">Neurology</option>
-            <option value="Nuclear medicine">Nuclear medicine</option>
-            <option value="Obstetrics and gynecology">
-              Obstetrics and gynecology
-            </option>
-            <option value="Ophthalmology">Ophthalmology</option>
-            <option value="Pathology">Pathology</option>
-            <option value="Pediatrics">Pediatrics</option>
-            <option value="Physical medicine and rehabilitation">
-              Physical medicine and rehabilitation
-            </option>
-            <option value="Preventive medicine">Preventive medicine</option>
-            <option value="Psychiatry">Psychiatry</option>
-            <option value="Radiation oncology">Radiation oncology</option>
-            <option value="Surgery">Surgery</option>
-            <option value="Urology">Urology</option>
-          </select>
-        </div>
-        <input
-          onChange={(e) => setDate(e.target.value)}
-          className="date"
-          type="date"
-          id="birthday"
-          name="birthday"
+      <div className="doc-icon-hold">
+        <AiFillHome 
+        onClick={() => navigate("/")} 
+        color="white" 
+        fontSize={30}
+        className="doc-icon"
         />
-        <label className="text-lab">
-          <input className="inp-text" type="text" />
-          Certificate in Specialization
-          <label className="lab-but">
-            <input type="file" className="file" onChange={FileCert} /> Choose
-            File
-          </label>
-        </label>
-
-        <label className="text-lab">
-          <input className="inp-text" type="text" />
-          Nigeria Medical License
-          <label className="lab-but">
-            <input type="file" className="file" onChange={FileMed} /> Choose
-            File
-          </label>
-        </label>
-
-        <label className="text-lab">
-          <input className="inp-text" type="text" />
-          Proof of Identity
-          <label className="lab-but">
-            <input type="file" className="file" onChange={FileProof} /> Choose
-            File
-          </label>
-        </label>
-        <div className="foot">
-          <div className="check">
-            <input
-              className="check-box"
-              type="checkbox"
-              name="terms"
-              id="terms"
-            />
-            <label className="label">
-              I have read and agreed to the{" "}
-              <b className="b"> Terms and conditions</b>
-            </label>
+      </div>
+      <div className="form-wrap">
+        <form className="form-wrap" onSubmit={handleSubmit}>
+          <h1>Create an account</h1>
+          <p>All fields are compulsory*</p>
+          {inputs.map((i) => (
+            <div key={i.id}>
+              <Form
+                {...i}
+                handleChange={handleChange}
+                values={values[i.name]}
+                setView={setView}
+                view={view}
+              />
+            </div>
+          ))}
+          <select className="inp" onChange={(e) => setGen(e.target.value)}>
+            <option value="">Select a Gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select>
+          <div className="custom-select">
+            <select onChange={(e) => setSpec(e.target.value)}>
+              <option value="">Specialty</option>
+              <option value="Allergy and immunology">
+                Allergy and immunology
+              </option>
+              <option value="Anesthesiology">Anesthesiology</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="Diagnostic radiology">Diagnostic radiology</option>
+              <option value="Emergency medicine">Emergency medicine</option>
+              <option value="Family medicine">Family medicine</option>
+              <option value="Internal medicine">Internal medicine</option>
+              <option value="Medical genetics">Medical genetics</option>
+              <option value="Neurology">Neurology</option>
+              <option value="Nuclear medicine">Nuclear medicine</option>
+              <option value="Obstetrics and gynecology">
+                Obstetrics and gynecology
+              </option>
+              <option value="Ophthalmology">Ophthalmology</option>
+              <option value="Pathology">Pathology</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Physical medicine and rehabilitation">
+                Physical medicine and rehabilitation
+              </option>
+              <option value="Preventive medicine">Preventive medicine</option>
+              <option value="Psychiatry">Psychiatry</option>
+              <option value="Radiation oncology">Radiation oncology</option>
+              <option value="Surgery">Surgery</option>
+              <option value="Urology">Urology</option>
+            </select>
           </div>
-          <div>
-            {/* <button className="back-button" onClick={() => navigate("/choice")}>
+          <input
+            onChange={(e) => setDate(e.target.value)}
+            className="date"
+            type="date"
+            id="birthday"
+            name="birthday"
+          />
+          <label className="text-lab">
+            <input className="inp-text" type="text" />
+            Certificate in Specialization
+            <label className="lab-but">
+              <input type="file" className="file" onChange={FileCert} /> Choose
+              File
+            </label>
+          </label>
+
+          <label className="text-lab">
+            <input className="inp-text" type="text" />
+            Nigeria Medical License
+            <label className="lab-but">
+              <input type="file" className="file" onChange={FileMed} /> Choose
+              File
+            </label>
+          </label>
+
+          <label className="text-lab">
+            <input className="inp-text" type="text" />
+            Proof of Identity
+            <label className="lab-but">
+              <input type="file" className="file" onChange={FileProof} /> Choose
+              File
+            </label>
+          </label>
+          <div className="foot">
+            <div className="check">
+              <input
+                className="check-box"
+                type="checkbox"
+                name="terms"
+                id="terms"
+              />
+              <label className="label">
+                I have read and agreed to the{" "}
+                <b className="b"> Terms and conditions</b>
+              </label>
+            </div>
+            <div>
+              {/* <button className="back-button" onClick={() => navigate("/choice")}>
               Go Back
             </button> */}
-            <button
-              className="button"
-              // disabled={!validate()}
-            >
-              CREATE ACCOUNT
-            </button>
+              <button className="button">CREATE ACCOUNT</button>
+            </div>
           </div>
-        </div>
-      </form>
-      <p className="p">
+        </form>
+          <p className="p">
         Already have an account?{" "}
         <b className="b" onClick={() => navigate("/log in")}>
           {" "}
           Log In.
         </b>
       </p>
+      </div>
+    
     </div>
   );
 };

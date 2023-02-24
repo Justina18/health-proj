@@ -17,7 +17,7 @@ const Whys = () => {
       <h1 className="why-h1">
         Why use <br /> Health360
       </h1>
-      <CgShapeZigzag fontSize={25} />
+      <CgShapeZigzag  color="#F8D33B" fontSize={25} />
       <p className="why-p">
         The Health360 platform <br /> makes it possible for anyone with{" "}
         <br /> a smartphone or tablet to receive <br /> quality and
@@ -32,7 +32,7 @@ const Whys = () => {
       <br /> Services
     </h1>
     <br />
-    <CgShapeZigzag fontSize={25} />
+    <CgShapeZigzag color="#F8D33B" fontSize={25} />
     <br />
     <p className="why-p">
       With a wide range of <br /> healthcare services to <br /> choose
@@ -46,7 +46,7 @@ const Whys = () => {
       High User <br /> Satisfaction
     </h1>
     <br />
-    <CgShapeZigzag fontSize={25} />
+    <CgShapeZigzag color="#F8D33B" fontSize={25} />
     <br />
     <p className="why-p">
       We take pride in <br /> ensuring all services <br /> rendered are
@@ -60,7 +60,7 @@ const Whys = () => {
       Round the <br /> clock <br /> availability
     </h1>
     <br />
-    <CgShapeZigzag fontSize={25} />
+    <CgShapeZigzag  color="#F8D33B" fontSize={25} />
     <br />
     <p className="why-p">
       With doctors from <br /> different countries, <br /> we ensure we
