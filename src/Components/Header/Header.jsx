@@ -41,6 +41,17 @@ const Header = () => {
                   Home
                 </p>
                 <hr />
+                <p className="head-link" onClick={() => navigate('/about')}>
+                  About Us
+                </p>
+                <hr/>
+                <p
+                  className="head-link"
+                  onClick={() => navigate('/contact us')}
+                >
+                  Contact Us
+                </p>
+                <hr />
                 <p
                   className="head-link"
                   onClick={() => navigate("/user dashboard")}
@@ -59,10 +70,7 @@ const Header = () => {
                 <p className="head-link" onClick={() => navigate("/dashboard")}>
                   Main
                 </p>
-                <hr />
-                <p className="head-link" onClick={() => navigate("/Doc Sign")}>
-                  Main
-                </p>
+                
               </div>
             </div>
           </div>
