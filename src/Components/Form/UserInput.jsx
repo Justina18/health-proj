@@ -97,7 +97,7 @@ const UserInput = () => {
   };
 
   return (
-    <div className="apps">
+    <div className="user-sign-apps">
       <form onSubmit={handleSubmit}>
         <h1>Create an account</h1>
         {inputs.map((i) => (

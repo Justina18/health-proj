@@ -19,6 +19,18 @@
   font-family: Raleway;
 }
 
+.user-sign-apps{
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #2991E0, #1B75BC, #006edc);
+  font-family: Raleway;
+}
+
 .log-apps {
   flex-wrap: wrap;
   flex-direction: column;
@@ -516,5 +528,15 @@ select {
   .logSuccess-img {
     width: 362px;
     height: 244px;
+  }
+  .forget{
+    width: 80%;
+    height: 70%;
+  }
+
+}
+@media screen and (max-width: 426px) {
+  .user-sign-apps{
+    height: 100vh;
   }
 }
