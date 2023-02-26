@@ -6,10 +6,21 @@ import {HiLocationMarker} from 'react-icons/hi';
 import {IoLogoTwitter} from 'react-icons/io'
 import {BsTelephoneFill} from 'react-icons/bs';
 import { AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  
+  const navigate = useNavigate();
+
   return (
     <div className="cont">
+      <div className="cont-head-img-holder">
+          <img
+            className="cont-head-img"
+            src="/Premium.png"
+            onClick={() => navigate("/")}
+          />
+        </div>
       <div className="circle"></div>
       <div className="cont-wrap">
         <div className="cont-lower">

@@ -1,13 +1,29 @@
 .cont {
     background: linear-gradient(to left, #2991E0, #1B75BC, #006edc);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #0D3859;
     flex-wrap: wrap;
     /* color: #0D3859; */
+}
+
+.cont-head-img-holder {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    z-index: 100;
+}
+
+.cont-head-img {
+    width: 90px;
+    height: 70px;
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 20px;
+    z-index: 100;
 }
 
 .cont-wrap {
@@ -20,9 +36,9 @@
     width: 80%;
     height: 90%;
     border-radius: 20px;
-    box-shadow: 0px 0px 19px 0px rgba(255,255,255,0.75);
--webkit-box-shadow: 0px 0px 19px 0px rgba(255,255,255,0.75);
--moz-box-shadow: 0px 0px 19px 0px rgba(255,255,255,0.75);
+    box-shadow: 0px 0px 19px 0px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 0px 0px 19px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(255, 255, 255, 0.75);
 }
 
 .spin-wrap {
@@ -204,7 +220,8 @@
     border-radius: 0 50% 50% 50%;
     /* z-index: 1; */
 }
-.cont-img-text2{
+
+.cont-img-text2 {
     display: none;
 }
 
@@ -213,7 +230,7 @@
         height: 100%;
     }
 
-    .cont-icons{
+    .cont-icons {
         margin-bottom: 5px;
     }
 
@@ -231,10 +248,11 @@
 }
 
 @media screen and (max-width: 430px) {
-    .cont-img-text{
+    .cont-img-text {
         display: none;
     }
-    .cont-img-text2{
+
+    .cont-img-text2 {
         display: flex;
         margin-left: 20px;
         flex-wrap: wrap;
@@ -243,6 +261,7 @@
         line-height: 35px;
         font-size: smaller;
     }
+
     .cont-lower {
         width: 100%;
         display: flex;
@@ -268,21 +287,23 @@
         justify-content: center;
         text-align: center;
     }
-    .spin-wrap{
+
+    .spin-wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
     }
-    
+
     .cont-lower p {
         width: 100%;
     }
-    .cont-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+    .cont-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }

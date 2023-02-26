@@ -6,6 +6,7 @@ import { GiTrophyCup } from "react-icons/gi";
 import { FaAward } from "react-icons/fa";
 import { GiClockwork } from "react-icons/gi";
 import { BsCheck } from "react-icons/bs";
+import Footer from "../Foot/Footer";
 
 const About = () => {
 
@@ -14,11 +15,11 @@ const About = () => {
   return (
     <div className="about">
       <div className="abt-head-img-wrap">
-        <img
-           onClick={()=> navigate('/')}
-          className="abt-head-img"
-          src="/Morest.png"
-        />
+      <img
+            className="prem-head-img"
+            src="/Morest.png"
+            onClick={() => navigate("/")}
+          />
       </div>
       <h2 className="miss-h1">About Us</h2>
       <div className="about-wrap">
@@ -124,6 +125,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

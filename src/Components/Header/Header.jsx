@@ -34,42 +34,50 @@ const Header = () => {
           />
         </div>
         {isOpen && (
-          <div className="hid">
-            <div className="head-link">
-              <p onClick={() => navigate("/")} className="head-link">
-                Home
-              </p>
-              <hr/>
-              <p
-                className="head-link"
-                onClick={() => navigate("/user dashboard")}
-              >
-                Dashboard
-              </p>
-              <hr/>
-              <p className="head-link" onClick={() => navigate("premium")}>
-                Go Premium
-              </p>
-              <hr/>
-              <p className="head-link" onClick={() => navigate("premium")}>
-                Log Out
-              </p>
-              <hr/>
-              <p className="head-link" onClick={() => navigate("/dashboard")}>
-                Main
-              </p>
-              <hr/>
-              <p className="head-link" onClick={() => navigate('/Doc Sign')}>
-                Main
-              </p>
+          <div className="hid-wrap">
+            <div className="hid">
+              <div className="head-link">
+                <p onClick={() => navigate("/")} className="head-link">
+                  Home
+                </p>
+                <hr />
+                <p
+                  className="head-link"
+                  onClick={() => navigate("/user dashboard")}
+                >
+                  Dashboard
+                </p>
+                <hr />
+                <p className="head-link" onClick={() => navigate("premium")}>
+                  Go Premium
+                </p>
+                <hr />
+                <p className="head-link" onClick={() => navigate("premium")}>
+                  Log Out
+                </p>
+                <hr />
+                <p className="head-link" onClick={() => navigate("/dashboard")}>
+                  Main
+                </p>
+                <hr />
+                <p className="head-link" onClick={() => navigate("/Doc Sign")}>
+                  Main
+                </p>
+              </div>
             </div>
           </div>
         )}
-        <div className='head-links'>
-                <h4  onClick={()=> navigate('/')} className='head-links' >Home</h4>
-                <h4 className='head-links' onClick={()=> navigate('/about')}>About</h4>
-                <h4 className='head-links' onClick={()=> navigate('/contact us')}>Contact Us</h4>
-             </div>
+        <div className="head-links">
+          <h4 onClick={() => navigate("/")} className="head-links">
+            Home
+          </h4>
+          <h4 className="head-links" onClick={() => navigate("/about")}>
+            About
+          </h4>
+          <h4 className="head-links" onClick={() => navigate("/contact us")}>
+            Contact Us
+          </h4>
+        </div>
         <div className="head-buttons">
           <button
             className="head-log-button "

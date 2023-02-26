@@ -280,3 +280,11 @@
 
    
 }
+@media screen and (max-width: 380px) {
+    .abt-img{
+    width: 320px;
+    }
+    .mission-wrap {
+        height: 420px;
+    }
+}

@@ -1,6 +1,6 @@
 .Footer-wrap{
+    width: 100%;
     color: white;
-    height: 25vh;
     background-color: #0D3859;
     display: flex;
     justify-content: space-around;
