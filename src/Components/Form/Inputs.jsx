@@ -43,11 +43,15 @@ const Inputs = () => {
     const file = e.target.files[0];
     setProof(file);
   };
-  useEffect(() => {
-    console.log(cert);
-    console.log(med);
-    console.log(proof);
-  }, [cert, med, proof]);
+  // useEffect(() => {
+  //   console.log(cert);
+  //   console.log(med);
+  //   console.log(proof);
+  // }, [cert, med, proof]);
+
+  const { name, email, mobileNo, password } = values;
+  const valuesData = { name, email, mobileNo, password, gen, date };
+  
 
   const inputs = [
     {
@@ -115,47 +119,67 @@ const Inputs = () => {
     // console.log(e)
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData();
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const formData = new FormData();
 
-    formData.append("name", values.name);
-    formData.append("email", values.email);
-    formData.append("mobileNo", values.mobileNo);
-    formData.append("birthdate", date);
-    formData.append("gender", gen);
-    formData.append("specialty", spec);
-    formData.append("location", values.location);
-    formData.append("password", values.password);
-    formData.append("license", med);
-    formData.append("proofOfId", proof);
-    formData.append("certificateUpload", cert);
+  //   formData.append("name", values.name);
+  //   formData.append("email", values.email);
+  //   formData.append("mobileNo", values.mobileNo);
+  //   formData.append("birthdate", date);
+  //   formData.append("gender", gen);
+  //   formData.append("specialty", spec);
+  //   formData.append("location", values.location);
+  //   formData.append("password", values.password);
+  //   formData.append("license", med);
+  //   formData.append("proofOfId", proof);
+  //   formData.append("certificateUpload", cert);
 
-    const config = {
-      headers: {
-        "content-Type": "multipart/form-data",
-      },
-    };
+  //   const config = {
+  //     headers: {
+  //       "content-Type": "multipart/form-data",
+  //     },
+  //   };
 
-    try {
-      const response = await axios.post(
-        "https://health360-h4ws.onrender.com/api/signup",
-        formData,
-        config
-      );
-      console.log(response);
-      event.preventDefault();
-      navigate("/User Login");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //   try {
+  //     const response = await axios.post(
+  //       "https://health360-h4ws.onrender.com/api/signup",
+  //       formData,
+  //       config
+  //     );
+  //     console.log(response);
+  //     event.preventDefault();
+  //     navigate("/User Login");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   // const receivedValues = (e) => {
   //   e.preventDefault();
   //   // console.log(values);
   //   console.log(totalInfo);
   // };
+
+
+      const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(valuesData);
+    try {
+      event.preventDefault();
+      const response = await axios.post(
+        "https://health360-h4ws.onrender.com/api/signup",
+        valuesData
+      );
+      console.log(response);
+      navigate("/User Login");
+      login_alert();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <div className="apps">
       <div className="doc-icon-hold">

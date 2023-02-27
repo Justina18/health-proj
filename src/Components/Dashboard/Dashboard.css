@@ -31,6 +31,7 @@
   margin-top: 20px;
 }
 .dash-txt{
+  line-height: 20px;
   margin-top: 80px;
   width: 100%;
 }
@@ -319,6 +320,16 @@
     }
   }
   @media screen and (max-width: 426px) {
+    .user-dash-wrap-lower-wrapped{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .user-dash-wrap-lower-one {
+      width: 300px;
+    }
     .user-Burger{
       background-color: #006edc;
     }

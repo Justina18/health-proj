@@ -63,12 +63,12 @@ const Dashboard = () => {
               {" "}
               <AiFillHome className="user-dash-icons" fontSize={25} />
             </NavLink>
-            <hr className="dash-hr" />
+            <br/>
             <NavLink onClick={() => navigate("/profile")} className="dash-p">
               {" "}
               <BiUserCircle className="user-dash-icons" fontSize={30} />
             </NavLink>
-            <hr className="dash-hr" />
+            <br/>
             <NavLink
               onClick={() => navigate("/appointment")}
               className="dash-p"
@@ -76,17 +76,17 @@ const Dashboard = () => {
               {" "}
               <BsJournalBookmarkFill className="user-dash-icons" fontSize={25} />
             </NavLink>
-            <hr className="dash-hr" />
+           <br/>
             <NavLink className="dash-p">
               {" "}
               <BiBell className="user-dash-icons" fontSize={25} />
             </NavLink>
-            <hr className="dash-hr" />
+            <br/>
             <NavLink className="dash-p">
               {" "}
-              <AiOutlineMessage className="user-dash-icons" fontSize={25} />
+              <AiOutlineMessage textDecoration={0} className="user-dash-icons" fontSize={25} />
             </NavLink>
-            <hr className="dash-hr" />
+             <br/>
             <NavLink className="dash-p">
               {" "}
               <AiOutlineSetting className="user-dash-icons" fontSize={25} />
