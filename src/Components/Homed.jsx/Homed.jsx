@@ -23,7 +23,7 @@ const Homed = () => {
             </div>
           </div>
           <div className="land-img-two-wrap">
-            <img className="land-img-two" src="/home.png" />
+            <img className="land-img-two" src="/land.png" />
           </div>
           <div className="home-text">
             <h1 className="Home-h1">

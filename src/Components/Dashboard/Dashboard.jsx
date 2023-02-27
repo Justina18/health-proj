@@ -64,13 +64,12 @@ const Dashboard = () => {
               <AiFillHome className="user-dash-icons" fontSize={25} />
             </NavLink>
             <br/>
-            <NavLink onClick={() => navigate("/profile")} className="dash-p">
+            <NavLink to = "/profile" className="dash-p">
               {" "}
               <BiUserCircle className="user-dash-icons" fontSize={30} />
             </NavLink>
             <br/>
-            <NavLink
-              onClick={() => navigate("/appointment")}
+            <NavLink  to="/appointment"
               className="dash-p"
             >
               {" "}
