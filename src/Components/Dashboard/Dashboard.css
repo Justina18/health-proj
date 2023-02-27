@@ -35,8 +35,8 @@
   width: 100%;
 }
 .dash-hr{
-    border-top: 1px solid #006edc;
-    width: 1005;
+    border-top: 1px solid #ffffff;
+    width: 60px;
 }
 .dash-img{
     width: 110px;
@@ -49,6 +49,9 @@
     align-items: center;
     width: 45%;
     background-color: #006edc;
+}
+.user-dash-icons{
+  text-decoration: none;
 }
 .dash-icon-wrap{
     display: flex;
@@ -66,9 +69,9 @@
     width: 80%;
 }
 .dash-p{
-    font-size: medium;
+  text-decoration: none;
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     align-items: center;
     cursor: pointer;
 }
@@ -314,5 +317,13 @@
     .Burger {
       display: flex;
     }
-    
+  }
+  @media screen and (max-width: 426px) {
+    .user-Burger{
+      background-color: #006edc;
+    }
+    .duns{
+      height: 100%;
+      /* width: 100% */
+    }
   }

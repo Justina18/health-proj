@@ -1,15 +1,31 @@
 import './Profile.css'
-import React from 'react'
+import React,{useState} from 'react'
 import {BsJournalBookmarkFill} from 'react-icons/bs'
 import { useNavigate,NavLink } from 'react-router-dom';
 import {AiFillHome,AiOutlineMessage,AiOutlineSetting} from 'react-icons/ai'
 import {BiUserCircle,BiBell} from 'react-icons/bi'
 import {RxDashboard} from 'react-icons/rx'
 import {FiLogOut} from 'react-icons/fi'
+import { FiAlignJustify } from "react-icons/fi";
+import { FaTimes } from "react-icons/fa";
 
 const SideBar = () => {
-
+  const [toggle, setToggle] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate()
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+    setIsOpen(!isOpen);
+  };
+  const FiAlignJustif = (
+    <FiAlignJustify fontSize={25} color="#006edc" onClick={handleToggle} />
+  );
+  const FaTime = (
+    <div>
+      <FaTimes fontSize={25} color="#D9D9D9" onClick={handleToggle} />
+    </div>
+  );
   
   const activeColorObject ={
     color: "#006edc",

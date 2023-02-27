@@ -7,7 +7,6 @@ import { MdAttachMoney, MdOutlineCancel } from "react-icons/md";
 import { HiOutlineUsers } from "react-icons/hi";
 import { AiOutlinePhone } from "react-icons/ai";
 import { CiFolderOn } from "react-icons/ci";
-import { TiTick } from "react-icons/ti";
 import { BsSuitHeartFill } from "react-icons/bs";
 
 const UserDash = () => {

@@ -63,14 +63,14 @@ const Header = () => {
                   Go Premium
                 </p>
                 <hr />
-                <p className="head-link" onClick={() => navigate("premium")}>
-                  Log Out
-                </p>
-                <hr />
                 <p className="head-link" onClick={() => navigate("/dashboard")}>
                   Main
                 </p>
-                
+                <hr />
+                <p className="head-link" onClick={() => navigate("premium")}>
+                  Log Out
+                </p>
+
               </div>
             </div>
           </div>

@@ -40,11 +40,11 @@ const Dashboard = () => {
     setIsOpen(!isOpen);
   };
   const FiAlignJustif = (
-    <FiAlignJustify fontSize={25} color="#1B75BC" onClick={handleToggle} />
+    <FiAlignJustify fontSize={25} color="#fff" onClick={handleToggle} />
   );
   const FaTime = (
     <div>
-      <FaTimes fontSize={25} color="#D9D9D9" onClick={handleToggle} />
+      <FaTimes fontSize={25} color="#fff" onClick={handleToggle} />
     </div>
   );
   const inputRef = useRef("");
@@ -55,25 +55,18 @@ const Dashboard = () => {
 
   return (
     <div className="hey">
-      <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
+      <div className="user-Burger">{toggle ? FiAlignJustif : FaTime}</div>
       {isOpen && (
         <div className="sides">
-          <div>
-            <h4 onClick={() => navigate("/dashboard")}>Dashboard</h4>
-            <div className="dash-img-wrap">
-              <img className="dash-img" src="/profile.png" />
-            </div>
-            <h2>Albert Weed</h2>
-          </div>
           <div className="dash-txt">
             <NavLink to="/" className="dash-p">
               {" "}
-              <AiFillHome fontSize={25} /> Home
+              <AiFillHome className="user-dash-icons" fontSize={25} />
             </NavLink>
             <hr className="dash-hr" />
             <NavLink onClick={() => navigate("/profile")} className="dash-p">
               {" "}
-              <BiUserCircle fontSize={25} /> Your Profile
+              <BiUserCircle className="user-dash-icons" fontSize={30} />
             </NavLink>
             <hr className="dash-hr" />
             <NavLink
@@ -81,23 +74,22 @@ const Dashboard = () => {
               className="dash-p"
             >
               {" "}
-              <BsJournalBookmarkFill fontSize={25} /> Appointments and Schedule
+              <BsJournalBookmarkFill className="user-dash-icons" fontSize={25} />
             </NavLink>
             <hr className="dash-hr" />
             <NavLink className="dash-p">
               {" "}
-              <BiBell fontSize={25} /> Notifications
+              <BiBell className="user-dash-icons" fontSize={25} />
             </NavLink>
             <hr className="dash-hr" />
             <NavLink className="dash-p">
               {" "}
-              <AiOutlineMessage fontSize={25} /> Messages
+              <AiOutlineMessage className="user-dash-icons" fontSize={25} />
             </NavLink>
             <hr className="dash-hr" />
             <NavLink className="dash-p">
               {" "}
-              <AiOutlineSetting fontSize={25} />
-              Settings
+              <AiOutlineSetting className="user-dash-icons" fontSize={25} />
             </NavLink>
           </div>
         </div>
