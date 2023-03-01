@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { userData } from "../../REDUX/Features";
 import { AiFillHome } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi"; 
+import Swal from 'sweetalert2'
 import axios from "axios";
 
 const Inputs = () => {
@@ -114,6 +115,30 @@ const Inputs = () => {
     return inputs.length;
   };
 
+  const loginAlert = () => {
+    let timerInterval
+Swal.fire({
+  title: 'You have been sent an email. Please check to verify.',
+  timer: 8000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+  }
+
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
     // console.log(e)
@@ -173,7 +198,7 @@ const Inputs = () => {
       );
       console.log(response);
       navigate("/User Login");
-      login_alert();
+      loginAlert();
     } catch (error) {
       console.log(error);
     }

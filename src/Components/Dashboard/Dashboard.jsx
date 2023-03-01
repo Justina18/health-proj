@@ -53,6 +53,8 @@ const Dashboard = () => {
     JSON.parse(localStorage.getItem("todo")) || []
   );
 
+  const getResponse = JSON.parse(localStorage.getItem("response"));
+
   return (
     <div className="hey">
       <div className="user-Burger">{toggle ? FiAlignJustif : FaTime}</div>
@@ -98,10 +100,23 @@ const Dashboard = () => {
       <div className="duns">
         <div className="hey-wrap">
           <div className="heys">
-            <h1>
-              Hello User!
+
+          {
+                getResponse ? 
+                <h1>
+              Hello  {getResponse.data.data.firstName}!
               <BsSuitHeartFill color="E22727" fontSize={25} />{" "}
             </h1>
+                 : 
+                (<div>
+                  <h1> Hello User! 
+                  {/* <BsSuitHeartFill color="E22727" fontSize={25} */}
+                   </h1>
+                </div>)
+              }
+
+            
+
             <p>
               Welcome to your dashboard. <br /> See a quick summary of your
               transactions below.
