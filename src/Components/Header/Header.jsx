@@ -67,7 +67,7 @@ const Header = () => {
                   Main
                 </p>
                 <hr />
-                <p className="head-link" onClick={() => navigate("premium")}>
+                <p className="head-link" onClick={() => navigate('/verify')}>
                   Log Out
                 </p>
 

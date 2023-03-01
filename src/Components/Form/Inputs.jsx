@@ -12,12 +12,12 @@ const Inputs = () => {
   const [view, setView] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [spec, setSpec] = useState("");
+  const [speciality, setSpec] = useState("");
   const [cert, setCert] = useState("");
   const [med, setMed] = useState("");
   const [proof, setProof] = useState("");
-  const [gen, setGen] = useState("");
-  const [date, setDate] = useState("");
+  const [gender, setGen] = useState("");
+  const [birthDate, setDate] = useState("");
 
   const [values, setValues] = useState({
     name: "",
@@ -49,8 +49,8 @@ const Inputs = () => {
   //   console.log(proof);
   // }, [cert, med, proof]);
 
-  const { name, email, mobileNo, password } = values;
-  const valuesData = { name, email, mobileNo, password, gen, date };
+  const { name, email, mobileNo, password, location } = values;
+  const valuesData = { name, email, location, speciality, mobileNo, password, gender, birthDate };
   
 
   const inputs = [

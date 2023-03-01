@@ -81,6 +81,7 @@ const App = () => {
           <Route path='/User login' element={ <LogIn/> }/>
           <Route path='/PasswordReset' element={ <PassRes/> } />
           <Route path='/contact us' element={ <Contact/> } />
+          <Route path='/verify' element={ <Verify/> } />
         </Routes>
  
       </HashRouter>
