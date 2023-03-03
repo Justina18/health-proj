@@ -32,7 +32,7 @@ import LogIn from './Components/Form/LogIn';
 import Verify from './Components/Form/Verify';
 import PassRes from './Components/Form/PassRes';
 import Contact from './Components/Contact/Contact';
-import BookForm from './Components/Book/BookForm';
+import BookInput from './Components/Book/BookInput';
 
 const App = () => {
 
@@ -83,7 +83,7 @@ const App = () => {
           <Route path='/PasswordReset' element={ <PassRes/> } />
           <Route path='/contact us' element={ <Contact/> } />
           <Route path='/verify' element={ <Verify/> } />
-          <Route path='/bookForm'  element={ <BookForm/> }/>
+          <Route path='/bookInputs'  element={ <BookInput/> }/>
         </Routes>
  
       </HashRouter>

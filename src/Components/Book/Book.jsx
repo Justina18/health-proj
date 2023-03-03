@@ -99,7 +99,7 @@ const Book = () => {
                 </div>
               </Link>
               <button
-                onClick={() => { '' }}
+                 onClick={() => navigate('/bookInputs')}
                 className="book-foot-butt"
               >Book Doctor</button>
             </div>
