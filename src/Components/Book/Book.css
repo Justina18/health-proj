@@ -221,7 +221,15 @@
     background: #fff;
     color: #006edc;
   }
-
+.book-wrap-maine{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
   .book-wrap-main{
     margin: 10px;
     text-decoration: none;
