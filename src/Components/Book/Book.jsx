@@ -1,9 +1,9 @@
-import React,{useContext, useState, useEffect} from 'react'
-import axios from 'axios'
-import {useParams} from 'react-router-dom'
-import { useNavigate  } from "react-router-dom";
-import { addToCart } from '../../REDUX/Features';
-import Calendar from "react-calendar"; 
+import React, { useContext, useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { addToCart } from "../../REDUX/Features";
+import Calendar from "react-calendar";
 import { MdLocationPin } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import "./Book.css";
@@ -12,8 +12,8 @@ import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import { Contexts } from "../../Api/Context";
 
 const Book = () => {
-  const dispatch = useDispatch()
-  const {id} = useParams()
+  const dispatch = useDispatch();
+  const { id } = useParams();
   const [item, setItem] = useState([]);
   const [date, setDate] = useState(new Date());
   const [showTime, setShowTime] = useState(false);
@@ -72,19 +72,21 @@ const Book = () => {
     },
   ];
 
-  const getItem= async()=>{
-    try{
-        const res = await axios.get(`https://fakestoreapi.com/products/${id}`);
-        console.log(res.data)
-        setItem(res.data)
-    }catch(err){
-        console.log(err)
+  const getDoctors = async () => {
+    console.log("clicked");
+    try {
+      const res = await axios.get(`https://health360-h4ws.onrender.com/api/alldoctors`);
+      console.log("clicked");
+      console.log(res.data);
+      // setItem(res.data)
+    } catch (err) {
+      console.log(err);
     }
-}
+  };
 
-useEffect(()=>{
-  getItem()
-}, [])
+  useEffect(() => {
+    getDoctors();
+  }, []);
 
   return (
     <div className="book">
@@ -123,17 +125,19 @@ useEffect(()=>{
               <div className="book-foot">
                 <p>{i.price}</p>
               </div>
+              <button className="book-foot-butt" >Book Doctor</button>
             </div>
           ))}
         </div>
-          <button
-            onClick={() => {
-              dispatch(addToCart(i));
-              navigate("/booking info")}}
-            className="book-butt"
-          >
-            Proceed
-          </button>
+        <button
+          onClick={() => {
+            dispatch(addToCart(i));
+            navigate("/booking info");
+          }}
+          className="book-butt"
+        >
+          Proceed
+        </button>
       </div>
     </div>
   );
