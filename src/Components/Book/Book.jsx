@@ -96,7 +96,7 @@ const Book = () => {
               <div className="book-foot">
                 <p>{i.price}</p>
               </div>
-              <button 
+              <button  className="book-foot-butt"
                >Book Doctor</button>
             </Link>
           ))}
