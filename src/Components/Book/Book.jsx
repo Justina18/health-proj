@@ -45,7 +45,7 @@ const Book = () => {
       price: "$1500",
     },
 
-  
+
   ];
 
   const getDoctors = async () => {
@@ -66,7 +66,7 @@ const Book = () => {
 
   return (
     <div className="book">
-      <Header/>
+      <Header />
       <br /><br /><br /><br /><br /><br />
       <div className="book-wrap">
         <h1 className="book-header">Choose a Doctor</h1>
@@ -81,24 +81,28 @@ const Book = () => {
 
         <div className="wrappest">
           {data.map((i) => (
-            <Link to="/booking info" className="book-wrap-main" key={i.id}>
-              <div className="book-img-wrap">
-                <img className="book-img" src={i.img} />
-              </div>
-              <div className="book-wrap-main-text">
-                <h2 className="book-h">{i.name}</h2>
-                <p>{i.specialty}</p>
-              </div>
-              <div>
-                <MdLocationPin fontSize={18} />
-                {i.location}
-              </div>
-              <div className="book-foot">
-                <p>{i.price}</p>
-              </div>
-              <button  className="book-foot-butt"
-               >Book Doctor</button>
-            </Link>
+            <div key={i.id} className="book-wrap-main">
+              <Link to="/booking info" className="book-wrap-maine">
+                <div className="book-img-wrap">
+                  <img className="book-img" src={i.img} />
+                </div>
+                <div className="book-wrap-main-text">
+                  <h2 className="book-h">{i.name}</h2>
+                  <p>{i.specialty}</p>
+                </div>
+                <div>
+                  <MdLocationPin fontSize={18} />
+                  {i.location}
+                </div>
+                <div className="book-foot">
+                  <p>{i.price}</p>
+                </div>
+              </Link>
+              <button
+                onClick={() => { '' }}
+                className="book-foot-butt"
+              >Book Doctor</button>
+            </div>
           ))}
         </div>
       </div>
