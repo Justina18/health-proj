@@ -81,7 +81,7 @@ const Book = () => {
 
         <div className="wrappest">
           {data.map((i) => (
-            <div className="book-wrap-main" key={i.id}>
+            <Link to="/booking info" className="book-wrap-main" key={i.id}>
               <div className="book-img-wrap">
                 <img className="book-img" src={i.img} />
               </div>
@@ -96,9 +96,9 @@ const Book = () => {
               <div className="book-foot">
                 <p>{i.price}</p>
               </div>
-              <button
+              <button 
                >Book Doctor</button>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

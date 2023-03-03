@@ -262,6 +262,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    text-decoration: none;
   }
   .book-wrap-main:active{
     background-color: #006edc;
