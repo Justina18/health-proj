@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../REDUX/Features";
 import Calendar from "react-calendar";
 import BookInfo from "./BookInfo";
+import { Link } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import "./Book.css";
@@ -95,19 +96,11 @@ const Book = () => {
               <div className="book-foot">
                 <p>{i.price}</p>
               </div>
-              <button className="book-foot-butt" >Book Doctor</button>
+              <button
+               >Book Doctor</button>
             </div>
           ))}
         </div>
-        <button
-          onClick={() => {
-            // dispatch(addToCart(i));
-            navigate("/booking info");
-          }}
-          className="book-butt"
-        >
-          Proceed
-        </button>
       </div>
     </div>
   );
