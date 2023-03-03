@@ -4,12 +4,15 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../REDUX/Features";
 import Calendar from "react-calendar";
+import BookInfo from "./BookInfo";
 import { MdLocationPin } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import "./Book.css";
 import Time from "./Time";
+import Header from '../Header/Header'
 import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import { Contexts } from "../../Api/Context";
+
 
 const Book = () => {
   const dispatch = useDispatch();
@@ -35,41 +38,13 @@ const Book = () => {
       id: 1,
       img: "/shaa.png",
       name: "Joseph Jonah",
-      specialty: "anatomy",
+      specialty: "Anatomist",
       icon: "MdLocationPin",
       location: "Abuja",
       price: "$1500",
     },
 
-    {
-      id: 2,
-      img: "/her.png",
-      name: "Isaac Samuel",
-      specialty: "Physician",
-      icon: "MdLocationPin",
-      location: "Lagos",
-      price: "$1500",
-    },
-
-    {
-      id: 3,
-      img: "/shaa.png",
-      name: "Joseph Jonah",
-      specialty: "anatomy",
-      icon: "MdLocationPin",
-      location: "Abuja",
-      price: "$1500",
-    },
-
-    {
-      id: 4,
-      img: "/her.png",
-      name: "Isaac Samuel",
-      specialty: "Physician",
-      icon: "MdLocationPin",
-      location: "Port",
-      price: "$1500",
-    },
+  
   ];
 
   const getDoctors = async () => {
@@ -90,23 +65,18 @@ const Book = () => {
 
   return (
     <div className="book">
-      <div className="head-img-wrap">
-        <img
-          onClick={() => navigate("/")}
-          className="head-img"
-          src="/Morest.png"
-        />
-      </div>
+      <Header/>
+      <br /><br /><br /><br /><br /><br />
       <div className="book-wrap">
-        <h1 className="book-header">Book an Appointment</h1>
-        <div className="calendar-container">
+        <h1 className="book-header">Choose a Doctor</h1>
+        {/* <div className="calendar-container">
           <Calendar
             onChange={setDate}
             value={date}
             onClickDay={() => setShowTime(true)}
           />
         </div>
-        <Time showTime={showTime} date={date} />
+        <Time showTime={showTime} date={date} /> */}
 
         <div className="wrappest">
           {data.map((i) => (
@@ -131,7 +101,7 @@ const Book = () => {
         </div>
         <button
           onClick={() => {
-            dispatch(addToCart(i));
+            // dispatch(addToCart(i));
             navigate("/booking info");
           }}
           className="book-butt"
