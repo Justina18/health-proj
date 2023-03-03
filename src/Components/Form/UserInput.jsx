@@ -76,7 +76,7 @@ const UserInput = () => {
     let timerInterval
 Swal.fire({
   title: 'You have been sent an email. Please check to verify.',
-  timer: 8000,
+  timer: 5000,
   timerProgressBar: true,
   didOpen: () => {
     Swal.showLoading()
