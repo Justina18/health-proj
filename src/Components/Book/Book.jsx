@@ -81,7 +81,7 @@ const Book = () => {
         <div className="wrappest">
           {item.map((i) => (
             <div key={i._id} className="book-wrap-main">
-              <Link to={`/booking info/${i._id}`} className="book-wrap-maine">
+              <Link to={`/docs details/${i._id}`} className="book-wrap-maine">
                 <div className="book-img-wrap">
                   <img className="book-img" src={'i.img'} />
                 </div>
