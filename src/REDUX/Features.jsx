@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  user: [],
+  users: [],
 };
 
 const features = createSlice({
@@ -9,14 +9,10 @@ const features = createSlice({
   reducers: {
 
     userData: (state, { payload }) => {
-      if (state.user.length) {
-        state.user = [{ ...payload }];
-      } else { 
-        state.user = [{ ...state.user[0], ...payload }];
-      }
+        state.users = [{payload }];
     },
     clear_userData: (state) => {
-      state.user = [];
+      state.users = [];
     },
     addToCart: (state, {payload})=>{
       const check = state.cart.findIndex((i) => i.id === payload.id);

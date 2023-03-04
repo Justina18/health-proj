@@ -11,7 +11,7 @@ const persistConfig = {
 }
 
 const reducer = combineReducers({
-  Commerce: health,
+  commerce: health,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer)

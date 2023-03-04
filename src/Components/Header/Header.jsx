@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import { clear_userData } from "../../REDUX/Features";
+import axios from "axios";
 const Header = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const user = useSelector((state) => state.commerce.users[0]?.payload.data.data)
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,6 +26,25 @@ const Header = () => {
       <FaTimes fontSize={25} color="#D9D9D9" onClick={handleToggle} />
     </div>
   );
+
+  const logOut = async () => {
+    console.log(user._id)
+    try {
+      const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
+      console.log(res.data);
+      res.status === 200 ? dispatch(clear_userData()) : null;
+      res.status === 200 ? navigate("/") : null;
+    } catch (e) {
+      console.log(e)
+    }
+
+  };
+
+
+
+  useEffect(() => {
+    console.log(user)
+  }, [])
 
   return (
     <div className="Header">
@@ -44,7 +67,7 @@ const Header = () => {
                 <p className="head-link" onClick={() => navigate('/about')}>
                   About Us
                 </p>
-                <hr/>
+                <hr />
                 <p
                   className="head-link"
                   onClick={() => navigate('/contact us')}
@@ -70,7 +93,6 @@ const Header = () => {
                 <p className="head-link">
                   Log Out
                 </p>
-
               </div>
             </div>
           </div>
@@ -88,18 +110,11 @@ const Header = () => {
           </h4>
         </div>
         <div className="head-buttons">
-          <button
-            className="head-log-button "
-            onClick={() => navigate("/User Login")}
-          >
-            Log In
-          </button>
-          <button
-            className="head-sign-button"
-            onClick={() => navigate("/choice")}
-          >
-            Sign Up
-          </button>
+
+          {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
+            <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
+            <button className="head-sign-button" onClick={() => logOut()} >Log Out  </button>}
+
         </div>
         <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
       </div>

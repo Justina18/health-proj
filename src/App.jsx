@@ -1,6 +1,6 @@
 import React from 'react'
 import 'animate.css';
-import {HashRouter ,Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './Components/Home/Home'
 import './App.css'
 import Inputs from './Components/Form/Inputs'
@@ -37,55 +37,55 @@ import BookInput from './Components/Book/BookInput';
 const App = () => {
 
 
-//   const arr=[]
-// const obj={
-//     name:"bola"
-// }
-// const ARR= [{...obj}]
-// console.log(ARR)
-// const obj2={
-//     status:"Doctor"
-// }
+  //   const arr=[]
+  // const obj={
+  //     name:"bola"
+  // }
+  // const ARR= [{...obj}]
+  // console.log(ARR)
+  // const obj2={
+  //     status:"Doctor"
+  // }
 
-// console.log([{...ARR[0],...obj2}])
+  // console.log([{...ARR[0],...obj2}])
   return (
-    
+
     <div className='App'>
-        <HashRouter>
+      <HashRouter>
         <Routes>
-          <Route path="/" element={ <Home/> } />
-          <Route path='/homed' element={ <Homed/>} />
-          <Route path='/sign up' element={ <Inputs/> }/>
-          <Route path='/upload' element={ <Upload/> }/>
-          <Route path='/log in img' element={ <LogSuccess/> }/>
-          <Route path='/appointment' element={ <Appointment/> }/>
-          <Route path='/dashboard' element={ <Dashboard/> } />
-          <Route path='/choice' element={ <Choose/> } />
-          <Route path='/forgot' element={ <Forgot/> }/>
-          <Route path='/user sign' element={ <UserInput/> } />
-          <Route path='/user password' element={ <UserPass/> } />
-          <Route path='/sign success' element={ <SignSuccess/> } />
-          <Route path='/user success' element={ <UserSucess/> } />
-          <Route path='book' element={ <Book/> }/>
-          <Route path='premium' element={ <Prem/> }/>
-          <Route path='/about' element={ <About/> }/>
-          <Route path='/more info' element={ <More/> }/>
-          <Route path='/profile' element={ <Profile/> } />
-          <Route path='/user dashboard' element={ <UserDash/> } />
-          <Route path='/notifications' element={ <Notification/> } />
-          <Route path='/user upload' element={ <UserUpload/> }/>
-          <Route path='/settings' element={ <Settings/> } />
-          <Route path='/texts' element={ <Texts/> }/>
-          <Route path='/requests' element={ <Requests/> } />
-          <Route path='/docs details' element={ <BookInfo/> }/>
-          <Route path='/User Profile' element={ <UserPro/> }/>
-          <Route path='/User login' element={ <LogIn/> }/>
-          <Route path='/PasswordReset' element={ <PassRes/> } />
-          <Route path='/contact us' element={ <Contact/> } />
-          <Route path='/verify' element={ <Verify/> } />
-          <Route path='/bookInputs'  element={ <BookInput/> }/>
+          <Route path="/" element={<Home />} />
+          <Route path='/homed' element={<Homed />} />
+          <Route path='/sign up' element={<Inputs />} />
+          <Route path='/upload' element={<Upload />} />
+          <Route path='/log in img' element={<LogSuccess />} />
+          <Route path='/appointment' element={<Appointment />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/choice' element={<Choose />} />
+          <Route path='/forgot' element={<Forgot />} />
+          <Route path='/user sign' element={<UserInput />} />
+          <Route path='/user password' element={<UserPass />} />
+          <Route path='/sign success' element={<SignSuccess />} />
+          <Route path='/user success' element={<UserSucess />} />
+          <Route path='book' element={<Book />} />
+          <Route path='premium' element={<Prem />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/more info' element={<More />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/user dashboard' element={<UserDash />} />
+          <Route path='/notifications' element={<Notification />} />
+          <Route path='/user upload' element={<UserUpload />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/texts' element={<Texts />} />
+          <Route path='/requests' element={<Requests />} />
+          <Route path='/docs details/:id' element={<BookInfo />} />
+          <Route path='/User Profile' element={<UserPro />} />
+          <Route path='/User login' element={<LogIn />} />
+          <Route path='/PasswordReset' element={<PassRes />} />
+          <Route path='/contact us' element={<Contact />} />
+          <Route path='/verify' element={<Verify />} />
+          <Route path='/bookInputs/:id/:speciality' element={<BookInput />} />
         </Routes>
- 
+
       </HashRouter>
     </div>
   )

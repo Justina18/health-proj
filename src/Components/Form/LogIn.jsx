@@ -15,7 +15,7 @@ const LogIn = () => {
   const [err, setErr] = useState("");
   const [herr, setHerr] = useState(false);
   const { verify, login_alert } = useContext(Contexts);
-  const user = useSelector((state) => state.Commerce.user);
+  const user = useSelector((state) => state.commerce.users);
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
@@ -34,7 +34,7 @@ const LogIn = () => {
     res.status === 200 ? navigate("/login") : null;
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
     event.preventDefault();
     await axios.post("https://health360-h4ws.onrender.com/api/userlogin", valueData)
       .then(function (res) {
@@ -92,10 +92,7 @@ const LogIn = () => {
     <div className="log-apps">
       {herr && <p style={{ color: "red" }}>{err}</p>}
 
-      <form onSubmit={ () =>{
-        event.preventDefault();
-        handleLogin()
-        }}>
+      <form onSubmit={handleLogin}>
         <h1 className="logIn-head-h1">Welcome Back</h1>
         <p>Login to have access to your account</p>
         {inputs.map((i) => (
