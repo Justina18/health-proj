@@ -10,7 +10,7 @@ const BookInput = () => {
   });
 
   const { date, time } = valued;
-  const valuedData = { date, time };
+  const valuedData = { date, time,appointmentType };
 
   const inputs = [
     {
@@ -18,30 +18,45 @@ const BookInput = () => {
       name: "appointmentDate",
       type: "date",
       required: true,
-      //   errMsg:
-      //     "All characters must be letters. There should be at least 3 characters ",
-    },
+     },
 
     {
       id: 1,
       name: "appointmentTime",
       type: "time",
       required: true,
-      //   errMsg:
-      //     "All characters must be letters. There should be at least 3 characters ",
-    },
+      },
   ];
+
+  
+  const handleChange = (e) => {
+    setValued({ ...valued, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(valuedData);
+    try {
+      event.preventDefault();
+      const response = await axios.post(
+        "https://health360-h4ws.onrender.com/api/id/bookappointment" , valuedData
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="BookInp">
-    <form className="BookInpForm">
+    <form onSubmit={handleSubmit} className="BookInpForm">
       <h1>Talk to us</h1>
       <p>Select a date, time and the specialty of the doctor you require</p>
       {inputs.map((i) => (
         <BookForm
           key={i.id}
           {...i}
-        //   handleChange={handleChange}
+          handleChange={handleChange}
           value={valued[i.name]}
         />
       ))}
@@ -74,6 +89,9 @@ const BookInput = () => {
           <option value="Urology">Urology</option>
         </select>
       </div>
+      <button className="button" type="submit">
+              Proceed to payments
+            </button>
       </form>
     </div>
   );
