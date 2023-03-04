@@ -60,7 +60,7 @@ const BookInput = () => {
           value={valued[i.name]}
         />
       ))}
-      <div className="custom-select">
+      {/* <div className="custom-select">
         <select onChange={(e) => setAppointmentType(e.target.value)}>
           <option value="">Specialty</option>
           <option value="Allergy and immunology">Allergy and immunology</option>
@@ -88,7 +88,7 @@ const BookInput = () => {
           <option value="Surgery">Surgery</option>
           <option value="Urology">Urology</option>
         </select>
-      </div>
+      </div> */}
       <button className="button" type="submit">
               Proceed to payments
             </button>
