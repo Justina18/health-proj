@@ -52,9 +52,8 @@ const Book = () => {
     console.log("clicked");
     try {
       const res = await axios.get(`https://health360-h4ws.onrender.com/api/alldoctors`);
-      console.log("clicked");
-      console.log(res.data);
-      // setItem(res.data)
+      console.log(res.data.data);
+      setItem(res.data.data)
     } catch (err) {
       console.log(err);
     }
@@ -80,11 +79,11 @@ const Book = () => {
         <Time showTime={showTime} date={date} /> */}
 
         <div className="wrappest">
-          {data.map((i) => (
-            <div key={i.id} className="book-wrap-main">
+          {item.map((i) => (
+            <div key={i._id} className="book-wrap-main">
               <Link to="/booking info" className="book-wrap-maine">
                 <div className="book-img-wrap">
-                  <img className="book-img" src={i.img} />
+                  <img className="book-img" src={'i.img'} />
                 </div>
                 <div className="book-wrap-main-text">
                   <h2 className="book-h">{i.name}</h2>
