@@ -81,7 +81,7 @@ const Book = () => {
         <div className="wrappest">
           {item.map((i) => (
             <div key={i._id} className="book-wrap-main">
-              <Link to="/booking info" className="book-wrap-maine">
+              <Link to={`/booking info/${i._id}`} className="book-wrap-maine">
                 <div className="book-img-wrap">
                   <img className="book-img" src={'i.img'} />
                 </div>
@@ -98,7 +98,7 @@ const Book = () => {
                 </div>
               </Link>
               <button
-                 onClick={() => navigate('/bookInputs')}
+                onClick={() => navigate(`/bookInputs/${i._id}/${i.speciality}`)}
                 className="book-foot-butt"
               >Book Doctor</button>
             </div>
