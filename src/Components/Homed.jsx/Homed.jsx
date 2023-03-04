@@ -31,8 +31,8 @@ const Homed = () => {
               <b className="home-b"> consultation</b> with a doctor.
             </h1>
             <p className="home-p">
-              The top medical experts are prepared to provide <br /> feedback on
-              your problems.
+              Top medical experts are prepared to provide feedbacks <br /> and solutions to
+              your problems via an application.
             </p>
             <div className="home-buttons">
               <button
