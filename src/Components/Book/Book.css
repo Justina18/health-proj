@@ -382,8 +382,30 @@
   height: 100vh;
 }
 .BookInpForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
   gap: 25px;
   height: 60%;
   width: 35%;
   background-color: white;
+}
+@media screen and (max-width: 769px) {
+  .BookInpForm{
+    height: 60%;
+    width: 55%;
+  }
+  .BookInpForm p{
+   font-size: small;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .BookInpForm{
+    height: 60%;
+    width: 90%;
+  }
 }
