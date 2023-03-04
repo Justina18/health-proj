@@ -77,7 +77,7 @@ const App = () => {
           <Route path='/settings' element={ <Settings/> } />
           <Route path='/texts' element={ <Texts/> }/>
           <Route path='/requests' element={ <Requests/> } />
-          <Route path='/booking info' element={ <BookInfo/> }/>
+          <Route path='/docs details' element={ <BookInfo/> }/>
           <Route path='/User Profile' element={ <UserPro/> }/>
           <Route path='/User login' element={ <LogIn/> }/>
           <Route path='/PasswordReset' element={ <PassRes/> } />
