@@ -304,6 +304,17 @@
     background: #006edc;
     color: white;
   }
+  .bookingInfoButt{
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 130px;
+    height: 30px;
+    font-size: medium;
+    font-weight: 600;
+    background: #006edc;
+    color: white;
+  }
   .bookInfo{
     display: flex;
     justify-content: center;

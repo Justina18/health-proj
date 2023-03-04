@@ -49,7 +49,7 @@ const BookInfo = () => {
               <h4 className="docs-deets-h">Location:</h4>
               <p>Abuja</p>
             </div>
-            <button onClick={() => navigate('/bookForm')}  className="bookingInfoButt">Book Doctor</button>
+            <button onClick={() => navigate('/bookInputs')}  className="bookingInfoButt">Book Doctor</button>
           </div>
           
         </div>
