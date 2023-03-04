@@ -51,7 +51,7 @@ const BookInput = () => {
     <div className="BookInp">
     <form onSubmit={handleSubmit} className="BookInpForm">
       <h1>Talk to us</h1>
-      <p>Select a date, time and the specialty of the doctor you require</p>
+      <p>Select a date and the time you wish your appointment be.</p>
       {inputs.map((i) => (
         <BookForm
           key={i.id}
