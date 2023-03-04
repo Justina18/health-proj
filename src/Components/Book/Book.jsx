@@ -86,8 +86,8 @@ const Book = () => {
                   <img className="book-img" src={'i.img'} />
                 </div>
                 <div className="book-wrap-main-text">
-                  <h2 className="book-h">{i.name}</h2>
-                  <p>{i.specialty}</p>
+                  <h3 className="book-h">{i.name}</h3>
+                  <p>{i.speciality}</p>
                 </div>
                 <div>
                   <MdLocationPin fontSize={18} />

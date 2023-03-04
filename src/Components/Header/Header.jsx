@@ -90,13 +90,14 @@ const Header = () => {
                   Main
                 </p>
                 <hr />
-                <p className="head-link" onClick={() => navigate("premium")}>
+                <p className="head-link">
                   Log Out
                 </p>
               </div>
             </div>
           </div>
         )}
+
         <div className="head-links">
           <h4 onClick={() => navigate("/")} className="head-links">
             Home

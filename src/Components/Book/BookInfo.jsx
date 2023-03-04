@@ -36,12 +36,14 @@ const BookInfo = () => {
       </div>
 
       <div className="booking-deets">
+        
         <div className="docs-deets-wrap">
           <div className="booking-deets-img-wrap">
             <img className="booking-deets-img" src="/Doc.png" alt="" />
           </div>
 
           <div className="docs-deets">
+
             <h1 className="docs-deets-h">{item.name}</h1>
 
             <div className="about-deets">
@@ -64,10 +66,15 @@ const BookInfo = () => {
             </div>
             <button onClick={() => navigate(`/bookInputs/${item._id}/${item.speciality}`)} className="bookingInfoButt">Book Doctor</button>
           </div>
-
+            <button
+              onClick={() => navigate("/bookInputs")}
+              className="bookingInfoButt"
+            >
+              Book Doctor
+            </button>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 
