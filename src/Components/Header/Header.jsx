@@ -10,7 +10,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const user = useSelector((state) => state.commerce.users[0]?.payload.data.data)
+  const user = useSelector((state) => state.commerce.users[0]?.data.data)
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,7 +30,6 @@ const Header = () => {
   const logOut = async () => {
 
     console.log(user._id)
-
     try {
       const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
       console.log(res.data);
@@ -44,7 +43,7 @@ const Header = () => {
 
 
   useEffect(() => {
-    console.log(user)
+    // console.log(user)
   }, [])
 
   return (
@@ -112,10 +111,9 @@ const Header = () => {
         </div>
         <div className="head-buttons">
 
-          {user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
+          {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
             <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
             <button className="head-sign-button" onClick={() => logOut()} >Log Out  </button>}
-
         </div>
         <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
       </div>

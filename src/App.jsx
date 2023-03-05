@@ -3,12 +3,12 @@ import 'animate.css';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './Components/Home/Home'
 import './App.css'
-import Inputs from './Components/Form/Inputs'
+
 import Upload from './Components/Form/Upload'
 import LogSuccess from './Components/Form/LogSuccess'
 import Choose from './Components/Choose/Choose'
 import Forgot from './Components/Form/Forgot'
-import UserInput from './Components/Form/UserInput'
+
 import UserPass from './Components/Form/UserPass'
 import SignSuccess from './Components/Form/SignSuccess'
 import Book from './Components/Book/Book'
@@ -28,13 +28,17 @@ import Texts from './Components/Dashboard/Texts';
 import BookInfo from './Components/Book/BookInfo';
 import UserPro from './Components/Dashboard/UserPro';
 import Requests from './Components/Dashboard/Requests';
-import LogIn from './Components/Form/LogIn';
+
+import User_Signup from './Components/Form/User_Signup'
 import Verify from './Components/Form/Verify';
 import PassRes from './Components/Form/PassRes';
 import Contact from './Components/Contact/Contact';
 import BookInput from './Components/Book/BookInput';
 import DocVer from './Components/Form/DocVer';
 
+import Admin_Signup from './Components/Form/Admin_Signup'
+import User_LogIn from './Components/Form/User_LogIn';
+import Admin_Login from './Components/Form/Admin_LogIn'
 const App = () => {
 
 
@@ -56,14 +60,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/homed' element={<Homed />} />
-          <Route path='/sign up' element={<Inputs />} />
+
           <Route path='/upload' element={<Upload />} />
           <Route path='/log in img' element={<LogSuccess />} />
           <Route path='/appointment' element={<Appointment />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/choice' element={<Choose />} />
           <Route path='/forgot' element={<Forgot />} />
-          <Route path='/user sign' element={<UserInput />} />
+
           <Route path='/user password' element={<UserPass />} />
           <Route path='/sign success' element={<SignSuccess />} />
           <Route path='/user success' element={<UserSucess />} />
@@ -80,11 +84,16 @@ const App = () => {
           <Route path='/requests' element={<Requests />} />
           <Route path='/docs details/:id' element={<BookInfo />} />
           <Route path='/User Profile' element={<UserPro />} />
-          <Route path='/User login' element={<LogIn />} />
+
+          <Route path='/usersign' element={<User_Signup />} />
+          <Route path='/adminsignup' element={<Admin_Signup />} />
+          <Route path='/User login' element={<User_LogIn />} />
+          <Route path='/admin_login' element={<Admin_Login />} />
+
           <Route path='/PasswordReset' element={<PassRes />} />
           <Route path='/contact us' element={<Contact />} />
           <Route path='/verify' element={<Verify />} />
-          <Route path='/doc verify' element={ <DocVer/> } />
+          <Route path='/doc verify' element={<DocVer />} />
           <Route path='/bookInputs/:id/:speciality' element={<BookInput />} />
         </Routes>
       </Router>

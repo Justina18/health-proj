@@ -2,27 +2,16 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { userData } from "../../REDUX/Features";
 import { AiFillHome } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
 import Swal from 'sweetalert2'
 import axios from "axios";
 
+
 const Inputs = () => {
   const [view, setView] = useState(false);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
-  // "name": "DOC DAVIDO",
-  //   "email": "davido@gmail.com",
-  //     "mobileNo": "08169918225",
-  //       "birthDate": "25-08-2023",
-  //         "gender": "FEMALE",
-  //           "password": "DAVIDO",
-  //             "speciality": "Nurse",
-  //               "location": "Anyigba"
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -35,13 +24,6 @@ const Inputs = () => {
   });
 
   const totalInfo = { ...values };
-
-  // useEffect(() => {
-  //   console.log(cert);
-  //   console.log(med);
-  //   console.log(proof);
-  // }, [cert, med, proof]);
-
 
   const inputs = [
     {
@@ -133,55 +115,12 @@ const Inputs = () => {
     // console.log(e)
   };
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const formData = new FormData();
-
-  //   formData.append("name", values.name);
-  //   formData.append("email", values.email);
-  //   formData.append("mobileNo", values.mobileNo);
-  //   formData.append("birthdate", date);
-  //   formData.append("gender", gen);
-  //   formData.append("specialty", spec);
-  //   formData.append("location", values.location);
-  //   formData.append("password", values.password);
-  //   formData.append("license", med);
-  //   formData.append("proofOfId", proof);
-  //   formData.append("certificateUpload", cert);
-
-  //   const config = {
-  //     headers: {
-  //       "content-Type": "multipart/form-data",
-  //     },
-  //   };
-
-  //   try {
-  //     const response = await axios.post(
-  //       "https://health360-h4ws.onrender.com/api/signup",
-  //       formData,
-  //       config
-  //     );
-  //     console.log(response);
-  //     event.preventDefault();
-  //     navigate("/User Login");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const receivedValues = (e) => {
-  //   e.preventDefault();
-  //   // console.log(values);
-  //   console.log(totalInfo);
-  // };
-
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(values);
     try {
       event.preventDefault();
-      const response = await axios.post("https://health360-h4ws.onrender.com/api/signup",values);
+      const response = await axios.post("https://health360-h4ws.onrender.com/api/signup", values);
       console.log(response);
       navigate("/User Login");
       loginAlert();
@@ -217,16 +156,11 @@ const Inputs = () => {
             </div>
           ))}
 
-
-          {/* const [, setGen] = useState("");
-          const [birthDate, setDate] = useState(""); */}
-
           <select className="inp" name="gender" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}>
             <option value="">Select a Gender</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
           </select>
-
 
           <div className="custom-select">
             <select name="speciality" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}>
@@ -267,8 +201,6 @@ const Inputs = () => {
             name="birthDate"
           />
 
-
-
           <div className="foot">
             <div className="check">
               <input
@@ -283,16 +215,13 @@ const Inputs = () => {
               </label>
             </div>
             <div>
-              {/* <button className="back-button" onClick={() => navigate("/choice")}>
-              Go Back
-            </button> */}
               <button className="button">CREATE ACCOUNT</button>
             </div>
           </div>
         </form>
         <p className="p">
           Already have an account?{" "}
-          <b className="b" onClick={() => navigate("/User login")}>
+          <b className="b" onClick={() => navigate("/admin_login")}>
             {" "}
             Log In.
           </b>
