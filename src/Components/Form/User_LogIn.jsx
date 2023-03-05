@@ -33,7 +33,7 @@ const LogIn = () => {
 
 
   const handleLogin = async (e) => {
-    console.log(values)
+
     event.preventDefault();
     await axios.post("https://health360-h4ws.onrender.com/api/userlogin", values)
       .then(function (res) {

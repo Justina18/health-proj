@@ -105,13 +105,11 @@ const UserInput = () => {
     console.log(valuesData);
     try {
       event.preventDefault();
-      const response = await axios.post(
-        "https://health360-h4ws.onrender.com/api/usersignUp",
-        valuesData
-      );
+      const response = await axios.post("https://health360-h4ws.onrender.com/api/usersignUp", valuesData);
       console.log(response);
       navigate("/User Login");
       loginAlert();
+
     } catch (error) {
       console.log(error);
     }
