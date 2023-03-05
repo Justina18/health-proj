@@ -28,18 +28,19 @@ const Header = () => {
   );
 
   const logOut = async () => {
+
     console.log(user._id)
+
     try {
       const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
       console.log(res.data);
       res.status === 200 ? dispatch(clear_userData()) : null;
       res.status === 200 ? navigate("/") : null;
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
 
   };
-
 
 
   useEffect(() => {
@@ -111,7 +112,7 @@ const Header = () => {
         </div>
         <div className="head-buttons">
 
-          {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
+          {user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
             <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
             <button className="head-sign-button" onClick={() => logOut()} >Log Out  </button>}
 

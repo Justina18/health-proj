@@ -1,6 +1,6 @@
 import React from 'react'
 import 'animate.css';
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './Components/Home/Home'
 import './App.css'
 import Inputs from './Components/Form/Inputs'
@@ -51,7 +51,7 @@ const App = () => {
   return (
 
     <div className='App'>
-      <HashRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/homed' element={<Homed />} />
@@ -85,8 +85,7 @@ const App = () => {
           <Route path='/verify' element={<Verify />} />
           <Route path='/bookInputs/:id/:speciality' element={<BookInput />} />
         </Routes>
-
-      </HashRouter>
+      </Router>
     </div>
   )
 }

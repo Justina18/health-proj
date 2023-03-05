@@ -22,21 +22,20 @@ const LogIn = () => {
     password: "",
   });
 
-  const { email, password } = values;
-  const valueData = { email, password };
+
 
   const logOut = async () => {
-    const res = await axios.post(
-      `https://health360-h4ws.onrender.com/api/userlogout/:${user[0]?.data.data._id}`
-    );
+    const res = await axios.post(`https://health360-h4ws.onrender.com/api/userlogout/${user[0]?.data.data._id}`);
     console.log(res.data);
     res.status === 200 ? dispatch(clearUser()) : null;
     res.status === 200 ? navigate("/login") : null;
   };
 
+
   const handleLogin = async (e) => {
+    console.log(values)
     event.preventDefault();
-    await axios.post("https://health360-h4ws.onrender.com/api/userlogin", valueData)
+    await axios.post("https://health360-h4ws.onrender.com/api/userlogin", values)
       .then(function (res) {
         console.log(res.data);
         res.data.data.email === values.email ? dispatch(userData(res)) : null;
@@ -44,7 +43,7 @@ const LogIn = () => {
         if (res.data.data.verify === true) {
           res.data.data.email === values.email ? navigate("/") : null;
         } else {
-          logOut();
+          // logOut();
         }
       })
       .catch(function (error) {
