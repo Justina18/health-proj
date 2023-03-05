@@ -104,7 +104,7 @@ const Dashboard = () => {
           {
                 getResponse ? 
                 <h1>
-              Hello  {getResponse.data.data.firstName}!
+              Hello  {getResponse.data.data.name}!
               <BsSuitHeartFill color="E22727" fontSize={25} />{" "}
             </h1>
                  : 
