@@ -28,19 +28,18 @@ const Header = () => {
   );
 
   const logOut = async () => {
-
     console.log(user._id)
-
     try {
       const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
       console.log(res.data);
       res.status === 200 ? dispatch(clear_userData()) : null;
       res.status === 200 ? navigate("/") : null;
     } catch (e) {
-      console.log(e);
+      console.log(e)
     }
 
   };
+
 
 
   useEffect(() => {
@@ -99,7 +98,9 @@ const Header = () => {
           </div>
         )}
 
-        <div className="head-links">
+<div className="head-links">
+       {!user ? 
+        <>
           <h4 onClick={() => navigate("/")} className="head-links">
             Home
           </h4>
@@ -109,10 +110,27 @@ const Header = () => {
           <h4 className="head-links" onClick={() => navigate("/contact us")}>
             Contact Us
           </h4>
-        </div>
-        <div className="head-buttons">
+          </>
+          :
+          <>
+          <h4 onClick={() => navigate("/")} className="head-links">
+            Home
+          </h4>
+          <h4 className="head-links" onClick={() => navigate("/about")}>
+            About
+          </h4>
+          <h4 className="head-links" onClick={() => navigate("/contact us")}>
+            Contact Us
+          </h4>
+          <h4 className="head-links" onClick={() => navigate("/dashboard")}>
+            Dashboard
+          </h4>
+          </>
+       } 
+       </div>
 
-          {user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
+        <div className="head-buttons">
+          {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
             <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
             <button className="head-sign-button" onClick={() => logOut()} >Log Out  </button>}
 
