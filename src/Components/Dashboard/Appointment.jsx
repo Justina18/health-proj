@@ -17,6 +17,7 @@ const Appointment = () => {
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const [app, setApp] = useState([])
   const user = useSelector((state) => state.commerce.users[0]?.data.data)
 
   const handleToggle = () => {
@@ -43,13 +44,12 @@ const Appointment = () => {
 
   const getApp = async () => {
     try {
-      const res = axios.get(`https://health360-h4ws.onrender.com/api/${user._id}/myappointment`)
-      // console.log(res)`
+      const res = await axios.get(`https://health360-h4ws.onrender.com/api/${user._id}/myappointment`)
+      console.log(res.data.data)
+      setApp(res.data.data)
     } catch (e) {
       console.log(e)
     }
-
-
   }
 
 
@@ -118,7 +118,7 @@ const Appointment = () => {
             </div>
           </div>
 
-          {[1].map((i) => (
+          {app.map((i) => (
             <div>
               <div className="user-dash-wrap-lower-text-upper-low-wrap">
                 <div className="user-dash-wrap-lower-text-upper-low">
@@ -156,7 +156,7 @@ const Appointment = () => {
                 </button>
                 <button className="doc-butt">
                   {" "}
-                  <CiFolderOn fontSize={16} /> Documents{" "}
+                  {/* <CiFolderOn fontSize={16} /> Documents{" "} */}
                 </button>
               </div>
             </div>

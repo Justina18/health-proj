@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./User.css";
 import { CiFolderOn } from "react-icons/ci";
 import { MdLocationOn } from "react-icons/md";
 import { BsQuestionCircle } from "react-icons/bs";
-
+import { useSelector } from "react-redux";
+import axios from "axios";
 const UserPro = () => {
+  const [doc, setDoc] = useState()
+  const user = useSelector((state) => state.commerce.users[0]?.data.data)
+
+
+
+  const getDoc = async () => {
+    try {
+      const res = await axios.get(`https://health360-h4ws.onrender.com/api/doctor/${user._id}`)
+      console.log(res.data.data)
+      setDoc(res.data.data)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+
+  useEffect(() => {
+    getDoc()
+    // console.log(user)
+  }, [])
+
+
+
+
+
+
   return (
     <div className="UserPro">
       <div className="UserPro-wrap">
@@ -13,7 +40,7 @@ const UserPro = () => {
             <img className="UserPro-img" src="/profiled.png" />
           </div>
           <div className="UserPro-txt-wrap">
-            <h2>Jeremy Flames</h2>
+            <h2>{doc?.name}</h2>
             <button className="UserPro-doc-butt">
               {" "}
               <CiFolderOn fontSize={25} /> Documents{" "}
@@ -21,7 +48,7 @@ const UserPro = () => {
             <div className="UserPro-icon-wrap">
               {" "}
               <MdLocationOn fontSize={20} color="#006edc" />
-              Lagos State
+            {doc?.location}
             </div>
           </div>
         </div>
@@ -32,29 +59,29 @@ const UserPro = () => {
           <div className="UserPro-wrap-lower-text-upper">
             <div className="UserPro-wrap-lower-text">
               <h4>Name:</h4>
-              <p>Jeremy Rose</p>
+              <p>{doc?.name}</p>
             </div>
 
             <div className="UserPro-wrap-lower-text">
-              <h4>Email:</h4>
-              <p>25, Elder street, New York</p>
+              <h4>Email: </h4>
+              <p>{doc?.email}</p>
             </div>
 
             <div className="UserPro-wrap-lower-text">
               <h4>Phone:</h4>
-              <p>+234 839 202</p>
+              <p>{doc?.mobileNo}</p>
             </div>
           </div>
 
           <div className="UserPro-wrap-lower-text-lower">
             <div className="UserPro-wrap-lower-text">
               <h4>Gender:</h4>
-              <p>Male</p>
+              <p>{doc?.gender}</p>
             </div>
 
             <div className="UserPro-wrap-lower-text">
               <h4>Birthday:</h4>
-              <p>June 5, 1992</p>
+              <p>{doc?.birthDate}</p>
             </div>
 
             <div className="UserPro-wrap-lower-text">

@@ -8,8 +8,8 @@ import { TiTick } from "react-icons/ti";
 import axios from "axios";
 const Requests = () => {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.commerce.users[0]?.payload.data.data)
-
+  const user = useSelector((state) => state.commerce.users[0]?.data.data)
+const [item,setItem]=useState()
 
   const getApointment = async () => {
     console.log("clicked");
