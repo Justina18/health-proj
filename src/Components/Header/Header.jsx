@@ -91,7 +91,7 @@ const Header = () => {
                   Main
                 </p>
                 <hr />
-                <p className="head-link">
+                <p className="head-link" onClick={() => navigate('/doc verify')}>
                   Log Out
                 </p>
               </div>

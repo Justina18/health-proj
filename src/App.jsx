@@ -33,6 +33,7 @@ import Verify from './Components/Form/Verify';
 import PassRes from './Components/Form/PassRes';
 import Contact from './Components/Contact/Contact';
 import BookInput from './Components/Book/BookInput';
+import DocVer from './Components/Form/DocVer';
 
 const App = () => {
 
@@ -83,6 +84,7 @@ const App = () => {
           <Route path='/PasswordReset' element={<PassRes />} />
           <Route path='/contact us' element={<Contact />} />
           <Route path='/verify' element={<Verify />} />
+          <Route path='/doc verify' element={ <DocVer/> } />
           <Route path='/bookInputs/:id/:speciality' element={<BookInput />} />
         </Routes>
       </Router>
