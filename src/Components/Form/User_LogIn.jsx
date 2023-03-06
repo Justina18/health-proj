@@ -92,7 +92,7 @@ const LogIn = () => {
       {herr && <p style={{ color: "red" }}>{err}</p>}
 
       <form onSubmit={handleLogin}>
-        <h1 className="logIn-head-h1">Welcome Back</h1>
+        <h1 className="logIn-head-h1">Hey User</h1>
         <p>Login to have access to your account</p>
         {inputs.map((i) => (
           <Form

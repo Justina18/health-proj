@@ -52,7 +52,7 @@ const SideBar = () => {
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject} className='p-wrap' to='/user_dashboard'>
+              isActive ? activeColorObject : colorObject} className='p-wrap' to='/Doctor_dashboard'>
               <RxDashboard color='white' fontSize={20}/>  
               <p className='dash-p'>  Dashboard</p>
               </NavLink>
@@ -84,7 +84,7 @@ const SideBar = () => {
               </NavLink> */}
           </div>
           <div className='logOut'>
-            <FiLogOut color='#d9d9d9' fontSize={30}/><h4>Log Out</h4>
+            <FiLogOut color='#d9d9d9' fontSize={20}/><h4>Log Out</h4>
           </div>
         </div>
   )

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
+import { FiLogOut } from "react-icons/fi";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -122,7 +123,7 @@ const Header = () => {
           <h4 className="head-links" onClick={() => navigate("/contact us")}>
             Contact Us
           </h4>
-          <h4 className="head-links" onClick={() => navigate("/dashboard")}>
+          <h4 className="head-links" onClick={() => navigate('/user_dashboard')}>
             Dashboard
           </h4>
           </>
@@ -131,7 +132,7 @@ const Header = () => {
         <div className="head-buttons">
           {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
             <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
-            <button className="head-sign-button" onClick={() => logOut()} >Log Out  </button>}
+            <button className="head-sign-button" onClick={() => logOut()} >Log Out  <FiLogOut color='#d9d9d9' fontSize={20}/> </button>}
         </div>
         <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
       </div>

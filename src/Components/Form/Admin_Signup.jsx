@@ -122,7 +122,7 @@ const Inputs = () => {
       event.preventDefault();
       const response = await axios.post("https://health360-h4ws.onrender.com/api/signup", values);
       console.log(response);
-      navigate("/User Login");
+      navigate("/admin_login");
       loginAlert();
     } catch (error) {
       console.log(error);
