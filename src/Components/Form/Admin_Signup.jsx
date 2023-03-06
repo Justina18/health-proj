@@ -199,6 +199,8 @@ const Inputs = () => {
             type="date"
             id="birthday"
             name="birthDate"
+            placeholder="Select your birthdate"
+            
           />
 
           <div className="foot">

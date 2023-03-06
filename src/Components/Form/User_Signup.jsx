@@ -149,6 +149,7 @@ const UserInput = () => {
           type="date"
           id="birthday"
           name="birthday"
+          placeholder="Select your birthdate"
         />
         <div className="foot">
           <div className="check">

@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const BookInput = () => {
   const { id, speciality } = useParams()
   const [appointmentType, setAppointmentType] = useState("");
-  const user = useSelector((state) => state.commerce.users[0]?.payload.data.data)
+  const user = useSelector((state) => state.commerce.users[0]?.data.data)
   // console.log(user)
 
 
