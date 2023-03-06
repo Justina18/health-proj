@@ -77,7 +77,7 @@ const Header = () => {
                 <hr />
                 <p
                   className="head-link"
-                  onClick={() => navigate("/user dashboard")}
+                  onClick={() => navigate("/user_dashboard")}
                 >
                   Dashboard
                 </p>
@@ -86,7 +86,7 @@ const Header = () => {
                   Go Premium
                 </p>
                 <hr />
-                <p className="head-link" onClick={() => navigate("/dashboard")}>
+                <p className="head-link" onClick={() => navigate("/doctor_dashboard")}>
                   Main
                 </p>
                 <hr />

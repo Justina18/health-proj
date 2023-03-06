@@ -16,10 +16,10 @@ import Prem from './Components/Prem/Prem'
 import About from './Components/About/About'
 import More from './Components/More/More'
 import Appointment from './Components/Dashboard/Appointment'
-import Dashboard from './Components/Dashboard/Dashboard'
+import Dashboard from './Components/Dashboard/user_dashboard'
 import Profile from './Components/Dashboard/Profile'
 import Homed from './Components/Homed.jsx/Homed'
-import UserDash from './Components/Dashboard/UserDash'
+import UserDash from './Components/Dashboard/Doctor_dashboard'
 import Notification from './Components/Dashboard/Notification'
 import UserUpload from './Components/Form/UserUpload';
 import UserSucess from './Components/Form/UserSucess';
@@ -64,7 +64,7 @@ const App = () => {
           <Route path='/upload' element={<Upload />} />
           <Route path='/log in img' element={<LogSuccess />} />
           <Route path='/appointment' element={<Appointment />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+
           <Route path='/choice' element={<Choose />} />
           <Route path='/forgot' element={<Forgot />} />
 
@@ -76,7 +76,10 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/more info' element={<More />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/user dashboard' element={<UserDash />} />
+
+          <Route path='/user_dashboard' element={<Dashboard />} />
+          <Route path='/doctor_dashboard' element={<UserDash />} />
+
           <Route path='/notifications' element={<Notification />} />
           <Route path='/user upload' element={<UserUpload />} />
           <Route path='/settings' element={<Settings />} />

@@ -39,7 +39,7 @@ const LogIn = () => {
       .then(function (res) {
         console.log(res.data);
         res.data.data.email === values.email ? dispatch(userData(res)) : null;
-        res.data.data.email === values.email ? navigate("/log in img") : null;
+        res.data.data.email === values.email ? navigate("/user_dashboard") : null;
         if (res.data.data.verify === true) {
           res.data.data.email === values.email ? navigate("/") : null;
         } else {

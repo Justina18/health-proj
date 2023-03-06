@@ -15,9 +15,9 @@ const LogSuccess = () => {
             <br />
             <b className="suc">Logged In!</b>
           </h2>
-          <button className="button" onClick={() => navigate("/dashboard")}>
+          {/* <button className="button" onClick={() => navigate("/user_dashboard")}>
             Continue
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

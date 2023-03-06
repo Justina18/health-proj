@@ -12,7 +12,6 @@ import axios from "axios";
 import UserSide from "./UserSide";
 
 
-
 const Appointment = () => {
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(true);

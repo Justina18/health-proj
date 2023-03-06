@@ -36,7 +36,7 @@ const UserSide = () => {
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject} className='p-wrap' to='/dashboard'>
+              isActive ? activeColorObject : colorObject} className='p-wrap' to='/doctor_dashboard'>
               <RxDashboard color='white' fontSize={20}/>  
               <p className='dash-p'>  Dashboard</p>
               </NavLink>
