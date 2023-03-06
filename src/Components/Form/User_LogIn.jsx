@@ -35,7 +35,7 @@ const LogIn = () => {
   const handleLogin = async (e) => {
 
     event.preventDefault();
-    await axios.post("https://health360-h4ws.onrender.com/api/userlogin", values)
+    await axios.post("https://health360-h4ws.onrender.com/api/login", values)
       .then(function (res) {
         console.log(res.data);
         res.data.data.email === values.email ? dispatch(userData(res)) : null;
