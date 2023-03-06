@@ -38,7 +38,7 @@ const LogIn = () => {
     await axios.post("https://health360-h4ws.onrender.com/api/doctorlogin", values)
       .then(function (res) {
         console.log(res.data);
-        res.data.data.email === values.email ? dispatch(userData(res)) : null;
+        res.data.data.email === values.email ? dispatch(userData(res.data.data)) : null;
         res.data.data.email === values.email ? navigate("/doctor_dashboard") : null;
         if (res.data.data.verify === true) {
           res.data.data.email === values.email ? navigate("/") : null;

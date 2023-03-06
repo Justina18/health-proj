@@ -65,36 +65,6 @@ const BookInput = () => {
           />
         ))}
 
-        {/* <div className="custom-select">
-        <select onChange={(e) => setAppointmentType(e.target.value)}>
-          <option value="">Specialty</option>
-          <option value="Allergy and immunology">Allergy and immunology</option>
-          <option value="Anesthesiology">Anesthesiology</option>
-          <option value="Dermatology">Dermatology</option>
-          <option value="Diagnostic radiology">Diagnostic radiology</option>
-          <option value="Emergency medicine">Emergency medicine</option>
-          <option value="Family medicine">Family medicine</option>
-          <option value="Internal medicine">Internal medicine</option>
-          <option value="Medical genetics">Medical genetics</option>
-          <option value="Neurology">Neurology</option>
-          <option value="Nuclear medicine">Nuclear medicine</option>
-          <option value="Obstetrics and gynecology">
-            Obstetrics and gynecology
-          </option>
-          <option value="Ophthalmology">Ophthalmology</option>
-          <option value="Pathology">Pathology</option>
-          <option value="Pediatrics">Pediatrics</option>
-          <option value="Physical medicine and rehabilitation">
-            Physical medicine and rehabilitation
-          </option>
-          <option value="Preventive medicine">Preventive medicine</option>
-          <option value="Psychiatry">Psychiatry</option>
-          <option value="Radiation oncology">Radiation oncology</option>
-          <option value="Surgery">Surgery</option>
-          <option value="Urology">Urology</option>
-        </select>
-        </div> */}
-
         <button className="button" type="submit">
           Proceed to payments
         </button>

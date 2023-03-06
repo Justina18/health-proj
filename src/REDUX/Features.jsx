@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   users: [],
+  id: ""
 };
 
 const features = createSlice({
@@ -23,8 +24,14 @@ const features = createSlice({
         state.cart.push(items);
       }
     },
+    addId: (state, {payload}) =>{
+      state.id = payload
+  },
+  signOut: (state) => {
+    state.id = "";
+  }
   },
 });
 
-export const { userData, clear_userData, addToCart } = features.actions;
+export const { userData, clear_userData, addToCart,addId,  } = features.actions;
 export default features.reducer;

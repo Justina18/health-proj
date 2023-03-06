@@ -21,6 +21,17 @@ const UserSide = () => {
     color: "white",
     fontWeight:500,
   }
+  const logOut = async () => {
+    console.log(user._id)
+    try {
+      const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
+      console.log(res.data);
+      res.status === 200 ? dispatch(clear_userData()) : null;
+      res.status === 200 ? navigate("/") : null;
+    } catch (e) {
+      console.log(e)
+    }
+  };
 
 
   return (
@@ -67,7 +78,7 @@ const UserSide = () => {
                <AiOutlineSetting color='white'  fontSize={20}/> <p className='dash-p'> Settings</p>
               </NavLink> */}
           </div>
-          <div className='logOut'>
+          <div className='logOut' onClick={() => logOut()}>
             <FiLogOut color='#d9d9d9' fontSize={30}/><h4>Log Out</h4>
           </div>
         </div>

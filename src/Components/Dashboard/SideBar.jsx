@@ -38,6 +38,17 @@ const SideBar = () => {
     fontWeight:400,
   }
 
+  const logOut = async () => {
+    console.log(user._id)
+    try {
+      const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
+      console.log(res.data);
+      res.status === 200 ? dispatch(clear_userData()) : null;
+      res.status === 200 ? navigate("/") : null;
+    } catch (e) {
+      console.log(e)
+    }
+  };
 
   return (
         <div className='sided'>
@@ -83,8 +94,8 @@ const SideBar = () => {
                <AiOutlineSetting color='white'  fontSize={20}/> <p className='dash-p'> Settings</p>
               </NavLink> */}
           </div>
-          <div className='logOut'>
-            <FiLogOut color='#d9d9d9' fontSize={20}/><h4>Log Out</h4>
+          <div className='logOut' onClick={() => logOut()}>
+            <FiLogOut color='#d9d9d9' fontSize={20}/><h5>Log Out</h5>
           </div>
         </div>
   )

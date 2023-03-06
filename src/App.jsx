@@ -39,6 +39,9 @@ import DocVer from './Components/Form/DocVer';
 import Admin_Signup from './Components/Form/Admin_Signup'
 import User_LogIn from './Components/Form/User_LogIn';
 import Admin_Login from './Components/Form/Admin_LogIn'
+import Apps from './ChatRoom/Apps';
+
+
 const App = () => {
 
 
@@ -98,6 +101,7 @@ const App = () => {
           <Route path='/verify' element={<Verify />} />
           <Route path='/doc verify' element={<DocVer />} />
           <Route path='/bookInputs/:id/:speciality' element={<BookInput />} />
+          <Route path='/ChatRoom' element={ <Apps/> } />
         </Routes>
       </Router>
     </div>

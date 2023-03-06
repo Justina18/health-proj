@@ -11,7 +11,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const user = useSelector((state) => state.commerce.users[0]?.data.data)
+  const user = useSelector((state) => state.commerce.users[0])
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -100,7 +100,7 @@ const Header = () => {
         )}
 
 <div className="head-links">
-       {user ? 
+       {!user ? 
         <>
           <h4 onClick={() => navigate("/")} className="head-links">
             Home
@@ -111,6 +111,7 @@ const Header = () => {
           <h4 className="head-links" onClick={() => navigate("/contact us")}>
             Contact Us
           </h4>
+         
           </>
           :
           <>
@@ -126,13 +127,16 @@ const Header = () => {
           <h4 className="head-links" onClick={() => navigate('/user_dashboard')}>
             Dashboard
           </h4>
+          <h4 className="head-links" onClick={() => navigate('/ChatRoom')}>
+            Chat Room
+          </h4>
           </>
        } 
        </div>
         <div className="head-buttons">
-          {user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
+          {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
             <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
-            <button className="head-sign-button" onClick={() => logOut()} >Log Out  <FiLogOut color='#d9d9d9' fontSize={20}/> </button>}
+            <button className="head-sign-button" onClick={() => logOut()} >Log Out </button>}
         </div>
         <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
       </div>

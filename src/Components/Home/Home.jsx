@@ -8,6 +8,7 @@ import About from '../About/About';
 import Homed from '../Homed.jsx/Homed';
 import Whys from '../Whys/Whys';
 import Hows from '../Hows/Hows';
+import Interest from '../Interest/Interest';
 
 const Home = () => {
 
@@ -24,6 +25,7 @@ const Home = () => {
         <Whys/>
         <Hows/>
         <Are/>
+        <Interest/>
         <Footer/>
     </div>
   )
