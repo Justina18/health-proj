@@ -9,7 +9,7 @@ const Header = () => {
     <div className="Head">
       <div className="head-wrap">
         <h2>Chats</h2>
-        <div>
+        <div className="chat-head-icons">
           <BsChatDots />
           <IoIosMore />
         </div>

@@ -100,7 +100,7 @@ const Header = () => {
         )}
 
 <div className="head-links">
-       {!user ? 
+       {user ? 
         <>
           <h4 onClick={() => navigate("/")} className="head-links">
             Home
@@ -134,7 +134,7 @@ const Header = () => {
        } 
        </div>
         <div className="head-buttons">
-          {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
+          {user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
             <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
             <button className="head-sign-button" onClick={() => logOut()} >Log Out </button>}
         </div>

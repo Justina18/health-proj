@@ -7,7 +7,6 @@ import { CiFolderOn } from 'react-icons/ci'
 import { useSelector } from "react-redux";
 import { AiFillHome, AiOutlineMessage, AiOutlineSetting, AiOutlinePhone } from "react-icons/ai";
 import { BiUserCircle, BiBell } from "react-icons/bi";
-// import SideBar from "./SideBar";
 import axios from "axios";
 import UserSide from "../UserSide";
 

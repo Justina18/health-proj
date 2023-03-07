@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-.Apps{
+
+.Apps {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,36 +14,42 @@
     height: 100vh;
     background: linear-gradient(to left, #2991E0, #1B75BC, #006edc);
 }
-.head-wrap-img-wrap{
+
+.head-wrap-img-wrap {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     width: 96%;
     height: 45px;
 }
-.head-wrap-img{
+
+.head-wrap-img {
     width: 50px;
     height: 100%;
 }
-.Main{
+
+.Main {
     width: 85%;
     height: 90%;
     background-color: white;
     display: flex;
     border-radius: 3px;
-    
+
 }
-.Side{
+
+.Side {
     border-radius: 8px 0 0 8px;
     background-color: white;
     flex: 1;
     border-right: 1px solid #e2e2e2;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-.Head{
+
+.Head {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +57,8 @@
     gap: 10px;
     width: 100%;
 }
-.head-wrap{
+
+.head-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +66,7 @@
     padding: 8px;
     width: 95%;
 }
+
 .inp {
     display: flex;
     justify-content: center;
@@ -69,8 +79,9 @@
     box-shadow: 0px 2px 12px 3px rgba(224, 232, 248, 0.75);
     /* -webkit-box-shadow: 0px 2px 14px 5px rgba(213, 225, 250, 0.75);
     -moz-box-shadow: 0px 2px 14px 5px rgba(213, 225, 250, 0.75); */
-  }
-  .input{
+}
+
+.input {
     /* background-color: aqua; */
     border: none;
     padding-left: 5px;
@@ -78,5 +89,54 @@
     height: 40px;
     border-radius: 5px;
     width: 90%;
-  }
+}
 
+.chat-head-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.fri-cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardss {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-text P {
+    font-size: 0.8rem;
+}
+
+.card-text {
+    line-height: 22px;
+}
+
+.cardss-wrap {
+    cursor: pointer;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.cardss-wrap :hover { 
+    border-bottom: 1px solid #fff;
+    background-color: #e2e2e2;
+}
+
+.card-text-up {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-text-up h5 {
+    margin-right: 15px;
+}
