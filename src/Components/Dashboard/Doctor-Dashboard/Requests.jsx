@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SideBar from "./SideBar";
-import "./User.css";
+import SideBar from "../SideBar";
+import "../User.css";
 import { useNavigate} from "react-router-dom";
 import { useSelector } from "react-redux";
 import { MdOutlineCancel } from "react-icons/md";

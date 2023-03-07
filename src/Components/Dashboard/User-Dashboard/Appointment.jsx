@@ -9,7 +9,7 @@ import { AiFillHome, AiOutlineMessage, AiOutlineSetting, AiOutlinePhone } from "
 import { BiUserCircle, BiBell } from "react-icons/bi";
 // import SideBar from "./SideBar";
 import axios from "axios";
-import UserSide from "./UserSide";
+import UserSide from "../UserSide";
 
 
 const Appointment = () => {

@@ -15,19 +15,18 @@ import Book from './Components/Book/Book'
 import Prem from './Components/Prem/Prem'
 import About from './Components/About/About'
 import More from './Components/More/More'
-import Appointment from './Components/Dashboard/Appointment'
-import Dashboard from './Components/Dashboard/User_dashboard'
-import Profile from './Components/Dashboard/Profile'
+import Appointment from './Components/Dashboard/User-Dashboard/Appointment';
+import Dashboard from './Components/Dashboard/User-Dashboard/User_dashboard'
+import Profile from './Components/Dashboard/Doctor-Dashboard/Profile'
 import Homed from './Components/Homed.jsx/Homed'
-import UserDash from './Components/Dashboard/Doctor_dashboard'
-import Notification from './Components/Dashboard/Notification'
+import UserDash from './Components/Dashboard/Doctor-Dashboard/Doctor_dashboard'
 import UserUpload from './Components/Form/UserUpload';
 import UserSucess from './Components/Form/UserSucess';
 import Settings from './Components/Dashboard/Settings';
 import Texts from './Components/Dashboard/Texts';
 import BookInfo from './Components/Book/BookInfo';
-import UserPro from './Components/Dashboard/UserPro';
-import Requests from './Components/Dashboard/Requests';
+import UserPro from './Components/Dashboard/User-Dashboard/UserPro';
+import Requests from './Components/Dashboard/Doctor-Dashboard/Requests';
 
 import User_Signup from './Components/Form/User_Signup'
 import Verify from './Components/Form/Verify';

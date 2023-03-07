@@ -1,4 +1,4 @@
-import './Profile.css'
+import '../Profile.css'
 import React,{useState, useRef, useReducer} from 'react'
 import {BsJournalBookmarkFill} from 'react-icons/bs'
 import { useNavigate,NavLink } from 'react-router-dom';
@@ -6,7 +6,7 @@ import {FiAlignJustify} from 'react-icons/fi';
 import {FaTimes} from 'react-icons/fa'
 import {AiFillHome,AiOutlineMessage,AiOutlineSetting} from 'react-icons/ai'
 import {BiUserCircle,BiBell} from 'react-icons/bi'
-import SideBar from './SideBar';
+import SideBar from '../SideBar';
 
 const Profile = () => {
   const navigate = useNavigate()

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./User.css";
+import "../User.css";
 import { CiFolderOn } from "react-icons/ci";
 import { MdLocationOn } from "react-icons/md";
 import { BsQuestionCircle } from "react-icons/bs";

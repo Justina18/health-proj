@@ -1,6 +1,6 @@
 import React from "react";
-import SideBar from "./SideBar";
-import "./User.css";
+import SideBar from "../SideBar";
+import '../User.css'
 import { useNavigate } from "react-router-dom";
 import { BsFillJournalBookmarkFill } from "react-icons/bs";
 import { MdAttachMoney, MdOutlineCancel } from "react-icons/md";

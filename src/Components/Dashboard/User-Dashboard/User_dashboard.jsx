@@ -9,8 +9,8 @@ import { BsFillJournalBookmarkFill } from "react-icons/bs";
 import { MdAttachMoney, MdOutlineCancel } from "react-icons/md";
 import { HiOutlineUsers } from "react-icons/hi";
 import { TiTick } from "react-icons/ti";
-import "./Dashboard.css";
-import UserSide from "./UserSide";
+import "../Dashboard.css";
+import UserSide from "../UserSide";
 
 function reducer(todos, action) {
   switch (action.type) {
