@@ -59,6 +59,7 @@ const Header = () => {
         </div>
         {isOpen && (
           <div className="hid-wrap">
+               {!user ? 
             <div className="hid">
               <div className="head-link">
                 <p onClick={() => navigate("/")} className="head-link">
@@ -76,26 +77,52 @@ const Header = () => {
                   Contact Us
                 </p>
                 <hr />
-                <p
-                  className="head-link"
-                  onClick={() => navigate("/user_dashboard")}
-                >
-                  Dashboard
-                </p>
-                <hr />
                 <p className="head-link" onClick={() => navigate("premium")}>
                   Go Premium
-                </p>
-                <hr />
-                <p className="head-link" onClick={() => navigate("/doctor_dashboard")}>
-                  Main
                 </p>
                 <hr />
                 <p className="head-link" onClick={() => navigate('/doc verify')}>
                   Log Out
                 </p>
               </div>
+            </div>:
+            <div className="hid">
+            <div className="head-link">
+              <p onClick={() => navigate("/")} className="head-link">
+                Home
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate('/about')}>
+                About Us
+              </p>
+              <hr />
+              <p
+                className="head-link"
+                onClick={() => navigate('/contact us')}
+              >
+                Contact Us
+              </p>
+              <hr />
+              <p
+                className="head-link"
+                onClick={() => navigate("/user_dashboard")}
+              >
+                Dashboard
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate("premium")}>
+                Go Premium
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate("/doctor_dashboard")}>
+                Main
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate('/doc verify')}>
+                Log Out
+              </p>
             </div>
+          </div>}
           </div>
         )}
 
