@@ -78,7 +78,7 @@ const BookInput = () => {
         ))}
 
         <button className="button" type="submit">
-          Proceed to payments
+          Finish Up
         </button>
 
       </form>
