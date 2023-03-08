@@ -6,11 +6,11 @@ import "./Prem.css";
 const Prem = () => {
   const navigate = useNavigate();
   const payment = () => {
-    const refVal = "my-ref" + Math.random() * 1000;
+    let key = `key${Math.random()}`
     window.Korapay.initialize({
       key: "pk_test_XQyhbERtfEJPqWZLyaWYGv9pptvyYc59W3cZ3UK2",
-      reference: `${refVal}`,
-      amount: 22000,
+      reference: key,
+      amount: 150,
       currency: "NGN",
       customer: {
         name: "John Doe",
@@ -41,7 +41,7 @@ const Prem = () => {
             The Health360 platform gives a 10% {" "}
              discount off every appointment and consultation of the week.
           </p>
-          $150
+          #1500
           <button className="prem-butt" onClick={payment}>
             Subscribe
           </button>
@@ -54,7 +54,7 @@ const Prem = () => {
           The Health360 platform gives a 15% {" "}
              discount off every appointment and consultation of the week.
           </p>
-          $500
+          #5000
           <button className="prem-butt" onClick={payment}>
             Subscribe
           </button>
@@ -74,7 +74,7 @@ const Prem = () => {
             The Health360 platform gives a 20% {" "}
              discount off every appointment and consultation of the week!!
           </li>
-          $1500
+          #50000
           <button className="prem-butt" onClick={payment}>
             Subscribe
           </button>
