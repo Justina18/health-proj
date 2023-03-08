@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import BookForm from "./BookForm";
 import './Book.css'
+import Swal from 'sweetalert2'
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 const BookInput = () => {
@@ -61,12 +63,14 @@ const BookInput = () => {
       console.log(error);
     }
   };
+  
+  const navigate = useNavigate();
 
   return (
     <div className="BookInp">
 
       <form onSubmit={handleSubmit} className="BookInpForm">
-        <h1>Talk to us</h1>
+        <h1>Make choices!</h1>
         <p>Select a date and the time you wish your appointment be.</p>
         {inputs.map((i) => (
           <BookForm
@@ -82,7 +86,7 @@ const BookInput = () => {
               title: "You have successfully booked an appointment!",
               text: "Over to your dashboard",
               icon: 'success',
-              confirmButtonText: "Cool",
+              confirmButtonText: navigate('/user_dashboard'),
               
             })
           } className="button" type="submit">
