@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import SideBar from "../SideBar";
+import { useSelector } from "react-redux";
 import '../User.css'
 import { useNavigate } from "react-router-dom";
 import { BsFillJournalBookmarkFill } from "react-icons/bs";
@@ -8,9 +9,11 @@ import { HiOutlineUsers } from "react-icons/hi";
 import { AiOutlinePhone } from "react-icons/ai";
 import { CiFolderOn } from "react-icons/ci";
 import { BsSuitHeartFill } from "react-icons/bs";
-
+import axios from "axios";
 const UserDash = () => {
   const navigate = useNavigate();
+  const user = useSelector((state) => state.commerce.users[0])
+  const [item, setItem] = useState([])
   const cards = [
     {
       id: 1,
@@ -45,6 +48,24 @@ const UserDash = () => {
       date: "6 March",
     },
   ];
+
+  const getApointment = async () => {
+    console.log("clicked");
+    console.log(user._id)
+    try {
+      const res = await axios.get(`https://health360-h4ws.onrender.com/api/${user._id}/myappointment`);
+      console.log(res);
+      setItem(res.data.data)
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getApointment()
+    // console.log(user)
+  }, [])
+
   return (
     <div className="user-dash">
       <SideBar />
@@ -110,7 +131,7 @@ const UserDash = () => {
         <div className="lower-user-dash-wrap">
           <div className="user-dash-wrap-lower-wrapper">
             <div>
-              {cards.map((i) => (
+              {item?.map((i) => (
                 <div className="user-dash-wrap-lower">
                   <img className="user-dash-wrap-lower-img" src={i.img} />
                   <div className="user-dash-wrap-lower-text">
@@ -128,6 +149,9 @@ const UserDash = () => {
                 </div>
               ))}
             </div>
+
+
+
 
             <div className="Today">
               <h3 className="user-dash-h3"> Today's Appointments</h3>

@@ -7,17 +7,25 @@ import { useSelector } from "react-redux";
 const BookInput = () => {
   const { id, speciality } = useParams()
   const [appointmentType, setAppointmentType] = useState("");
-  const user = useSelector((state) => state.commerce.users[0]?.data.data)
+  const user = useSelector((state) => state.commerce.users[0])
   // console.log(user)
 
 
   const [valued, setValued] = useState({
     appointmentDate: "",
     appointmentTime: "",
-    appointmentType: speciality,
-    bookDoctor: id,
   });
 
+  let originalDate = "2022-04-3";
+  let parts = valued.appointmentDate.split("-");
+  let newDate = parts[2] + "-" + ("0" + parts[1]).slice(-2) + "-" + parts[0];
+
+  let { appointmentTime } = valued
+  const value = {
+    appointmentTime,
+    appointmentType: speciality,
+    appointmentDate: newDate,
+  }
   const inputs = [
     {
       id: 1,
@@ -39,11 +47,15 @@ const BookInput = () => {
   };
 
   const handleSubmit = async (event) => {
+    // console.log(valued.appointmentDate)
+    console.log(newDate)
+    console.log(value)
     event.preventDefault();
-    console.log(valued);
+    // console.log(valued);
+    console.log(id)
     try {
       event.preventDefault();
-      const response = await axios.post(`https://health360-h4ws.onrender.com/api/${user._id}/bookappointment`, valued);
+      const response = await axios.post(`https://health360-h4ws.onrender.com/api/${user._id}/${id}/bookappointment`, valued);
       console.log(response);
     } catch (error) {
       console.log(error);

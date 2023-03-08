@@ -60,6 +60,7 @@ const App = () => {
     <div className='App'>
       <Router>
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path='/homed' element={<Homed />} />
 
@@ -101,6 +102,7 @@ const App = () => {
           <Route path='/doc verify' element={<DocVer />} />
           <Route path='/bookInputs/:id/:speciality' element={<BookInput />} />
           <Route path='/ChatRoom' element={ <Apps/> } />
+          
         </Routes>
       </Router>
     </div>

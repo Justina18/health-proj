@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 const UserPro = () => {
   const [doc, setDoc] = useState()
-  const user = useSelector((state) => state.commerce.users[0]?.data.data)
+  const user = useSelector((state) => state.commerce.users[0])
 
 
 
@@ -24,7 +24,7 @@ const UserPro = () => {
 
   useEffect(() => {
     getDoc()
-    // console.log(user)
+    console.log(user)
   }, [])
 
 

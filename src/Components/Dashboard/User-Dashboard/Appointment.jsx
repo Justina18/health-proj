@@ -11,13 +11,12 @@ import { BiUserCircle, BiBell } from "react-icons/bi";
 import axios from "axios";
 import UserSide from "../UserSide";
 
-
 const Appointment = () => {
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [app, setApp] = useState([])
-  const user = useSelector((state) => state.commerce.users[0]?.data.data)
+  const user = useSelector((state) => state.commerce.users[0])
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -43,17 +42,16 @@ const Appointment = () => {
 
   const getApp = async () => {
     try {
-      const res = await axios.get(`https://health360-h4ws.onrender.com/api/${user._id}/myappointment`)
+      const res = await axios.get(`https://health360-h4ws.onrender.com/api/`)
       console.log(res.data.data)
       setApp(res.data.data)
     } catch (e) {
       console.log(e)
     }
   }
-
-
+  
   useEffect(() => {
-    getApp()
+    // getApp()
     // console.log(user)
   }, [])
 
@@ -160,9 +158,6 @@ const Appointment = () => {
               </div>
             </div>
           ))}
-
-
-
         </div>
       </div>
     </div>
