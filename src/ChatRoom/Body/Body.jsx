@@ -36,10 +36,10 @@ const Body = () => {
             </div>
 
             <div className="body-icon">
-              <BsCameraVideo />
-              <MdCall />
-              <hr />
-              <BiSearch />
+              <BsCameraVideo className="body-icons" />
+              <MdCall className="body-icons" />
+              <hr className="chat-line" />
+              <BiSearch className="body-icons" />
             </div>
           </div>
         </div>
@@ -59,12 +59,46 @@ const Body = () => {
               <div className= "messenger">
                 <div className="content">
                   <div >
-                    <p>Hi</p>
+                    <p>Hi Doc...I suppose you've already read about me from my request and profile. So, let's cut straight to the chase as our time is limited.</p>
+                  </div>
+              </div>
+              </div>
+
+              <div className= "message">
+              <div className="content">
+                <div >
+                  <p>Sure. So when did your migraines start?</p>
+                </div>
+              </div>
+              </div>
+              
+              <div className= "messenger">
+                <div className="content">
+                  <div >
+                    <p>Earlier this morning Doc.</p>
+                  </div>
+              </div>
+              </div>
+
+              <div className= "message">
+              <div className="content">
+                <div >
+                  <p>Okay...Okay<br/> Do you still have it?</p>
+                </div>
+              </div>
+              </div>
+              
+              <div className= "messenger">
+                <div className="content">
+                  <div >
+                    <p>Yes Doc...I haven't been able to have as much as a meal cos it hurts as the sides of my head.</p>
                   </div>
               </div>
               </div>
           </div>
         </div>
+
+        
 
         <div className="body-inp">
           <div className="body-icons">
@@ -73,6 +107,7 @@ const Body = () => {
           <div className="body-icons">
             <AiOutlinePaperClip />
           </div>
+          <hr className="chat-line" />
           <input
             className="body-lower-inp"
             type="text"

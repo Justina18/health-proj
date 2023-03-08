@@ -36,13 +36,31 @@
 }
 
 .main-body {
-    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
     width: 100%;
     background-image: url("/Chat-Bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+/* 
+.main-body ::-webkit-scrollbar {
+    width: 20px;
+}
+
+.main-body ::-webkit-scrollbar-track {
+    box-shadow: green;
+}
+
+.main-body ::-webkit-scrollbar-thumb {
+    background-color: aqua;
+    border-radius: 5px;
+}
+
+.main-body ::-webkit-scrollbar-thumb :hover {
+    background-color: blueviolet;
+} */
 
 .body-inp {
     display: flex;
@@ -50,8 +68,8 @@
     align-items: center;
     width: 100%;
     background-color: white;
-    height: 60px;
-    gap: 12px;
+    height: 80px;
+    gap: 8px;
     border-top: 1px solid #e2e2e2;
 }
 
@@ -61,7 +79,8 @@
     align-items: center;
     gap: 3px;
 }
-.message-name-wrap{
+
+.message-name-wrap {
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
@@ -76,22 +95,25 @@
     width: 100%;
 }
 
-.messages-head-img{
+.messages-head-img {
     width: 40px;
     border-radius: 50px;
     object-fit: cover;
     height: 40px;
     margin-top: 10px;
 }
-.message{
+
+.message {
     display: flex;
     align-self: flex-start;
     max-width: 30%;
     /* justify-content: flex-start; */
     box-shadow: 0px 2px 12px 3px rgba(224, 232, 248, 0.75);
     background-color: white;
+    border-radius: 12px 12px 12px 0;
 }
-.messenger{
+
+.messenger {
     display: flex;
     align-self: flex-end;
     max-width: 30%;
@@ -99,30 +121,43 @@
     box-shadow: 0px 2px 12px 3px rgba(224, 232, 248, 0.75);
     background-color: rgb(111, 170, 197);
     color: white;
+    border-radius: 12px 12px 0 12px;
 }
-.message .content{
-        min-width: 40%;
-        max-width: 100%;
-        overflow-wrap: break-word;
-        padding: 1rem;
-        font-size: 1.1rem;
-        border-radius: 1rem;
+
+.message .content {
+    min-width: 40%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
 }
-.messenger .content{
-        min-width: 40%;
-        max-width: 100%;
-        overflow-wrap: break-word;
-        padding: 1rem;
-        font-size: 1.1rem;
-        border-radius: 1rem;
+
+.messenger .content {
+    min-width: 40%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
 }
 
 .body-lower-inp {
+    max-height: 30%;
     width: 85%;
     outline: none;
     border: none;
 }
 
+.body-icon{
+    display: flex;
+    gap: 10px;
+}
+
 .body-icons {
     cursor: pointer;
+}
+.chat-line{
+    height: 20px;
+    width: 0;
 }
