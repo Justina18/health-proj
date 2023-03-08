@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.StudentPayment_Main {
+    width: 70%;
+    height: 100%;
+    margin-left: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.StudentPayment_Main_Wrap {
+    width: 70%;
+    background-color: rgb(250, 250, 255);
+    box-shadow: -2px 3px 13px 0px rgb(173, 175, 176);
+    border-radius: 8px;
+
+}
+
+.StudentPayment_Main_Form {
+    width: 500px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Student_Payment_Input {
+    width: 400px;
+    height: 40px;
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.Payment_Button {
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #5390D9;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 426px) {
+    .StudentPayment_Main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: red; */
+        margin-right: 100px;
+    }
+
+    .StudentPayment_Main_Wrap {
+        width: 100%;
+        background-color: rgb(250, 250, 255);
+        box-shadow: -2px 3px 13px 0px rgb(173, 175, 176);
+        border-radius: 8px;
+
+
+    }
+
+    .StudentPayment_Main_Form {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: rgb(250, 250, 255); */
+        /* margin-right: 60px; */
+    }
+
+    .Student_Payment_Input {
+        width: 250px;
+        height: 40px;
+        /* margin-right: 40px; */
+    }
+    .Payment_Button {
+        width: 250px;
+        /* margin-right: 40px; */
+
+    }
+}
