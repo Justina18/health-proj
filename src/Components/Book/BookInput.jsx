@@ -77,7 +77,15 @@ const BookInput = () => {
           />
         ))}
 
-        <button className="button" type="submit">
+        <button onClick={() =>
+            Swal.fire({
+              title: "You have successfully booked an appointment!",
+              text: "Over to your dashboard",
+              icon: 'success',
+              confirmButtonText: "Cool",
+              
+            })
+          } className="button" type="submit">
          Confirm Appointment
         </button>
 
