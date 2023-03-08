@@ -83,7 +83,7 @@ const Book = () => {
             <div key={i._id} className="book-wrap-main">
               <Link to={`/docs details/${i._id}`} className="book-wrap-maine">
                 <div className="book-img-wrap">
-                  <img className="book-img" src={'i.img'} />
+                  <img className="book-img" src='/doc-pro.png' />
                 </div>
                 <div className="book-wrap-main-text">
                   <h3 className="book-h">{i.name}</h3>
