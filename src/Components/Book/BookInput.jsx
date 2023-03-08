@@ -78,11 +78,7 @@ const BookInput = () => {
         ))}
 
         <button className="button" type="submit">
-<<<<<<< HEAD
          Confirm Appointment
-=======
-          Finish Up
->>>>>>> 8431e07565d85ff709c5cabd76c46f2193680f23
         </button>
 
       </form>
