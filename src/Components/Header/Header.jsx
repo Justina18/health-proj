@@ -80,10 +80,6 @@ const Header = () => {
                 <p className="head-link" onClick={() => navigate("premium")}>
                   Go Premium
                 </p>
-                <hr />
-                <p className="head-link" onClick={() => navigate('/doc verify')}>
-                  Log Out
-                </p>
               </div>
             </div>:
             <div className="hid">
