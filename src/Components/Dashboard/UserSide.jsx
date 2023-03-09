@@ -73,7 +73,7 @@ const UserSide = () => {
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject}  to='/texts' className='p-wrap'>
+              isActive ? activeColorObject : colorObject}  to='/ChatRoom' className='p-wrap'>
               <AiOutlineMessage color='white'  fontSize={20}/>  <p className='dash-p'>  Messages</p>
               </NavLink>
               <br/>

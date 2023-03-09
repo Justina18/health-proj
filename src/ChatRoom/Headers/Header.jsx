@@ -15,7 +15,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="inp">
+      <div className="chat-inp">
         <input className="input" type="search" name="" id="" />
         <MdOutlineCancel fontSize={16}/>
       </div>

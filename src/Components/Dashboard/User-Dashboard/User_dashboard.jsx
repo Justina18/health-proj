@@ -3,28 +3,15 @@ import { BsSuitHeartFill, BsJournalBookmarkFill } from "react-icons/bs";
 import { useNavigate, NavLink } from "react-router-dom";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
-import { GrAddCircle } from "react-icons/gr";
+import { MdOutlineAddCircleOutline } from "react-icons/md";
 import { AiFillHome, AiOutlineMessage, AiOutlineSetting } from "react-icons/ai";
 import { BiUserCircle, BiBell } from "react-icons/bi";
 import "../Dashboard.css";
 import UserSide from "../UserSide";
 
-function reducer(todos, action) {
-  switch (action.type) {
-    case "Add":
-      return [...todos, newTodo(action.payload.name)];
-    case "checked":
-      return action.payload.Check;
-    case "delete":
-      return action.payload.Check;
-  }
-}
-
-function newTodo(inputRef) {
-  return { id: Date.now(), todo: inputRef, checkers: false };
-}
 
 const Dashboard = () => {
+  
   const handleClick = () => {
     dispatch({ type: "Add", payload: { name: inputRef.current.value } });
   };
@@ -43,11 +30,6 @@ const Dashboard = () => {
     <div>
       <FaTimes fontSize={25} color="#fff" onClick={handleToggle} />
     </div>
-  );
-  const inputRef = useRef("");
-  const [state, dispatch] = useReducer(
-    reducer,
-    JSON.parse(localStorage.getItem("todo")) || []
   );
 
   const getResponse = JSON.parse(localStorage.getItem("res"));
@@ -103,13 +85,13 @@ const Dashboard = () => {
         <div className="hey-wrap">
           <div className="heys">
             {getResponse ? (
-              <h1>
+              <h1  className="profiled-up-h1">
                 Hello {getResponse.data.data.name}!
                 <BsSuitHeartFill color="E22727" fontSize={25} />{" "}
               </h1>
             ) : (
               <div>
-                <h1>
+                <h1 className="profiled-up-h1">
                   {" "}
                   Hello User!
                   {/* <BsSuitHeartFill color="E22727" fontSize={25} */}
@@ -128,34 +110,36 @@ const Dashboard = () => {
           <div className="profiled-wrap">
             <div className="profiled-up">
               <img src="/doc-pro.png" alt="" />
-              <h1>Nina Igbani</h1>
-              <p>nibani09@gmail.com</p>
-              <h5>Appointments</h5>
+              <div className="profiled-head-text">
+                <h1>Nina Igbani</h1>
+                <p>nibani09@gmail.com</p>
+                <h5 className="profiled-up-h1">Appointments</h5>
+              </div>
               <div className="profiled-number">
                 <div className="profiled-number-1">
-                  <h1>4</h1>
+                  <h1>5</h1>
                   <p>Past</p>
                 </div>
                 <hr className="profiled-hr" />
                 <div className="profiled-number-1">
-                  <h1>3</h1>
+                  <h1>2</h1>
                   <p>Upcoming</p>
                 </div>
               </div>
               <button className="edit">Edit</button>
             </div>
 
-            <hr className="divide"/>
+            <hr className="divide" />
 
             <div className="profiled-down">
               <div className="profiled-down-content">
                 <div className="profiled-down-content-1">
-                  <h4>Gender</h4>
+                  <h4 className="profiled-up-h1">Gender</h4>
                   <p>Female</p>
                   <hr />
                 </div>
                 <div className="profiled-down-content-1">
-                  <h4>Birthday</h4>
+                  <h4 className="profiled-up-h1">Birthday</h4>
                   <p>Oct. 25, 1993</p>
                   <hr />
                 </div>
@@ -163,12 +147,12 @@ const Dashboard = () => {
 
               <div className="profiled-down-content">
                 <div className="profiled-down-content-1">
-                  <h4>Phone Number</h4>
+                  <h4 className="profiled-up-h1">Phone Number</h4>
                   <p>09161609940</p>
                   <hr />
                 </div>
                 <div className="profiled-down-content-1">
-                  <h4>Location</h4>
+                  <h4 className="profiled-up-h1">Location</h4>
                   <p>Lagos</p>
                   <hr />
                 </div>
@@ -176,12 +160,12 @@ const Dashboard = () => {
 
               <div className="profiled-down-content">
                 <div className="profiled-down-content-1">
-                  <h4>Gender</h4>
+                  <h4 className="profiled-up-h1">Gender</h4>
                   <p>Female</p>
                   <hr />
                 </div>
                 <div className="profiled-down-content-1">
-                  <h4>Birthday</h4>
+                  <h4 className="profiled-up-h1">Birthday</h4>
                   <p>Oct. 25, 1993</p>
                   <hr />
                 </div>
@@ -192,75 +176,54 @@ const Dashboard = () => {
 
         <div className="user-dash-wrap-lower-wrapped">
           <div className="up-menu">
-            <p>Upcoming Appointments </p>
-            <p>Past Appointments</p>
-            <button className="up-menu-button">
+            <p className="up-menu-p">Upcoming Appointments </p>
+            <p className="user-dash-wrap-lower-wrapped-p">Past Appointments</p>
+            <button  onClick={() => navigate("book")} className="up-menu-button">
               Add Appointment
-              <GrAddCircle color="white" />
+              <MdOutlineAddCircleOutline fontSize={20} color='#fff' />
             </button>
           </div>
           <div className="up-menu-content">
             <hr className="up-menu-content-hr" />
             <div className="up-menu-content-wrap">
               <div className="up-menu-date">
-                <h3>01 Jun'20</h3>
-                <p>09:00am</p>
+                <h3 className="profiled-up-h1">01 Jun'20</h3>
+                <p className="user-dash-wrap-lower-wrapped-p">09:00am</p>
               </div>
               <hr className="up-menu-hr" />
               <div className="up-menu-date">
-                <p>Case</p>
-                <h5>Stomach Aches</h5>
+                <p className="user-dash-wrap-lower-wrapped-p">Case</p>
+                <h5 className="profiled-up-h1">Stomach Aches</h5>
               </div>
               <hr className="up-menu-hr" />
               <div className="up-menu-date">
-                <p>Doctor</p>
-                <h5>Dr Lucia</h5>
+                <p className="user-dash-wrap-lower-wrapped-p">Doctor</p>
+                <h5 className="profiled-up-h1">Dr Lucia</h5>
               </div>
               <hr className="up-menu-hr" />
               <div className="up-menu-date">
-                <button>See doctor's profile</button>
+                <button  className="up-menu-button">See doctor's profile</button>
               </div>
             </div>
 
             <div className="up-menu-content-wrap">
               <div className="up-menu-date">
-                <h3>01 Jun'20</h3>
-                <p>09:00am</p>
+                <h3 className="profiled-up-h1">01 Jun'20</h3>
+                <p className="user-dash-wrap-lower-wrapped-p">09:00am</p>
               </div>
               <hr className="up-menu-hr" />
               <div className="up-menu-date">
-                <p>Case</p>
-                <h5>Stomach Aches</h5>
+                <p className="user-dash-wrap-lower-wrapped-p">Case</p>
+                <h5 className="profiled-up-h1">Stomach Aches</h5>
               </div>
               <hr className="up-menu-hr" />
               <div className="up-menu-date">
-                <p>Doctor</p>
-                <h5>Dr Lucia</h5>
+                <p className="user-dash-wrap-lower-wrapped-p">Doctor</p>
+                <h5 className="profiled-up-h1">Dr Lucia</h5>
               </div>
               <hr className="up-menu-hr" />
               <div className="up-menu-date">
-                <button>See doctor's profile</button>
-              </div>
-            </div>
-
-            <div className="up-menu-content-wrap">
-              <div className="up-menu-date">
-                <h3>01 Jun'20</h3>
-                <p>09:00am</p>
-              </div>
-              <hr className="up-menu-hr" />
-              <div className="up-menu-date">
-                <p>Case</p>
-                <h5>Stomach Aches</h5>
-              </div>
-              <hr className="up-menu-hr" />
-              <div className="up-menu-date">
-                <p>Doctor</p>
-                <h5>Dr Lucia</h5>
-              </div>
-              <hr className="up-menu-hr" />
-              <div className="up-menu-date">
-                <button>See doctor's profile</button>
+                <button  className="up-menu-button">See doctor's profile</button>
               </div>
             </div>
           </div>

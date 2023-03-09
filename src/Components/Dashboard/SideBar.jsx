@@ -58,38 +58,38 @@ const SideBar = () => {
           <div className='dash-txt'>
             <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to="/" >
-              <AiFillHome color='white' fontSize={20}/>  
+              <AiFillHome fontSize={20}/>  
               <p className='dash-p'>  Home</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/Doctor_dashboard'>
-              <RxDashboard color='white' fontSize={20}/>  
+              <RxDashboard  fontSize={20}/>  
               <p className='dash-p'>  Dashboard</p>
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/profile' >
-               <BiUserCircle color='white' fontSize={20}/><p className='dash-p'>   Your Profile</p>
+               <BiUserCircle fontSize={20}/><p className='dash-p'>   Your Profile</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/requests'>
-               <BsJournalBookmarkFill  color='white'  fontSize={18}/>
+               <BsJournalBookmarkFill  fontSize={18}/>
                <p  className='dash-p'>Appointments and Schedule</p>
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} to='/notifications' className='p-wrap'>
-               <BiBell  color='white' fontSize={20}/>  <p className='dash-p'> Notifications</p>
-              </NavLink>
-              <br/>
-              {/* <NavLink style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject}  to='/texts' className='p-wrap'>
-              <AiOutlineMessage color='white'  fontSize={20}/>  <p className='dash-p'>  Messages</p>
+               <BiBell  fontSize={20}/>  <p className='dash-p'> Notifications</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
+              isActive ? activeColorObject : colorObject}  to='/ChatRoom' className='p-wrap'>
+              <AiOutlineMessage  fontSize={20}/>  <p className='dash-p'>  Messages</p>
+              </NavLink>
+              <br/>
+              {/* <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject}  to='/settings' className='p-wrap'>
                <AiOutlineSetting color='white'  fontSize={20}/> <p className='dash-p'> Settings</p>
               </NavLink> */}

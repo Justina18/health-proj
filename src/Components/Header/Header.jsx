@@ -154,6 +154,9 @@ const Header = () => {
           <h4 className="head-links" onClick={() => navigate('/user_dashboard')}>
             Dashboard
           </h4>
+          {/* <h4 className="head-links" onClick={() => navigate("/doctor_dashboard")}>
+            Doc
+          </h4> */}
           <h4 className="head-links" onClick={() => navigate('/ChatRoom')}>
             Chat Room
           </h4>
