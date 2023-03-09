@@ -37,43 +37,47 @@ const UserSide = () => {
   return (
         <div className='sided'>
             <div className='side-head'>
-                <h2>Albert Weed</h2>
+            <img
+            className="dash-ic-img"
+            src="/Premium.png"
+            onClick={() => navigate("/")}
+          />
           </div>
           <div className='dash-txt'>
             <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to="/" >
-              <AiFillHome color='white' fontSize={20}/>  
+              <AiFillHome fontSize={20}/>  
               <p className='dash-p'>  Home</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/user_dashboard'>
-              <RxDashboard color='white' fontSize={20}/>  
+              <RxDashboard fontSize={20}/>  
               <p className='dash-p'>  Dashboard</p>
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/User Profile' >
-               <BiUserCircle color='white' fontSize={20}/><p className='dash-p'>   Your Profile</p>
+               <BiUserCircle fontSize={20}/><p className='dash-p'>   Your Profile</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/appointment'>
-               <BsJournalBookmarkFill  color='white'  fontSize={18}/>
-               <p  className='dash-p'>Appointments and Schedule</p>
+               <BsJournalBookmarkFill  fontSize={18}/>
+               <p  className='dash-p'>Appointments</p>
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} to='/notifications' className='p-wrap'>
-               <BiBell  color='white' fontSize={20}/>  <p className='dash-p'> Notifications</p>
+               <BiBell fontSize={20}/>  <p className='dash-p'> Notifications</p>
               </NavLink>
               <br/>
-              {/* <NavLink style={({ isActive }) =>
+              <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject}  to='/texts' className='p-wrap'>
               <AiOutlineMessage color='white'  fontSize={20}/>  <p className='dash-p'>  Messages</p>
               </NavLink>
               <br/>
-              <NavLink style={({ isActive }) =>
+              {/* <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject}  to='/settings' className='p-wrap'>
                <AiOutlineSetting color='white'  fontSize={20}/> <p className='dash-p'> Settings</p>
               </NavLink> */}

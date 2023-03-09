@@ -192,6 +192,12 @@
     width: 100%;
 }
 
+.dash-ic-img{
+    width: 150px;
+    height: 120px;
+    cursor: pointer;
+}
+
 .pro-butt {
     outline: none;
     border: none;

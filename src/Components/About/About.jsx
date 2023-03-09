@@ -10,7 +10,7 @@ import Footer from "../Foot/Footer";
 
 const About = () => {
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   return (
     <div className="about">

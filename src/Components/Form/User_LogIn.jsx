@@ -40,6 +40,7 @@ const LogIn = () => {
         console.log(res.data);
         res.data.data.email === values.email ? dispatch(userData(res.data.data)) : null;
         res.data.data.email === values.email ? navigate("/user_dashboard") : null;
+        localStorage.setItem("res", JSON.stringify(res));
         if (res.data.data.verify === true) {
           res.data.data.email === values.email ? navigate("/") : null;
         } else {

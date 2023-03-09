@@ -84,8 +84,8 @@
   display: none;
 }
 
-@media screen and (max-width: 767px) {
-  .head-link {
+@media screen and (max-width: 769px) {
+  /* .head-link {
     width: 100px;
     height: 50px;
     display: flex;
@@ -94,7 +94,7 @@
 
   .head-links {
     display: none;
-  }
+  } */
 
   .Burger {
     display: flex;
@@ -134,6 +134,10 @@
     justify-content: center;
     align-items: flex-start;
     cursor: pointer;
+  }
+
+  .head-buttons{
+    display: none;
   }
 
   .Header-Toggle {

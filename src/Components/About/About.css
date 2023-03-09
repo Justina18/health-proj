@@ -280,6 +280,15 @@
 
    
 }
+
+@media screen and (max-width: 426px) {
+    .meet-bounce-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 380px) {
     .abt-img{
     width: 320px;

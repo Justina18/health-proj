@@ -15,8 +15,8 @@ const Interest = () => {
           <p>While you don't need insurance to use Health360, it can often bring the cost lower. And alongside our satisfaction guarantee, is our promise that if Health360 can't treat you there's no change.</p>
            <button onClick={() => navigate("/choice")}>Sign Up Now!</button>
         </div>
-        <div className="int-img">
-            <img src="/heart.png" alt="" />
+        <div className="int-img-wrap">
+            <img className="int-img" src="/heart.png" alt="" />
         </div>
       </div>
     </div>
