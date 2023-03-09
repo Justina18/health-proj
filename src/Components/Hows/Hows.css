@@ -64,11 +64,10 @@
         color: #0D3859;
 
     }
-    /* .hows-img-holder{
+    .hows-img-holder{
         display: none;
-    } */
+    }
     .hows-img {
-        width: 365px;
-        height: 100%;
+        display: none;
     }
 }
