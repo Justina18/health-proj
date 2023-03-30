@@ -2,57 +2,28 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import "./AllForm.css";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { userData } from "../../REDUX/Features";
 import { AiFillHome } from "react-icons/ai";
-import { BiArrowBack } from "react-icons/bi"; 
+import { BiArrowBack } from "react-icons/bi";
 import Swal from 'sweetalert2'
 import axios from "axios";
 
+
 const Inputs = () => {
   const [view, setView] = useState(false);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [speciality, setSpec] = useState("");
-  const [cert, setCert] = useState("");
-  const [med, setMed] = useState("");
-  const [proof, setProof] = useState("");
-  const [gender, setGen] = useState("");
-  const [birthDate, setDate] = useState("");
 
   const [values, setValues] = useState({
     name: "",
     email: "",
     mobileNo: "",
-    location: "",
+    birthDate: "",
+    gender: "",
     password: "",
+    speciality: "",
+    location: ""
   });
 
   const totalInfo = { ...values };
-
-  const FileCert = (e) => {
-    const file = e.target.files[0];
-    setCert(file);
-  };
-
-  const FileMed = (e) => {
-    const file = e.target.files[0];
-    setMed(file);
-  };
-
-  const FileProof = (e) => {
-    const file = e.target.files[0];
-    setProof(file);
-  };
-  // useEffect(() => {
-  //   console.log(cert);
-  //   console.log(med);
-  //   console.log(proof);
-  // }, [cert, med, proof]);
-
-  const { name, email, mobileNo, password, location } = values;
-  const valuesData = { name, email, location, speciality, mobileNo, password, gender, birthDate };
-  
 
   const inputs = [
     {
@@ -117,26 +88,26 @@ const Inputs = () => {
 
   const loginAlert = () => {
     let timerInterval
-Swal.fire({
-  title: 'You have been sent an email. Please check to verify.',
-  timer: 8000,
-  timerProgressBar: true,
-  didOpen: () => {
-    Swal.showLoading()
-    const b = Swal.getHtmlContainer().querySelector('b')
-    timerInterval = setInterval(() => {
-      b.textContent = Swal.getTimerLeft()
-    }, 100)
-  },
-  willClose: () => {
-    clearInterval(timerInterval)
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    console.log('I was closed by the timer')
-  }
-})
+    Swal.fire({
+      title: 'You have been sent an email. Please check to verify.',
+      timer: 8000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+        const b = Swal.getHtmlContainer().querySelector('b')
+        timerInterval = setInterval(() => {
+          b.textContent = Swal.getTimerLeft()
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer')
+      }
+    })
   }
 
   const handleChange = (e) => {
@@ -144,60 +115,14 @@ Swal.fire({
     // console.log(e)
   };
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const formData = new FormData();
-
-  //   formData.append("name", values.name);
-  //   formData.append("email", values.email);
-  //   formData.append("mobileNo", values.mobileNo);
-  //   formData.append("birthdate", date);
-  //   formData.append("gender", gen);
-  //   formData.append("specialty", spec);
-  //   formData.append("location", values.location);
-  //   formData.append("password", values.password);
-  //   formData.append("license", med);
-  //   formData.append("proofOfId", proof);
-  //   formData.append("certificateUpload", cert);
-
-  //   const config = {
-  //     headers: {
-  //       "content-Type": "multipart/form-data",
-  //     },
-  //   };
-
-  //   try {
-  //     const response = await axios.post(
-  //       "https://health360-h4ws.onrender.com/api/signup",
-  //       formData,
-  //       config
-  //     );
-  //     console.log(response);
-  //     event.preventDefault();
-  //     navigate("/User Login");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const receivedValues = (e) => {
-  //   e.preventDefault();
-  //   // console.log(values);
-  //   console.log(totalInfo);
-  // };
-
-
-      const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(valuesData);
+    console.log(values);
     try {
       event.preventDefault();
-      const response = await axios.post(
-        "https://health360-h4ws.onrender.com/api/signup",
-        valuesData
-      );
+      const response = await axios.post("https://health360-h4ws.onrender.com/api/signup", values);
       console.log(response);
-      navigate("/User Login");
+      navigate("/admin_login");
       loginAlert();
     } catch (error) {
       console.log(error);
@@ -208,11 +133,11 @@ Swal.fire({
   return (
     <div className="apps">
       <div className="doc-icon-hold">
-        <AiFillHome 
-        onClick={() => navigate("/")} 
-        color="white" 
-        fontSize={30}
-        className="doc-icon"
+        <AiFillHome
+          onClick={() => navigate("/")}
+          color="white"
+          fontSize={30}
+          className="doc-icon"
         />
       </div>
       <div className="form-wrap">
@@ -230,14 +155,16 @@ Swal.fire({
               />
             </div>
           ))}
-          <select className="inp" onChange={(e) => setGen(e.target.value)}>
+
+          <select className="inp" name="gender" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}>
             <option value="">Select a Gender</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
           </select>
+
           <div className="custom-select">
-            <select onChange={(e) => setSpec(e.target.value)}>
-              <option value="">Specialty</option>
+            <select name="speciality" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}>
+              <option value="">select a Specialty</option>
               <option value="Allergy and immunology">
                 Allergy and immunology
               </option>
@@ -267,38 +194,13 @@ Swal.fire({
             </select>
           </div>
           <input
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
             className="date"
             type="date"
             id="birthday"
-            name="birthday"
+            name="birthDate"
           />
-          <label className="text-lab">
-            <input className="inp-text" type="text" />
-            Certificate in Specialization
-            <label className="lab-but">
-              <input type="file" className="file" onChange={FileCert} /> Choose
-              File
-            </label>
-          </label>
 
-          <label className="text-lab">
-            <input className="inp-text" type="text" />
-            Nigeria Medical License
-            <label className="lab-but">
-              <input type="file" className="file" onChange={FileMed} /> Choose
-              File
-            </label>
-          </label>
-
-          <label className="text-lab">
-            <input className="inp-text" type="text" />
-            Proof of Identity
-            <label className="lab-but">
-              <input type="file" className="file" onChange={FileProof} /> Choose
-              File
-            </label>
-          </label>
           <div className="foot">
             <div className="check">
               <input
@@ -313,23 +215,20 @@ Swal.fire({
               </label>
             </div>
             <div>
-              {/* <button className="back-button" onClick={() => navigate("/choice")}>
-              Go Back
-            </button> */}
               <button className="button">CREATE ACCOUNT</button>
             </div>
           </div>
         </form>
-          <p className="p">
-        Already have an account?{" "}
-        <b className="b" onClick={() => navigate("/log in")}>
-          {" "}
-          Log In.
-        </b>
-      </p>
-      </div>
-    
-    </div>
+        <p className="p">
+          Already have an account?{" "}
+          <b className="b" onClick={() => navigate("/admin_login")}>
+            {" "}
+            Log In.
+          </b>
+        </p>
+      </div >
+
+    </div >
   );
 };
 

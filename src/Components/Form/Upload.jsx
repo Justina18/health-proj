@@ -29,7 +29,6 @@ const Upload = () => {
         </div>
       )}
       <br />
-     
       <br />
       <label className="buttons">
       <input

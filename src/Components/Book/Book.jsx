@@ -1,19 +1,23 @@
-import React,{useContext, useState, useEffect} from 'react'
-import axios from 'axios'
-import {useParams} from 'react-router-dom'
-import { useNavigate  } from "react-router-dom";
-import { addToCart } from '../../REDUX/Features';
-import Calendar from "react-calendar"; 
+import React, { useContext, useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { addToCart } from "../../REDUX/Features";
+import Calendar from "react-calendar";
+import BookInfo from "./BookInfo";
+import { Link } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import "./Book.css";
 import Time from "./Time";
+import Header from '../Header/Header'
 import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import { Contexts } from "../../Api/Context";
 
+
 const Book = () => {
-  const dispatch = useDispatch()
-  const {id} = useParams()
+  const dispatch = useDispatch();
+  const { id } = useParams();
   const [item, setItem] = useState([]);
   const [date, setDate] = useState(new Date());
   const [showTime, setShowTime] = useState(false);
@@ -35,105 +39,71 @@ const Book = () => {
       id: 1,
       img: "/shaa.png",
       name: "Joseph Jonah",
-      specialty: "anatomy",
+      specialty: "Anatomist",
       icon: "MdLocationPin",
       location: "Abuja",
       price: "$1500",
     },
 
-    {
-      id: 2,
-      img: "/her.png",
-      name: "Isaac Samuel",
-      specialty: "Physician",
-      icon: "MdLocationPin",
-      location: "Lagos",
-      price: "$1500",
-    },
 
-    {
-      id: 3,
-      img: "/shaa.png",
-      name: "Joseph Jonah",
-      specialty: "anatomy",
-      icon: "MdLocationPin",
-      location: "Abuja",
-      price: "$1500",
-    },
-
-    {
-      id: 4,
-      img: "/her.png",
-      name: "Isaac Samuel",
-      specialty: "Physician",
-      icon: "MdLocationPin",
-      location: "Port",
-      price: "$1500",
-    },
   ];
 
-  const getItem= async()=>{
-    try{
-        const res = await axios.get(`https://fakestoreapi.com/products/${id}`);
-        console.log(res.data)
-        setItem(res.data)
-    }catch(err){
-        console.log(err)
+  const getDoctors = async () => {
+    console.log("clicked");
+    try {
+      const res = await axios.get(`https://health360-h4ws.onrender.com/api/alldoctors`);
+      console.log(res.data.data);
+      setItem(res.data.data)
+    } catch (err) {
+      console.log(err);
     }
-}
+  };
 
-useEffect(()=>{
-  getItem()
-}, [])
+  useEffect(() => {
+    getDoctors();
+  }, []);
 
   return (
     <div className="book">
-      <div className="head-img-wrap">
-        <img
-          onClick={() => navigate("/")}
-          className="head-img"
-          src="/Morest.png"
-        />
-      </div>
+      <Header />
+      <br /><br /><br /><br /><br /><br />
       <div className="book-wrap">
-        <h1 className="book-header">Book an Appointment</h1>
-        <div className="calendar-container">
+        <h1 className="book-header">Choose a Doctor</h1>
+        {/* <div className="calendar-container">
           <Calendar
             onChange={setDate}
             value={date}
             onClickDay={() => setShowTime(true)}
           />
         </div>
-        <Time showTime={showTime} date={date} />
+        <Time showTime={showTime} date={date} /> */}
 
         <div className="wrappest">
-          {data.map((i) => (
-            <div className="book-wrap-main" key={i.id}>
-              <div className="book-img-wrap">
-                <img className="book-img" src={i.img} />
-              </div>
-              <div className="book-wrap-main-text">
-                <h2 className="book-h">{i.name}</h2>
-                <p>{i.specialty}</p>
-              </div>
-              <div>
-                <MdLocationPin fontSize={18} />
-                {i.location}
-              </div>
-              <div className="book-foot">
-                <p>{i.price}</p>
-              </div>
+          {item.map((i) => (
+            <div key={i._id} className="book-wrap-main">
+              <Link to={`/docs details/${i._id}`} className="book-wrap-maine">
+                <div className="book-img-wrap">
+                  <img className="book-img" src='/doc-pro.png' />
+                </div>
+                <div className="book-wrap-main-text">
+                  <h3 className="book-h">{i.name}</h3>
+                  <p>{i.speciality}</p>
+                </div>
+                <div>
+                  <MdLocationPin fontSize={18} />
+                  {i.location}
+                </div>
+                <div className="book-foot">
+                  <p>{i.price}</p>
+                </div>
+              </Link>
+              <button
+                onClick={() => navigate(`/bookInputs/${i._id}/${i.speciality}`)}
+                className="book-foot-butt"
+              >Book Doctor</button>
             </div>
           ))}
         </div>
-          <button
-            onClick={() => {
-              dispatch(addToCart(i));
-              navigate("/booking info")}}
-            className="book-butt"
-          >
-            Proceed
-          </button>
       </div>
     </div>
   );

@@ -6,11 +6,11 @@ import "./Prem.css";
 const Prem = () => {
   const navigate = useNavigate();
   const payment = () => {
-    const refVal = "my-ref" + Math.random() * 1000;
+    let key = `key${Math.random()}`
     window.Korapay.initialize({
       key: "pk_test_XQyhbERtfEJPqWZLyaWYGv9pptvyYc59W3cZ3UK2",
-      reference: `${refVal}`,
-      amount: 22000,
+      reference: key,
+      amount: 150,
       currency: "NGN",
       customer: {
         name: "John Doe",
@@ -38,11 +38,10 @@ const Prem = () => {
           <h1 className="prem-h1">Weekly Plans</h1>{" "}
           <RiVipCrown2Line color="#D27245" fontSize={40} />
           <p className="prem-p">
-            The Health360 platform <br /> makes it possible for anyone with{" "}
-            <br /> a smartphone or tablet to receive <br /> quality and
-            affordable health <br /> consultation.
+            The Health360 platform gives a 10% {" "}
+             discount off every appointment and consultation of the week.
           </p>
-          $150
+          #1500
           <button className="prem-butt" onClick={payment}>
             Subscribe
           </button>
@@ -52,11 +51,10 @@ const Prem = () => {
           <h1 className="prem-h1">Monthly Plan</h1>{" "}
           <RiVipCrown2Line color="#9E9E9E" fontSize={40} />
           <p className="prem-p">
-            The Health360 platform <br /> makes it possible for anyone with{" "}
-            <br /> a smartphone or tablet to receive <br /> quality and
-            affordable health <br /> consultation.
+          The Health360 platform gives a 15% {" "}
+             discount off every appointment and consultation of the week.
           </p>
-          $500
+          #5000
           <button className="prem-butt" onClick={payment}>
             Subscribe
           </button>
@@ -71,8 +69,12 @@ const Prem = () => {
             You can make your very own posts
             <br />
             No Ads
+            <br />
+          <b> AND</b> 
+            The Health360 platform gives a 20% {" "}
+             discount off every appointment and consultation of the week!!
           </li>
-          $1500
+          #50000
           <button className="prem-butt" onClick={payment}>
             Subscribe
           </button>

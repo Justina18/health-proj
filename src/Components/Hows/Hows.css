@@ -55,7 +55,7 @@
     width: 430px;
     height: 100%;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 769px) {
     .hows-head-text-h1{
         display: flex;
         align-items: center;
@@ -65,6 +65,9 @@
 
     }
     .hows-img-holder{
+        display: none;
+    }
+    .hows-img {
         display: none;
     }
 }

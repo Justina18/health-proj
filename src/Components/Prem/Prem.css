@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(to left, #2991E0, #1B75BC, #1765A1);
 }
 .prem-head{   
@@ -46,7 +46,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: start;
+    text-align: center;
+    flex-direction: column;
 }
 .prem-h1{
     color: #1765A1;

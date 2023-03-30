@@ -15,36 +15,35 @@ const LogIn = () => {
   const [err, setErr] = useState("");
   const [herr, setHerr] = useState(false);
   const { verify, login_alert } = useContext(Contexts);
-  const user = useSelector((state) => state.Commerce.user);
+  const user = useSelector((state) => state.commerce.users);
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
 
-  const { email, password } = values;
-  const valueData = { email, password };
+
 
   const logOut = async () => {
-    const res = await axios.post(
-      `https://health360-h4ws.onrender.com/api/userlogout/:${user[0]?.data.data._id}`
-    );
+    const res = await axios.post(`https://health360-h4ws.onrender.com/api/userlogout/${user[0]?.data.data._id}`);
     console.log(res.data);
     res.status === 200 ? dispatch(clearUser()) : null;
     res.status === 200 ? navigate("/login") : null;
   };
 
-  const handleLogin = async () => {
+
+  const handleLogin = async (e) => {
+    console.log(values)
     event.preventDefault();
-    await axios.post("https://health360-h4ws.onrender.com/api/userlogin", valueData)
+    await axios.post("https://health360-h4ws.onrender.com/api/doctorlogin", values)
       .then(function (res) {
         console.log(res.data);
-        res.data.data.email === values.email ? dispatch(userData(res)) : null;
-        res.data.data.email === values.email ? navigate("/log in img") : null;
+        res.data.data.email === values.email ? dispatch(userData(res.data.data)) : null;
+        res.data.data.email === values.email ? navigate("/doctor_dashboard") : null;
         if (res.data.data.verify === true) {
           res.data.data.email === values.email ? navigate("/") : null;
         } else {
-          logOut();
+          // logOut();
         }
       })
       .catch(function (error) {
@@ -92,11 +91,8 @@ const LogIn = () => {
     <div className="log-apps">
       {herr && <p style={{ color: "red" }}>{err}</p>}
 
-      <form onSubmit={ () =>{
-        event.preventDefault();
-        handleLogin()
-        }}>
-        <h1 className="logIn-head-h1">Welcome Back</h1>
+      <form onSubmit={handleLogin}>
+        <h1 className="logIn-head-h1">Hey Doc</h1>
         <p>Login to have access to your account</p>
         {inputs.map((i) => (
           <Form

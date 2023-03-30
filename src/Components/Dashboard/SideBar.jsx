@@ -38,6 +38,17 @@ const SideBar = () => {
     fontWeight:400,
   }
 
+  const logOut = async () => {
+    console.log(user._id)
+    try {
+      const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
+      console.log(res.data);
+      res.status === 200 ? dispatch(clear_userData()) : null;
+      res.status === 200 ? navigate("/") : null;
+    } catch (e) {
+      console.log(e)
+    }
+  };
 
   return (
         <div className='sided'>
@@ -47,44 +58,44 @@ const SideBar = () => {
           <div className='dash-txt'>
             <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to="/" >
-              <AiFillHome color='white' fontSize={20}/>  
+              <AiFillHome fontSize={20}/>  
               <p className='dash-p'>  Home</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject} className='p-wrap' to='/user dashboard'>
-              <RxDashboard color='white' fontSize={20}/>  
+              isActive ? activeColorObject : colorObject} className='p-wrap' to='/Doctor_dashboard'>
+              <RxDashboard  fontSize={20}/>  
               <p className='dash-p'>  Dashboard</p>
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/profile' >
-               <BiUserCircle color='white' fontSize={20}/><p className='dash-p'>   Your Profile</p>
+               <BiUserCircle fontSize={20}/><p className='dash-p'>   Your Profile</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} className='p-wrap' to='/requests'>
-               <BsJournalBookmarkFill  color='white'  fontSize={18}/>
+               <BsJournalBookmarkFill  fontSize={18}/>
                <p  className='dash-p'>Appointments and Schedule</p>
               </NavLink>
               <br/>
               <NavLink  style={({ isActive }) =>
               isActive ? activeColorObject : colorObject} to='/notifications' className='p-wrap'>
-               <BiBell  color='white' fontSize={20}/>  <p className='dash-p'> Notifications</p>
-              </NavLink>
-              <br/>
-              {/* <NavLink style={({ isActive }) =>
-              isActive ? activeColorObject : colorObject}  to='/texts' className='p-wrap'>
-              <AiOutlineMessage color='white'  fontSize={20}/>  <p className='dash-p'>  Messages</p>
+               <BiBell  fontSize={20}/>  <p className='dash-p'> Notifications</p>
               </NavLink>
               <br/>
               <NavLink style={({ isActive }) =>
+              isActive ? activeColorObject : colorObject}  to='/ChatRoom' className='p-wrap'>
+              <AiOutlineMessage  fontSize={20}/>  <p className='dash-p'>  Messages</p>
+              </NavLink>
+              <br/>
+              {/* <NavLink style={({ isActive }) =>
               isActive ? activeColorObject : colorObject}  to='/settings' className='p-wrap'>
                <AiOutlineSetting color='white'  fontSize={20}/> <p className='dash-p'> Settings</p>
               </NavLink> */}
           </div>
-          <div className='logOut'>
-            <FiLogOut color='#d9d9d9' fontSize={30}/><h4>Log Out</h4>
+          <div className='logOut' onClick={() => logOut()}>
+            <FiLogOut color='#d9d9d9' fontSize={20}/><h5>Log Out</h5>
           </div>
         </div>
   )

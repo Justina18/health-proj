@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
+import { FiLogOut } from "react-icons/fi";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import { clear_userData } from "../../REDUX/Features";
+import axios from "axios";
 const Header = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const user = useSelector((state) => state.commerce.users[0])
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,6 +28,25 @@ const Header = () => {
     </div>
   );
 
+  const logOut = async () => {
+    console.log(user._id)
+    try {
+      const res = await axios.post(`https://health360-h4ws.onrender.com/api/logout/${user._id}`);
+      console.log(res.data);
+      res.status === 200 ? dispatch(clear_userData()) : null;
+      res.status === 200 ? navigate("/") : null;
+    } catch (e) {
+      console.log(e)
+    }
+
+  };
+
+
+
+  useEffect(() => {
+    // console.log(user)
+  }, [])
+
   return (
     <div className="Header">
       <div className="Head-wrap">
@@ -35,6 +59,7 @@ const Header = () => {
         </div>
         {isOpen && (
           <div className="hid-wrap">
+               {!user ? 
             <div className="hid">
               <div className="head-link">
                 <p onClick={() => navigate("/")} className="head-link">
@@ -44,7 +69,7 @@ const Header = () => {
                 <p className="head-link" onClick={() => navigate('/about')}>
                   About Us
                 </p>
-                <hr/>
+                <hr />
                 <p
                   className="head-link"
                   onClick={() => navigate('/contact us')}
@@ -52,30 +77,54 @@ const Header = () => {
                   Contact Us
                 </p>
                 <hr />
-                <p
-                  className="head-link"
-                  onClick={() => navigate("/user dashboard")}
-                >
-                  Dashboard
-                </p>
-                <hr />
                 <p className="head-link" onClick={() => navigate("premium")}>
                   Go Premium
                 </p>
-                <hr />
-                <p className="head-link" onClick={() => navigate("/dashboard")}>
-                  Main
-                </p>
-                <hr />
-                <p className="head-link" onClick={() => navigate("premium")}>
-                  Log Out
-                </p>
-
               </div>
+            </div>:
+            <div className="hid">
+            <div className="head-link">
+              <p onClick={() => navigate("/")} className="head-link">
+                Home
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate('/about')}>
+                About Us
+              </p>
+              <hr />
+              <p
+                className="head-link"
+                onClick={() => navigate('/contact us')}
+              >
+                Contact Us
+              </p>
+              <hr />
+              <p
+                className="head-link"
+                onClick={() => navigate("/user_dashboard")}
+              >
+                Dashboard
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate("premium")}>
+                Go Premium
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate("/doctor_dashboard")}>
+                Main
+              </p>
+              <hr />
+              <p className="head-link" onClick={() => navigate('/doc verify')}>
+                Log Out
+              </p>
             </div>
+          </div>}
           </div>
         )}
-        <div className="head-links">
+
+<div className="head-links">
+       {!user ? 
+        <>
           <h4 onClick={() => navigate("/")} className="head-links">
             Home
           </h4>
@@ -85,20 +134,35 @@ const Header = () => {
           <h4 className="head-links" onClick={() => navigate("/contact us")}>
             Contact Us
           </h4>
-        </div>
+         
+          </>
+          :
+          <>
+          <h4 onClick={() => navigate("/")} className="head-links">
+            Home
+          </h4>
+          <h4 className="head-links" onClick={() => navigate("/about")}>
+            About
+          </h4>
+          <h4 className="head-links" onClick={() => navigate("/contact us")}>
+            Contact Us
+          </h4>
+          <h4 className="head-links" onClick={() => navigate('/user_dashboard')}>
+            Dashboard
+          </h4>
+          {/* <h4 className="head-links" onClick={() => navigate("/doctor_dashboard")}>
+            Doc
+          </h4> */}
+          <h4 className="head-links" onClick={() => navigate('/ChatRoom')}>
+            Chat Room
+          </h4>
+          </>
+       } 
+       </div>
         <div className="head-buttons">
-          <button
-            className="head-log-button "
-            onClick={() => navigate("/User Login")}
-          >
-            Log In
-          </button>
-          <button
-            className="head-sign-button"
-            onClick={() => navigate("/choice")}
-          >
-            Sign Up
-          </button>
+          {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
+            <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
+            <button className="head-sign-button" onClick={() => logOut()} >Log Out </button>}
         </div>
         <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
       </div>
