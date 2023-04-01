@@ -66,8 +66,7 @@ const BookInfo = () => {
             </div>
             <button onClick={() => navigate(`/bookInputs/${item._id}/${item.speciality}`)} className="bookingInfoButt">Book Doctor</button>
           </div>
-          <button onClick={() => navigate("/bookInputs")} className="bookingInfoButt"> Book Doctor </button>
-        </div>
+          </div>
       </div>
     </div>
   );

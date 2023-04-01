@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef, useState } from "react";
 import "./Body.css";
 import { BsCameraVideo } from "react-icons/bs";
 import { MdCall } from "react-icons/md";
@@ -7,23 +7,42 @@ import { CiFaceSmile } from "react-icons/ci";
 import { MdKeyboardVoice } from "react-icons/md";
 import { AiOutlinePaperClip } from "react-icons/ai";
 import { io } from "socket.io-client";
-import { useSelector } from "react-redux"
-import axios from "axios"
+import { useSelector } from "react-redux";
+import axios from "axios";
+import EmojiPicker from "emoji-picker-react";
 
 const Body = () => {
   const scrollRef = useRef();
-  const user = useSelector((state)=> state.commerce.users[0]._id);
-  console.log(user)
-  const getFunction = async()=>{
-    const data = await JSON.parse(
-      localStorage.getItem()
-    );
+  const user = useSelector((state) => state.commerce.users[0]._id);
+  console.log(user);
+  const getFunction = async () => {
+    const data = await JSON.parse(localStorage.getItem());
     const response = await axios.post(recieveMessageRoute, {
       from: data._id,
       to: currentChat._id,
     });
     setMessages(response.data);
-  }
+  };
+
+  const [inputStr, setInputStr] = useState("");
+  const [showPicker, setShowPicker] = useState(false);
+
+  const onEmojiClick = (event, emojiObect) => {
+    setInputStr((prevInput) => prevInput + emojiObect.emoji);
+    setShowPicker(false);
+  };
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const handleFileUpload = () => {
+    // Makeing an API call to upload the selected file
+    console.log(selectedFile);
+  };
+
   return (
     <div className="Body">
       <div className="body-wrap">
@@ -47,65 +66,92 @@ const Body = () => {
         <div className="main-body">
           <div className="message-name-wrap">
             {/* <img className="messages-head-img" src="/chat.webp" alt="" /> */}
-            
-              <div className= "message">
+
+            <div className="message">
               <div className="content">
-                <div >
+                <div>
                   <p>Hello</p>
                 </div>
               </div>
-              </div>
-              
-              <div className= "messenger">
-                <div className="content">
-                  <div >
-                    <p>Hi Doc...I suppose you've already read about me from my request and profile. So, let's cut straight to the chase as our time is limited.</p>
-                  </div>
-              </div>
-              </div>
+            </div>
 
-              <div className= "message">
+            <div className="messenger">
               <div className="content">
-                <div >
+                <div>
+                  <p>
+                    Hi Doc...I suppose you've already read about me from my
+                    request and profile. So, let's cut straight to the chase as
+                    our time is limited.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="message">
+              <div className="content">
+                <div>
                   <p>Sure. So when did your migraines start?</p>
                 </div>
               </div>
-              </div>
-              
-              <div className= "messenger">
-                <div className="content">
-                  <div >
-                    <p>Earlier this morning Doc.</p>
-                  </div>
-              </div>
-              </div>
+            </div>
 
-              <div className= "message">
+            <div className="messenger">
               <div className="content">
-                <div >
-                  <p>Okay...Okay<br/> Do you still have it?</p>
+                <div>
+                  <p>Earlier this morning Doc.</p>
                 </div>
               </div>
+            </div>
+
+            <div className="message">
+              <div className="content">
+                <div>
+                  <p>
+                    Okay...Okay
+                    <br /> Do you still have it?
+                  </p>
+                </div>
               </div>
-              
-              <div className= "messenger">
-                <div className="content">
-                  <div >
-                    <p>Yes Doc...I haven't been able to have as much as a meal cos it hurts as the sides of my head.</p>
-                  </div>
+            </div>
+
+            <div className="messenger">
+              <div className="content">
+                <div>
+                  <p>
+                    Yes Doc...I haven't been able to have as much as a meal cos
+                    it hurts as the sides of my head.
+                  </p>
+                </div>
               </div>
-              </div>
+            </div>
           </div>
         </div>
 
-        
-
         <div className="body-inp">
           <div className="body-icons">
-            <CiFaceSmile />{" "}
+            <input
+              type="file"
+              id="file-input"
+              onChange={(e) => setInputStr(e.target.value)}
+              style={{ display: "none" }}
+            />
+            <label htmlFor="file-input">
+              <div className="body-icons">
+                <CiFaceSmile />{" "}
+              </div>
+            </label>
           </div>
+
           <div className="body-icons">
-            <AiOutlinePaperClip />
+            <input
+              type="file"
+              id="file-input"
+              onChange={handleFileChange}
+              style={{ display: "none" }}
+            />
+            <label htmlFor="file-input">
+              <AiOutlinePaperClip />
+            </label>
           </div>
           <hr className="chat-line" />
           <input

@@ -6,6 +6,7 @@ import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clear_userData } from "../../REDUX/Features";
+import { AiOutlineMessage } from "react-icons/ai";
 import axios from "axios";
 const Header = () => {
   const dispatch = useDispatch()
@@ -153,16 +154,16 @@ const Header = () => {
           {/* <h4 className="head-links" onClick={() => navigate("/doctor_dashboard")}>
             Doc
           </h4> */}
-          <h4 className="head-links" onClick={() => navigate('/ChatRoom')}>
-            Chat Room
-          </h4>
           </>
        } 
        </div>
         <div className="head-buttons">
           {!user ? <> <button className="head-log-button " onClick={() => navigate("/User Login")} >  Log In  </button>
             <button className="head-sign-button" onClick={() => navigate("/choice")} > Sign Up </button> </> :
-            <button className="head-sign-button" onClick={() => logOut()} >Log Out </button>}
+             <div className="end-head">
+              <AiOutlineMessage color='#006edc'  onClick={() => navigate('/ChatRoom')} fontSize={25}/>  
+            <button className="head-sign-button" onClick={() => logOut()} >Log Out </button>
+            </div>}
         </div>
         <div className="Burger">{toggle ? FiAlignJustif : FaTime}</div>
       </div>

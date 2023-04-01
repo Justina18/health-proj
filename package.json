@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^1.9.2",
     "animate.css": "^4.1.1",
     "axios": "^1.2.4",
+    "emoji-picker-react": "^4.4.8",
     "react": "^18.2.0",
     "react-calendar": "^4.0.0",
     "react-dom": "^18.2.0",

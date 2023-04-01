@@ -48,6 +48,14 @@
   display: flex;
 }
 
+.end-head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+    cursor: pointer;
+}
+
 .head-log-button {
   background: transparent;
   border: 2px solid #006edc;

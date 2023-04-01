@@ -8,6 +8,8 @@ import axios from "axios";
 const UserInput = () => {
   const navigate = useNavigate();
   const [dateOfBirth, setDate] = useState();
+  const [err, setErr] = useState("");
+  const [herr, setHerr] = useState(false);
   const [gender, setGender] = useState();
   const [values, setValues] = useState({
     name: "",
@@ -72,30 +74,6 @@ const UserInput = () => {
     },
   ];
 
-  const loginAlert = () => {
-    let timerInterval;
-    Swal.fire({
-      title: "You have been sent an email. Please check to verify.",
-      timer: 5000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading();
-        const b = Swal.getHtmlContainer().querySelector("b");
-        timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft();
-        }, 100);
-      },
-      willClose: () => {
-        clearInterval(timerInterval);
-      },
-    }).then((result) => {
-      /* Read more about handling dismissals below */
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log("I was closed by the timer");
-      }
-    });
-  };
-
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
@@ -108,10 +86,10 @@ const UserInput = () => {
       const response = await axios.post("https://health360-h4ws.onrender.com/api/usersignUp", valuesData);
       console.log(response);
       navigate("/User Login");
-      loginAlert();
 
     } catch (error) {
       console.log(error);
+      setErr(error.response.data.message);
     }
   };
 
@@ -119,8 +97,17 @@ const UserInput = () => {
     return inputs.length;
   };
 
+  useEffect(() => {
+    setHerr(true);
+    setTimeout(() => {
+      setHerr(false);
+    }, 5000);
+  }, [err]);
+
   return (
     <div className="user-sign-apps">
+      {herr && <p style={{ color: "red" }}>{err}</p>}
+
       <form onSubmit={handleSubmit}>
         <h1>Create an account</h1>
         {inputs.map((i) => (

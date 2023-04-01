@@ -11,7 +11,7 @@ import UserSide from "../UserSide";
 
 
 const Dashboard = () => {
-  
+  const [item, setItem] = useState([]);
   const handleClick = () => {
     dispatch({ type: "Add", payload: { name: inputRef.current.value } });
   };
@@ -111,8 +111,8 @@ const Dashboard = () => {
             <div className="profiled-up">
               <img src="/doc-pro.png" alt="" />
               <div className="profiled-head-text">
-                <h1>Nina Igbani</h1>
-                <p>nibani09@gmail.com</p>
+                <h1>{getResponse.data.data.name}</h1>
+                <p>{getResponse.data.data.email}</p>
                 <h5 className="profiled-up-h1">Appointments</h5>
               </div>
               <div className="profiled-number">
@@ -135,12 +135,12 @@ const Dashboard = () => {
               <div className="profiled-down-content">
                 <div className="profiled-down-content-1">
                   <h4 className="profiled-up-h1">Gender</h4>
-                  <p>Female</p>
+                  <p>{getResponse.data.data.gender}</p>
                   <hr />
                 </div>
                 <div className="profiled-down-content-1">
                   <h4 className="profiled-up-h1">Birthday</h4>
-                  <p>Oct. 25, 1993</p>
+                  <p>{getResponse.data.data.dateOfBirth}</p>
                   <hr />
                 </div>
               </div>
@@ -148,17 +148,17 @@ const Dashboard = () => {
               <div className="profiled-down-content">
                 <div className="profiled-down-content-1">
                   <h4 className="profiled-up-h1">Phone Number</h4>
-                  <p>09161609940</p>
+                  <p>{getResponse.data.data.mobileNo}</p>
                   <hr />
                 </div>
                 <div className="profiled-down-content-1">
                   <h4 className="profiled-up-h1">Location</h4>
-                  <p>Lagos</p>
+                  <p>{getResponse.data.data.location}</p>
                   <hr />
                 </div>
               </div>
 
-              <div className="profiled-down-content">
+              {/* <div className="profiled-down-content">
                 <div className="profiled-down-content-1">
                   <h4 className="profiled-up-h1">Gender</h4>
                   <p>Female</p>
@@ -169,7 +169,7 @@ const Dashboard = () => {
                   <p>Oct. 25, 1993</p>
                   <hr />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
